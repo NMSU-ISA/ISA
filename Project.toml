@@ -1,0 +1,13 @@
+name = "ISA"
+uuid = "a013a70a-c79b-4821-a4a5-945bdb983244"
+authors = ["Hasanfcb <h.emadfcb@gmail.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
