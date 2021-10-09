@@ -18,7 +18,13 @@ makedocs(;
     ],
 )
 
+#deploydocs(;
+#    repo="github.com/Hasanfcb/ISA.jl",
+#    devbranch="master",
+#)
+
+
 deploydocs(;
-    repo="github.com/Hasanfcb/ISA.jl",
-    devbranch="master",
+    repo="github.com/NMSU-ISA/ISA.jl",
+#    devbranch="master",
 )
