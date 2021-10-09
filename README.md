@@ -16,9 +16,6 @@ In January of 2020, we began to re-implement our ISA tools in the Julia programi
 1) Download/Clone the ISA module to `username/.julia/dev/`.
 2) Enter the package manager in REPL by pressing `]`  then add the package by typing `dev ISA` rather than `add ISA`.
 
-## Documentation
-[https://ssandova.github.io/ISAdocs/](https://ssandova.github.io/ISAdocs/)
-
 
 
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://nmsu-isa.github.io/ISA.jl/dev/)
