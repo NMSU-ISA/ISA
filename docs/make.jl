@@ -1,21 +1,34 @@
 using ISA
 using Documenter
 
+push!(LOAD_PATH,"../src/")
+
 DocMeta.setdocmeta!(ISA, :DocTestSetup, :(using ISA); recursive=true)
 
 makedocs(;
     modules=[ISA],
     authors="Hasanfcb <h.emadfcb@gmail.com> and contributors",
-    repo="https://github.com/Hasanfcb/ISA.jl/blob/{commit}{path}#{line}",
+    repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",
     sitename="ISA.jl",
-    format=Documenter.HTML(;
+    fformat=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://Hasanfcb.github.io/ISA.jl",
+        canonical="https://github.com/NMSU-ISA/ISA.jl",
         assets=String[],
     ),
+
     pages=[
         "Home" => "index.md",
+        "ISA Basics" =>
+                    ["Cannonical Triplets and Component Sets"   => "basics/triplets.md",
+                     "AM--FM Components"     => "basics/components.md",
+                     "AM--FM Models"         => "basics/models.md",
+                     "Instantaneous Spectra" => "basics/spectra.md",
+                     "Numerical Components"     => "basics/componentsNumerical.md",],
+        "Decomposition" => "decomposition/EMD.md",
+        "Distributions" => "distributions/STFT.md",
+        "Citation" => "cite.md",
     ],
+    assets=String[],
 )
 
 #deploydocs(;

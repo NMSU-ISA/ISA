@@ -1,5 +1,10 @@
 module ISA
 
-# Write your package code here.
+include("components/basicComps.jl")
+export AMFMtriplet, AMFMcomp
 
-end
+include("models/basicModels.jl")
+export compSet, AMFMmodel
+
+
+end # module
