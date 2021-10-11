@@ -15,7 +15,9 @@ AMFMtriplet(a, ω) = AMFMtriplet(a, ω, zero(Float64))
 struct AMFMcomp
   C::AMFMtriplet
 end
-AMFMcomp(a, ω) = AMFMcomp( AMFMtriplet(a, ω, 0.0))
+
+#what is this??
+#AMFMcomp(a, ω) = AMFMcomp( AMFMtriplet(a, ω, 0.0))
 AMFMcomp(a, ω) = AMFMcomp(a, ω, 0.0)
 
 function (ψ::AMFMcomp)(t::Vector{<:Real})
