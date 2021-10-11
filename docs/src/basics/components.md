@@ -12,7 +12,11 @@ using ISA
 ## Defining an AM--FM Component
 We define an **AM--FM component** `AMFMcomp` by passing the function
 `AMFMcomp()` a object of type `AMFMtriplet`. First we will create
+<<<<<<< HEAD
 an object say, C of type `AMFMtriplet` by providing an instantaneous
+=======
+an object say, 𝐶 of type `AMFMtriplet` by providing an instantaneous
+>>>>>>> master
 amplitude $a(t)$, an instantaneous frequency $\omega(t)$,
 and a phase reference $\phi$ to function `AMFMtriplet`.
 ```
@@ -27,7 +31,11 @@ julia> ψ₀ = AMFMcomp(𝐶₀)
 AMFMcomp(AMFMtriplet(a₀, ω₀, 0.0))
 ```
 
+<<<<<<< HEAD
 We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the function `AMFMcomp()` an #instantaneous amplitude (IA) `Function`, an instantaneous frequency (IF) `Function`, and a phase #reference `Real`.
+=======
+We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the function `AMFMcomp()` an instantaneous amplitude (IA) `Function`, an instantaneous frequency (IF) `Function`, and a phase #reference `Real`.
+>>>>>>> master
 ```
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0

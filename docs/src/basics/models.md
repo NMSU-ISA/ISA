@@ -10,28 +10,25 @@ using ISA
 
 
 ## Defining an AM--FM Model
-We can define an **AM--FM model** as follows. First, define a **component set**.
+We can define an **AM--FM model** as follows. First, define a **component set**, 𝑆 by
+passing an object of type `AMFMtriplet` to the function `compSet`.
 ```
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
-𝐶₀ = (a₀,ω₀,φ₀)
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
 a₁(t) = 1.0
 ω₁(t) = 10*t
 φ₁ = 0.1
-𝐶₁ = (a₁,ω₁,φ₁)
+𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁)
 
-a₂(t) = 0.8*cos(2t)
-ω₂(t) = 10 + 7.5*sin(t)
-φ₂ = π
-𝐶₂ = (a₂,ω₂,φ₂)
-
-𝑆 = [𝐶₀,𝐶₁,𝐶₂]
+𝑆 = compSet([𝐶₀,𝐶₁])
 ```
-Then, pass the **component set** to the function `AMFMmodel()`.
+Then, pass the **component set**, 𝑆 to the function `AMFMmodel()`.
 ```
-z = AMFMmodel(𝑆)
+julia> z = AMFMmodel(𝑆)
+AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 ```
 
 We also allow an **AM--FM model** `AMFMmodel` to be defined by passing an array of `AMFMcomp` to the function `AMFMmodel()`. First, define the components.
@@ -62,18 +59,18 @@ Once an  **AM--FM model** `AMFMmodel` is defined it can be evaluated at a time i
 ```
 julia> t₀ = 0.15
 julia> z(t₀)
--0.1844131722041218 + 1.146808452231523im
+1.9115881433508801 + 0.4998495708278627im
 ```
 or over a range of time instants `Array{Float64,1}`.
 ```
 julia> t = 0.0:0.25:1.0
 julia> z(t)
-5-element Array{Complex{Float64},1}:
-  2.3127623746121317 + 1.2092678279852234im
- -1.2963995650827416 + 0.025282127799684584im
-  0.5931797251405191 + 0.9674372363846413im
- 0.25073410019471093 - 0.5690871746595758im
-  1.4587415832942454 + 0.7649782375222325im
+5-element Vector{ComplexF64}:
+  1.9950041652780257 + 0.09983341664682815im
+   1.740533956870742 + 0.8512794956108032im
+  0.6397945459984344 + 1.631061619726915im
+ -0.9335680061860003 + 0.7954494882259775im
+ 0.22488587703875393 - 0.5913028530884702im
 ```
 
 Another example of evaluating an **AM--FM model** over a range of time instants using the `Plots` module follows.
