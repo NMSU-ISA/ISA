@@ -1,4 +1,3 @@
-
 # PlotlyBackend.jl
 
 Graphs of the ISA model are shown using the [Plotly](https://plotly.com/julia/) framework in combination with [Dash](https://github.com/plotly/Dash.jl). In order to use `PlotlyBackend.jl` the user must add the required packages into your Julia Package Manager. To open the Julia Package Manager by type: `]` in the Julia Terminal. Then add the required packages:
@@ -187,3 +186,4 @@ Determine functions usually calcuates or returns a value based on the current va
 
 ### <a name="codeDashHTML"/>Dash HTML
 This portion of the code is the HTML code that displays on the local host. This is actually not written in HTML but is wrapped by Python which is wrapped again by Julia.
+

@@ -1,5 +1,5 @@
 # AM--FM Models
-A **component set** `Array{Tuple{Function,Function,Real},1}` maps to an **AM--FM model** `AMFMmodel`.
+A **component set**  maps to an **AM--FM model** `AMFMmodel`.
 
 $z\left( t ; \mathscr{S} \vphantom{0^0}\right)  \triangleq \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right),~\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 

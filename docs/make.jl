@@ -7,7 +7,7 @@ DocMeta.setdocmeta!(ISA, :DocTestSetup, :(using ISA); recursive=true)
 
 makedocs(;
     modules=[ISA],
-    authors="Hasanfcb <h.emadfcb@gmail.com> and contributors",
+    authors="Steven Sandoval, Hasan AL-Shammari, Mamta Dalal",
     repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",
     sitename="ISA.jl",
     fformat=Documenter.HTML(;
@@ -30,11 +30,6 @@ makedocs(;
     ],
     assets=String[],
 )
-
-#deploydocs(;
-#    repo="github.com/Hasanfcb/ISA.jl",
-#    devbranch="master",
-#)
 
 
 deploydocs(;
