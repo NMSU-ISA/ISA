@@ -7,12 +7,13 @@ This mapping is provided in the ISA module.
 ```
 using ISA
 ```
-
-
 ## Defining an AM--FM Model
-We can define an **AM--FM model** as follows. First, define a **component set**, 𝑆 by
-passing an object of type `AMFMtriplet` to the function `compSet`.
-```
+We can define an **AM--FM model** by passing an object, 𝑆 to the function `AMFMmodel()`
+.First, define a **component set**, 𝑆 by passing an object of type `AMFMtriplet`
+to the function `compSet`.
+
+```julia
+
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
@@ -24,11 +25,7 @@ a₁(t) = 1.0
 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁)
 
 𝑆 = compSet([𝐶₀,𝐶₁])
-```
-Then, pass the **component set**, 𝑆 to the function `AMFMmodel()`.
-```
-julia> z = AMFMmodel(𝑆)
-AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
+z = AMFMmodel(𝑆)
 ```
 
 We also allow an **AM--FM model** `AMFMmodel` to be defined by passing an array of `AMFMcomp` to the function `AMFMmodel()`. First, define the components.

@@ -16,9 +16,10 @@ struct AMFMcomp
   C::AMFMtriplet
 end
 
-#what is this??
-#AMFMcomp(a, ω) = AMFMcomp( AMFMtriplet(a, ω, 0.0))
+AMFMcomp(a, ω) = AMFMcomp( AMFMtriplet(a, ω, 0.0))
 AMFMcomp(a, ω) = AMFMcomp(a, ω, 0.0)
+
+# Method -1
 
 function (ψ::AMFMcomp)(t::Vector{<:Real})
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
@@ -27,6 +28,23 @@ function (ψ::AMFMcomp)(t::Vector{<:Real})
   θ = [ temp[i][1] for i in 1:length(t) ]
   a.(t) .* exp.( 1im .* ( θ .+ φ ) )
 end
+
+# Method - 2
+
+#struct AMFMcomp
+#a::Function #real-valued function of time
+#ω::Function #real-valued function of time
+#φ::Real     #real-value
+#end
+
+#function (ψ::AMFMcomp)(t::Vector{<:Real})
+#References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
+ #a, ω, φ = ψ.a, ψ.ω, φ
+  #temp = quadgk.(ω, 0.0, t)
+  #θ = [ temp[i][1] for i in 1:length(t) ]
+  #a.(t) .* exp.( 1im .* ( θ .+ φ ) )
+#end
+
 
 function (ψ::AMFMcomp)(t::Real)
   return (ψ::AMFMcomp)([t::Real])[1]
