@@ -7,7 +7,15 @@ a₀(t) = exp(-t^2)
 φ₀ = 0.0
 
 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
-</code></pre><h2 id="Component-Sets-1"><a class="docs-heading-anchor" href="#Component-Sets-1">Component Sets</a><a class="docs-heading-anchor-permalink" href="#Component-Sets-1" title="Permalink"></a></h2><p>A <strong>component set</strong> is a set of <strong>cannonical triplet</strong> of type <code>Vector{AMFMtriplet}</code>.</p><div>\[\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}\]</div><h3 id="Defining-a-Component-Set-1"><a class="docs-heading-anchor" href="#Defining-a-Component-Set-1">Defining a Component Set</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Component-Set-1" title="Permalink"></a></h3><p>We can define a <strong>component set</strong> by defining a structure or a constructor method which contains the object 𝑆 that creates a vector of <strong>cannonical triplets</strong> as follows:</p><pre><code class="language-julia">a₀(t) = exp(-t^2)
+</code></pre><pre><code class="language-julia">using ISA
+
+a₀(t) = exp(-t^2)
+
+ω₀(t) = 2.0
+
+φ₀ = 0.0
+
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)</code></pre><pre><code class="language-none">AMFMtriplet(Main.ex-index.a₀, Main.ex-index.ω₀, 0.0)</code></pre><h2 id="Component-Sets-1"><a class="docs-heading-anchor" href="#Component-Sets-1">Component Sets</a><a class="docs-heading-anchor-permalink" href="#Component-Sets-1" title="Permalink"></a></h2><p>A <strong>component set</strong> is a set of <strong>cannonical triplet</strong> of type <code>Vector{AMFMtriplet}</code>.</p><div>\[\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}\]</div><h3 id="Defining-a-Component-Set-1"><a class="docs-heading-anchor" href="#Defining-a-Component-Set-1">Defining a Component Set</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Component-Set-1" title="Permalink"></a></h3><p>We can define a <strong>component set</strong> by defining a structure or a constructor method which contains the object 𝑆 that creates a vector of <strong>cannonical triplets</strong> as follows:</p><pre><code class="language-julia">a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
@@ -22,4 +30,4 @@ a₂(t) = 0.8*cos(2t)
 φ₂ = π
 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂)
 
-𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../components/">AM–FM Components »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Tuesday 19 October 2021 01:41">Tuesday 19 October 2021</span>. Using Julia version 1.6.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../components/">AM–FM Components »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Tuesday 19 October 2021 01:56">Tuesday 19 October 2021</span>. Using Julia version 1.6.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
