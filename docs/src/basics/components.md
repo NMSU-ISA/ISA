@@ -29,11 +29,15 @@ and a phase reference `Real`. [*need to update after modifying function baiscCom
 ## Evaluating an AM--FM Component
 Once an  **AM--FM component** `AMFMcomp` is defined it can be evaluated at a time instant `Float64`
 
-```julia
-
+```@example
+using ISA
+a₀(t) = exp(-t^2)
+ω₀(t) = 2.0
+φ₀ = 0.0
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ψ₀ = AMFMcomp(𝐶₀)
 t₀ = 0.15
 ψ₀(t₀)
-println("AMFM Components at an time instant: ", ψ(t₀))
 
 ```
 or over a range of time instants `Array{Float64,1}`.
