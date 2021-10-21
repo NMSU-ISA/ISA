@@ -10,7 +10,6 @@ We define an **cannonical triplet**  by passing the function `AMFMtriplet()` an 
  , and a phase reference $\phi$ which is a real number as its input arguments.
 The function `AMFMtriplet()` will return us the required **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` in the following way:
 
-
 ```@example
 using ISA
 
@@ -20,12 +19,6 @@ a₀(t) = exp(-t^2)
 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
 ```
-```@example
-a = 1
-b = 2
-a + b
-```
-
 ## Component Sets
 A **component set** is a set of **cannonical triplet** of type `Vector{AMFMtriplet}`.
 
@@ -36,7 +29,8 @@ We can define a **component set** by defining a structure or a constructor metho
 which contains the object 𝑆 that creates a vector of **cannonical triplets**
 as follows:
 
-```julia
+```@example
+using ISA
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
