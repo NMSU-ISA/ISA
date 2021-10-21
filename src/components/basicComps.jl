@@ -31,9 +31,8 @@ end
 
 # Method - 2
 #function (ψ::AMFMcomp)(t::Vector{<:Real})
-#  AMFMcomp(a, ω) = AMFMcomp( AMFMtriplet(a, ω, 0.0))
-#  AMFMcomp(a, ω) = AMFMcomp(a, ω, 0.0)
-#  return (ψ::AMFMcomp)
+#  AMFMtriplet(a, ω) = AMFMtriplet(a, ω, zero(Float64))
+#    return AMFMcomp( AMFMtriplet(a, ω))
 #end
 
 
