@@ -11,7 +11,7 @@ We define an **cannonical triplet**  by passing the function `AMFMtriplet()` an 
 The function `AMFMtriplet()` will return us the required **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` in the following way:
 
 
-```jldoctest
+```
 using ISA
 
 a₀(t) = exp(-t^2)
@@ -19,6 +19,11 @@ a₀(t) = exp(-t^2)
 φ₀ = 0.0
 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
+```
+```@example
+a = 1
+b = 2
+a + b
 ```
 
 ## Component Sets
