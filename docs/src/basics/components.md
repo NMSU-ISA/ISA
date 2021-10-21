@@ -16,6 +16,7 @@ required **AM--FM component**.
 
 ```@example
 using ISA
+
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
@@ -44,6 +45,12 @@ t₀ = 0.15
 or over a range of time instants `Array{Float64,1}`.
 
 ```@example
+using ISA
+a₀(t) = exp(-t^2)
+ω₀(t) = 2.0
+φ₀ = 0.0
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ψ₀ = AMFMcomp(𝐶₀)
 t = 0.0:0.25:1.0
 ψ₀(t)
 
