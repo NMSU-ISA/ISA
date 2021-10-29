@@ -30,11 +30,9 @@ function (ψ::AMFMcomp)(t::Vector{<:Real})
 end
 
 # Method - 2
-#function (ψ::AMFMcomp)(t::Vector{<:Real})
-#  AMFMtriplet(a, ω) = AMFMtriplet(a, ω, zero(Float64))
-#    return AMFMcomp( AMFMtriplet(a, ω))
-#end
-
+function (ψ::AMFMcomp)(a::Function,ω::Function,φ::Real)
+   return AMFMcomp(AMFMtriplet(a, ω, φ))
+end
 
 
 function (ψ::AMFMcomp)(t::Real)

@@ -8,7 +8,7 @@ a₀(t) = exp(-t^2)
 ω₀(t) = 2.0*t
 φ₀ = 0.0
 C₀ = AMFMtriplet(a₀,ω₀,φ₀)
-ψ = AMFMcomp(C₀)
+ψ = AMFMcomp(a₀,ω₀,φ₀)
 #ψ₀= AMFMcomp(a₀,ω₀,φ₀)
 t₀ = 1.0
 t=collect(1:5)
@@ -29,9 +29,6 @@ C₁ = AMFMtriplet(a₁,ω₁,φ₁)
 C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
 C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
 S = compSet([C₀,C₁])
-
-
-
 
 z = AMFMmodel(S)
 z(3.0)
