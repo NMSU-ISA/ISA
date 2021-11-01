@@ -1,7 +1,7 @@
 using ISA
 
 C = AMFMtriplet(t->exp(-t^2),ω->100,0.0)
-S = compSet([C,C])
+#S = compSet([C,C])
 ψ = AMFMcomp(C)
 
 a₀(t) = exp(-t^2)
