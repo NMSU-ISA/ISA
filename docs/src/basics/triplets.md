@@ -51,6 +51,8 @@ We also allow another method to define a **component set** by providing the
 vector of AMFM components as follows
 
 ```@example
+using ISA
+
 C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
 C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
 ψ₀ = AMFMcomp(C₀)
