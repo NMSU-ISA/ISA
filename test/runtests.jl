@@ -26,14 +26,12 @@ using LinearAlgebra
     ψ₀ = AMFMcomp(C₀)
     C₁ = AMFMtriplet(t->2,ω->10,0.0)
     ψ₁ = AMFMcomp(C₁)
-    ψ = [ψ₀,ψ₁]
-    z = AMFMmodel(ψ) #method 2
+    z = AMFMmodel([ψ₀,ψ₁]) #method 2
     @test norm(z(2.0).-[0.578153926388216 + 2.1672544356642636im]) ≈0.0
 
     C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
     C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
-    C = [C₀,C₁]
-    z = AMFMmodel(C) #method 3
+    z = AMFMmodel([C₀,C₁]) #method 3
     @test norm(z(3.0).-[5.411410145804563 - 1.4372358186796916im]) ≈0.0
 
 end

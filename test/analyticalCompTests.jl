@@ -24,16 +24,10 @@ a₁(t) = 1.0
 C₁ = AMFMtriplet(a₁,ω₁,φ₁)
 
 
-<<<<<<< Updated upstream
+#<<<<<<< Updated upstream
 
-C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
-C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
-S = compSet([C₀,C₁])
 
-z = AMFMmodel(S)
-z(3.0)
-
-isaPlot3d_PlotsGR(z,collect(-1.0:0.001:1.0))
-=======
+#isaPlot3d_PlotsGR(z,collect(-1.0:0.001:1.0))
+#=======
 z=AMFMmodel(S)
 >>>>>>> Stashed changes

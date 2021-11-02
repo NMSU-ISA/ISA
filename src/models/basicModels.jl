@@ -7,7 +7,7 @@ mutable struct AMFMmodel
   S::compSet
 end
 
-# Method - 1
+ # Method - 1
 
 function (z::AMFMmodel)(t::Vector{<:Real})
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
@@ -19,9 +19,22 @@ function (z::AMFMmodel)(t::Vector{<:Real})
   return out
 end
 
-# Method - 2 (by passing an array of ψ) like  z = AMFMmodel([ψ₀,ψ₁,ψ₂])
+function compSet(W::Vector{AMFMcomp})
+  temp = []
+  for i ∈ 1:length(W)
+    push!(temp,W[i].C)
+  end
+  return compSet(Vector(temp))
+end
 
+# Method - 2 (by passing an array of ψ) like  z = AMFMmodel([ψ₀,ψ₁,ψ₂])
+function AMFMmodel(W::Vector{AMFMcomp})
+        return AMFMmodel(compSet(W))
+end
 # Method - 3 (by passing an array of triplets, C) z = AMFMmodel([C₀,C₁,C₂])
+function AMFMmodel(X::Vector{AMFMtriplet})
+  return  AMFMmodel(compSet(X))
+end
 
 function (z::AMFMmodel)(t::Real)
   return (z::AMFMmodel)([t])[1]
