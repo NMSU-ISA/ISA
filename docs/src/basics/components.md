@@ -10,9 +10,12 @@ using ISA
 ```
 
 ## Defining an AM--FM Component
-We define an **AM--FM component** by passing the function `AMFMcomp()` a object of type `AMFMtriplet`. First we will create an object say, C of type `AMFMtriplet` by providing an instantaneous amplitude $a(t)$, an instantaneous frequency $\omega(t)$, and a phase reference $\phi$ to function `AMFMtriplet`.
-Then we simply pass the object C to the function `AMFMcomp()` that will result into
-required **AM--FM component**.
+We define an **AM--FM component** by passing the function `AMFMcomp()` a object
+of type `AMFMtriplet`. First we create an object say, C of type `AMFMtriplet`
+by providing an instantaneous amplitude $a(t)$, an instantaneous frequency
+$\omega(t)$, and a phase reference $\phi$ to function `AMFMtriplet`.
+Then we simply pass the object C to the function `AMFMcomp()` that will
+result into required **AM--FM component**.
 
 ```@example
 using ISA
@@ -24,12 +27,25 @@ a₀(t) = exp(-t^2)
 ψ₀ = AMFMcomp(𝐶₀)
 
 ```
-We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the function `AMFMcomp()` an instantaneous amplitude (IA) `Function`, an instantaneous frequency (IF) `Function`,
-and a phase reference `Real`. [*need to update after modifying function baiscComps]
+We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the
+function `AMFMcomp()` an instantaneous amplitude (IA) `Function`,
+an instantaneous frequency (IF) `Function`, and a phase reference `Real` as
+follows:
 
+```@example
+using ISA
+
+a(t) = exp(-t^2)
+ω(t) = 2.0
+φ = 0.0
+
+ψ = AMFMcomp(a,ω,φ)
+
+```
 
 ## Evaluating an AM--FM Component
-Once an  **AM--FM component** `AMFMcomp` is defined it can be evaluated at a time instant `Float64`
+Once an  **AM--FM component** `AMFMcomp` is defined it can be evaluated at
+a time instant `Float64`
 
 ```@example
 using ISA
@@ -42,7 +58,7 @@ t₀ = 0.15
 ψ₀(t₀)
 
 ```
-or over a range of time instants `Array{Float64,1}`.
+or over a range of time instants `Vector{Float64}`.
 
 ```@example
 using ISA

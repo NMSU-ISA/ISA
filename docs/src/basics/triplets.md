@@ -6,9 +6,9 @@ A **cannonical triplet** consists of an instantaneous amplitude (IA) `Function`,
 $\mathscr{C}\triangleq\left\{a,\omega, \phi\vphantom{0^0}\right\}$
 
 ### Defining a Cannonical Triplet
-We define an **cannonical triplet**  by passing the function `AMFMtriplet()` an instantaneous amplitude $a(t)$ i.e a real valued function of time, an instantaneous frequency $\omega(t)$ a real valued function of time
+We define an **cannonical triplet**  by passing the function `AMFMtriplet()` an instantaneous amplitude $a(t)$ which is a real valued function of time, an instantaneous frequency $\omega(t)$ a real valued function of time
  , and a phase reference $\phi$ which is a real number as its input arguments.
-The function `AMFMtriplet()` will return us the required **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` in the following way:
+The function `AMFMtriplet()` will return the required **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` in the following way:
 
 ```@example
 using ISA
@@ -25,9 +25,8 @@ A **component set** is a set of **cannonical triplet** of type `Vector{AMFMtripl
 $\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 
 ### Defining a Component Set
-We can define a **component set** by defining a structure or a constructor method
-which contains the object 𝑆 that creates a vector of **cannonical triplets**
-as follows:
+We define a **component set** primarily by defining a structure or a constructor method
+which contains the object 𝑆 that creates a vector of **cannonical triplets**.
 
 ```@example
 using ISA
@@ -47,4 +46,15 @@ a₂(t) = 0.8*cos(2t)
 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂)
 
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+```
+We also allow another method to define a **component set** by providing the
+vector of AMFM components as follows
+
+```@example
+C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
+C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
+ψ₀ = AMFMcomp(C₀)
+ψ₁ = AMFMcomp(C₁)
+S = compSet([ψ₀,ψ₁])
+
 ```
