@@ -11,7 +11,7 @@ makedocs(;
     pages=[
         "Home" => "index.md",
         "ISA Basics" =>
-                    ["Cannonical Triplets and Component Sets"   => "basics/triplets.jmd",
+                    ["Cannonical Triplets and Component Sets"   => "basics/triplets.md",
                      "AM--FM Components"     => "basics/components.md",
                      "AM--FM Models"         => "basics/models.md",
                      "Instantaneous Spectra" => "basics/spectra.md",

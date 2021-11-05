@@ -10,15 +10,6 @@ We define an **cannonical triplet**  by passing the function `AMFMtriplet()` an 
  , and a phase reference $\phi$ which is a real number as its input arguments.
 The function `AMFMtriplet()` will return the required **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` in the following way:
 
-```julia
-using ISA
-
-a₀(t) = exp(-t^2)
-ω₀(t) = 2.0
-φ₀ = 0.0
-𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
-
-```
 ```@example
 using ISA
 
