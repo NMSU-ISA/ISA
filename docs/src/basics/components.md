@@ -5,9 +5,6 @@ A **component triplet**  maps to an **AM--FM component** `AMFMcomp`.
 $\psi_k \left( t ; \mathscr{C}_k \vphantom{0^0}\right) \triangleq a_k(t) \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right)$
 
 This mapping is provided in the ISA module.
-```
-using ISA
-```
 
 ## Defining an AM--FM Component
 We define an **AM--FM component** by passing the function `AMFMcomp()` a object
@@ -58,7 +55,7 @@ t₀ = 0.15
 ψ₀(t₀)
 
 ```
-or over a range of time instants `Vector{Float64}`.
+or over a step range of time instants.
 
 ```@example
 using ISA

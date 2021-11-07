@@ -7,8 +7,8 @@ This mapping is provided in the ISA module.
 
 ## Defining an AM--FM Model
 We define an **AM--FM model** primarily by passing an object, 𝑆 to the
-function `AMFMmodel()`. First, define a **component set**, 𝑆 by passing an
-object of type `AMFMtriplet` to the function `compSet`.
+function `AMFMmodel()`. First, define a **component set**, 𝑆 by passing a
+vector of type `AMFMtriplet` to the function `compSet`.
 
 ```@example
 using ISA
@@ -70,7 +70,7 @@ t₀ = 2.0
 z(t₀)
 
 ```
-or over a range of time instants `Vector{Float64}`.
+or over a step range of time instants.
 
 ```@example
 using ISA
@@ -80,7 +80,7 @@ C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
 
 𝑆 = compSet([C₀,C₁])
 z = AMFMmodel(𝑆)
-t = t = 0.0:0.25:1.0
+t = 0.0:0.25:1.0
 z(t)
 
 ```
