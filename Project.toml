@@ -14,6 +14,7 @@ QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
 Weave = "44d3d7a6-8a23-5bf8-98c5-b353f8df5ec9"
 
 [compat]
+Makie = "0.15"
 julia = "1.6"
 
 [extras]
