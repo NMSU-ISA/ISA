@@ -44,7 +44,9 @@ a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+AMFMtriplet(a₀, ω₀, 0.0)
 ```
+
 
 
 ```jldoctest triplets
