@@ -38,7 +38,7 @@ $\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1
 We define a **component set** primarily by defining a structure or a constructor method
 which contains the object 𝑆 that creates a vector of **cannonical triplets**.
 
-```jldoctest ISA
+```@repl 
 julia> using ISA
 julia> a₀(t) = exp(-t^2)
 julia> ω₀(t) = 2.0
