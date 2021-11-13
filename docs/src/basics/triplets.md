@@ -10,14 +10,13 @@ We define an **cannonical triplet**  by passing the function `AMFMtriplet()` an 
  , and a phase reference $\phi$ which is a real number as its input arguments.
 The function `AMFMtriplet()` will return the required **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` in the following way:
 
-```jldoctest
-julia> using ISA
+```jldoctest ISA
 
 julia> a₀(t) = exp(-t^2)
 julia> ω₀(t) = 2.0
 julia> φ₀ = 0.0
 julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
-julia> 𝐶₁ = AMFMtriplet(a₀)
+AMFMtriplet(a₀, ω₀, 0.0)
 
 ```
 ## Component Sets
@@ -29,7 +28,17 @@ $\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1
 We define a **component set** primarily by defining a structure or a constructor method
 which contains the object 𝑆 that creates a vector of **cannonical triplets**.
 
-```@example
+```jldoctest ISA
+
+julia> a₀(t) = exp(-t^2)
+julia> ω₀(t) = 2.0
+julia> φ₀ = 0.0
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+AMFMtriplet(a₀, ω₀, 1.0)
+
+```
+
+```jldoctest ISA
 using ISA
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
