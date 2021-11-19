@@ -49,3 +49,18 @@ z = AMFMmodel(S)
 z([2.0,3.0])
 z(collect(1:3))
 z(1.0:0.1:1.2)
+
+
+using ISA
+a₀(t) = exp(-t^2)
+ω₀(t) = 2.0*t
+ϕ₀ = 0.0
+a₁(t) = cos.(t)
+ω₁(t) = 10*exp(-t)
+ϕ₁ = 0.1
+C₀ = AMFMtriplet(a₀,ω₀,ϕ₀)
+C₁ = AMFMtriplet(a₁,ω₁,ϕ₁)
+ψ₀ = AMFMcomp(C₀)
+ψ₁ = AMFMcomp(C₁)
+t₀ = 2.0
+ψ₁(t₀)
