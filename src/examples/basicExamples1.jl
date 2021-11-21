@@ -1,4 +1,3 @@
-# Example - 1
 using ISA
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0*t
