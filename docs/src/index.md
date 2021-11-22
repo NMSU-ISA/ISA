@@ -6,7 +6,7 @@
 Modules = [ISA]
 ```
 
-# ISA.jl: The Julia Library for Instantaneous Spectral Analysis
+# ISA: The Julia Library for Instantaneous Spectral Analysis
 
 [![](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ISexample.png)](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ISexample.png)
 

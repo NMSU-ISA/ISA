@@ -2,7 +2,7 @@
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://nmsu-isa.github.io/ISA.jl/dev/)
 
 
-# ISA.jl: The Julia Library for Instantaneous Spectral Analysis
+# ISA: The Julia Library for Instantaneous Spectral Analysis
 
 In January of 2020, we began to re-implement our ISA tools in the Julia programing language. This module is still in development---Please be patient as we continue to add new features.
 

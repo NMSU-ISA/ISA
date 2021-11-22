@@ -53,4 +53,4 @@ gif(anim, "animation.gif", fps = 30)
 # AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0), AMFMtriplet(a₁, ω₁, π), AMFMtriplet(a₂, ω₂, π)]))
 
 # compact output:
-#https://github.com/FluxML/Flux.jl/blob/dbb9f82ef8d4e196259ff1af56aeddc626159bf3/src/layers/show.jl
+# https://github.com/FluxML/Flux.jl/blob/dbb9f82ef8d4e196259ff1af56aeddc626159bf3/src/layers/show.jl
