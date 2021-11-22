@@ -7,10 +7,10 @@ a₁(t) = cos.(t)
 ω₁(t) = 10*exp(-t)
 φ₁ = 0.1
 
-C₀ = AMFMtriplet(a₀,ω₀,φ₀)
-C₁ = AMFMtriplet(a₁,ω₁,φ₁)
+ψ₀ = AMFMcomp(a₀,ω₀,φ₀)
+ψ₁ = AMFMcomp(a₁,ω₁,φ₁)
 
-S = compSet([C₀,C₁])
+S = compSet([ψ₀,ψ₁])
 z = AMFMmodel(S)
 
 #Evaluating the AM-FM signal model at a time instant
