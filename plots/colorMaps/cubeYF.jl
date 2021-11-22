@@ -1,4 +1,4 @@
-
+using Colors
 # see https://mycarta.wordpress.com/2013/02/21/perceptual-rainbow-palette-the-method/
 # and https://mycarta.wordpress.com/2013/03/06/perceptual-rainbow-palette-the-goodies/
 
