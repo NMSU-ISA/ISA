@@ -32,7 +32,9 @@ t = Array(0.0:0.005:2.0)
 
 using Plots
 
-plot(z,camera=(70,90))
+plot(z,camera=(0,90)) # 1) time-freq plane 2
+plot(z,camera=(20,80)) # 2) 3d plane 1
+plot(z,camera=(0,0)) # 3) time-real plane 3
 
 allPlots = []
 for θ ∈ 0:90
@@ -40,6 +42,8 @@ for θ ∈ 0:90
     frame = plot(p1)
     push!(allPlots, frame)
 end
+
+#30fps
 # for θ ∈ 0:90
 #     p1 = plot(z,camera=((90-θ),(90-θ)))
 #     frame = plot(p1)
