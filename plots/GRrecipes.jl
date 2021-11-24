@@ -62,25 +62,27 @@ t = Array(0.0:0.005:2.0)
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
-   a_max = maximum([maximum(abs.(z.S.S[2].a.(t))) for k in 1:length(z.S.S)])
+   a_max = maximum([maximum(abs.(z.S.S[1].a.(t))) for k in 1:length(z.S.S)])
 
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z.S.S[1].a.(t)) .* 256/a_max ),256),1) ]
-   #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
-   @series begin
-      timeaxis, Fnorm.*z.S.S[1].ω.(t), real(AMFMcomp(z.S.S[1]).(t))
+   for k in 1:length(z.S.S)
+      seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z.S.S[k].a.(t)) .* 256/a_max ),256),1) ]
+      #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
+      @series begin
+         timeaxis, Fnorm.*z.S.S[k].ω.(t), real(AMFMcomp(z.S.S[k]).(t))
+      end
    end
 
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z.S.S[2].a.(t)) .* 256/a_max ),256),1) ]
-   #linealpha --> max.(min.( abs.(z.S.S[2].a.(t)).^(1/2) .* 1/a_max ,1),0)
-   @series begin
-      timeaxis, Fnorm.*z.S.S[2].ω.(t), real(AMFMcomp(z.S.S[2]).(t))
-   end
-
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z.S.S[3].a.(t)) .* 256/a_max ),256),1) ]
-   #linealpha --> max.(min.( abs.(z.S.S[3].a.(t)).^(1/2) .* 1/a_max ,1),0)
-   @series begin
-      timeaxis, Fnorm.*z.S.S[3].ω.(t), real(AMFMcomp(z.S.S[3]).(t))
-   end
+   # seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z.S.S[2].a.(t)) .* 256/a_max ),256),1) ]
+   # #linealpha --> max.(min.( abs.(z.S.S[2].a.(t)).^(1/2) .* 1/a_max ,1),0)
+   # @series begin
+   #    timeaxis, Fnorm.*z.S.S[2].ω.(t), real(AMFMcomp(z.S.S[2]).(t))
+   # end
+   #
+   # seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z.S.S[3].a.(t)) .* 256/a_max ),256),1) ]
+   # #linealpha --> max.(min.( abs.(z.S.S[3].a.(t)).^(1/2) .* 1/a_max ,1),0)
+   # @series begin
+   #    timeaxis, Fnorm.*z.S.S[3].ω.(t), real(AMFMcomp(z.S.S[3]).(t))
+   # end
 end
 # issue with variable t (can't use t in the plot())
 z = AMFMmodel(𝑆)
