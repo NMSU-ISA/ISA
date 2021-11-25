@@ -32,30 +32,43 @@ t = Array(0.0:0.005:2.0)
 
 using Plots
 
-plot(z,camera=(0,90)) # 1) time-freq plane 2
-plot(z,camera=(20,80)) # 2) 3d plane 1
-plot(z,camera=(0,0)) # 3) time-real plane 3
+# plot(z,camera=(20,80)) # 2) 3d plane 1
+# plot(z,camera=(0,90)) # 1) time-freq plane 2
+# plot(z,camera=(0,0)) # 3) time-real plane 3
 
 allPlots = []
-for θ ∈ 0:90
-    p1 = plot(z,camera=(20,θ))
+p = plot(z,camera=(20.0,80.0))
+[push!(allPlots, plot(z,camera=(20.0,80.0))) for i in 1:30]
+for i ∈ 0:50
+    θ1 = 20.0 - i*20.0/50.0
+    θ2 = 80.0 + i*10.0/50.0
+    p1 = plot(z,camera=(θ1,θ2))
     frame = plot(p1)
     push!(allPlots, frame)
 end
+p = plot(z,camera=(0,90))
+[push!(allPlots, p) for i in 1:30]
+for i ∈ 0:90
+    p1 = plot(z,camera=(0,90-i))
+    frame = plot(p1)
+    push!(allPlots, frame)
+end
+p = plot(z,camera=(0,0))
+[push!(allPlots, p) for i in 1:30]
 
-#30fps
-# for θ ∈ 0:90
-#     p1 = plot(z,camera=((90-θ),(90-θ)))
-#     frame = plot(p1)
-#     push!(allPlots, frame)
-# end
-anim = @animate for i ∈ 1:length(allPlots)
+
+@gif for i in 1:length(allPlots)
     plot(allPlots[i])
 end
-gif(anim, "animation.gif", fps = 30)
+
+#
+# anim = @animate for i ∈ 1:length(allPlots)
+#     plot(allPlots[i])
+# end
+#gif(anim, "animation.gif", fps = 30)
 
 
-plot(z,camera=(20,90))
+#plot(z,camera=(20,90))
 # length(allPlots)
 # plot3d()
 # @gif for i=1:90
