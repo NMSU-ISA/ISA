@@ -8,13 +8,13 @@ include(raw"colorMaps/cubeYF.jl")
 include(raw"colorMaps/viridis.jl")
 
 #Supporting functions
-function  getFnorm(FreqUnits)
+function getFnorm(FreqUnits)
    if FreqUnits == "rad/s"
-         Fnorm = 1
+      Fnorm = 1
    elseif FreqUnits == "Hz"
-         Fnorm = 1/2π
-    else
-         error("invalid FreqUnits")
+      Fnorm = 1/2π
+   else
+      error("invalid FreqUnits")
    end
 end
 
@@ -93,7 +93,7 @@ end
 
 
 #Method 2: S::compSet, t::Vector{Float64} or t::StepRangeLen
-@recipe function temp(S::compSet;timeaxis = 0.0:0.005:2.0,FreqUnits = "rad/s")
+@recipe function temp(S::compSet;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
@@ -124,7 +124,7 @@ end
 
 
 #Method 3: ψ::AMFMcomp
-@recipe function temp(ψ::AMFMcomp;timeaxis = 0.0:0.005:2.0,FreqUnits = "rad/s")
+@recipe function temp(ψ::AMFMcomp;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
@@ -134,6 +134,7 @@ end
    camera --> (20,80)
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
+   t = timeaxis
    a_max = maximum(abs.(ψ.C.a.(t)))
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),1) ]
    t,ψ.C.ω.(t),real(ψ.(t))
@@ -151,7 +152,7 @@ end
 
 
 #Method 4: 𝐶::AMFMtriplet
-@recipe function temp(𝐶::AMFMtriplet;timeaxis = 0.0:0.005:2.0,FreqUnits = "rad/s")
+@recipe function temp(𝐶::AMFMtriplet;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
@@ -161,6 +162,7 @@ end
    camera --> (20,80)
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
+   t = timeaxis
    a_max = maximum(abs.(𝐶.a.(t)))
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),1) ]
    t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
