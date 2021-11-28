@@ -26,4 +26,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/NMSU-ISA/ISA.jl",
+    devurl = "devt"
 )

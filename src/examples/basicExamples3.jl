@@ -23,4 +23,5 @@ z = AMFMmodel(S)
 
 t = 0.0:0.005:2.0
 
-plot(z)
+plot(z) # default time-axis
+plot(z, timeaxis=0.0:0.005:2.0) # custom time-axis

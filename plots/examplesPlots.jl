@@ -36,7 +36,7 @@ t = Array(0.0:0.005:2.0)
 
 # METHOD 1: z (AMFM MODEL)
 plot(z) # default timeaxis
-plot(z, timeaxis=0.0:0.005:3.0) # costum timeaxis
+plot(z, timeaxis=0.0:0.005:3.0) # custom timeaxis
 
 
 # METHOD 2: 𝑆 (COMPONENT SET)
