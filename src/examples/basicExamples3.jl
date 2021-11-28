@@ -1,5 +1,7 @@
 using ISA, Plots
+
 include(raw"..\..\plots\GRrecipes.jl")
+
 
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
@@ -20,5 +22,5 @@ S = compSet([C₀,C₁,C₂])
 z = AMFMmodel(S)
 
 t = 0.0:0.005:2.0
+
 plot(z)
-#plot(z,timeaxis=0.0:0.005:2.0)
