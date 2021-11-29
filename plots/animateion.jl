@@ -81,3 +81,14 @@ end
 
 # compact output:
 # https://github.com/FluxML/Flux.jl/blob/dbb9f82ef8d4e196259ff1af56aeddc626159bf3/src/layers/show.jl
+
+
+
+
+using DSP
+
+t = collect(0:0.005:1)
+a = gaussian(length(t),5);
+m = 70 .+ 50*sin.(2*pi*2*t);
+
+Plots.plot3d!(t,a,m,camera = (20,80))
