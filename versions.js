@@ -1,3 +1,3 @@
 var DOC_VERSIONS = [
-  "devt",
+  "dev",
 ];
