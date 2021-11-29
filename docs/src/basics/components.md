@@ -73,7 +73,8 @@ julia> ψ₀(t)
  -0.1530918656742263 + 0.33451182923926226im
 ```
 
-Another example of evaluating an **AM--FM component** over a range of time instants using the `Plots` module follows.
+Another example of evaluating an **AM--FM component** over a
+range of time instants using the `Plots` module follows.
 
 ```julia
 using Plots

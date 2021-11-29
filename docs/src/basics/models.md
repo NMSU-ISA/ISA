@@ -10,83 +10,108 @@ We define an **AM--FM model** primarily by passing an object, 𝑆 to the
 function `AMFMmodel()`. First, define a **component set**, 𝑆 by passing a
 vector of type `AMFMtriplet` to the function `compSet`.
 
-```@example
-using ISA
-C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
-C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
+```jldoctest models
+julia> using ISA
+julia> a₀(t) = exp(-t^2);
+julia> ω₀(t) = 2.0;
+julia> φ₀ = 0.0;
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-𝑆 = compSet([C₀,C₁])
-z = AMFMmodel(𝑆)
+julia> a₁(t) = 1.0;
+julia> ω₁(t) = 10*t;
+julia> φ₁ = 0.1;
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+julia> 𝑆 = compSet([𝐶₀,𝐶₁]);
+julia> z = AMFMmodel(𝑆)
+AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 ```
 
 We also allow an **AM--FM model** `AMFMmodel` to be defined by passing an
 vector of `AMFMcomp` to the function `AMFMmodel()`.
 
-```@example
-using ISA
+```jldoctest models
+julia> using ISA
+julia> a₀(t) = exp(-t^2);
+julia> ω₀(t) = 2.0;
+julia> φ₀ = 0.0;
+julia> ψ₀ = AMFMcomp(a₀,ω₀,φ₀);
 
-a₀(t) = exp(-t^2)
-ω₀(t) = 2.0
-φ₀ = 0.0
-ψ₀ = AMFMcomp(a₀,ω₀,φ₀)
+julia> a₁(t) = 1.0;
+julia> ω₁(t) = 10*t;
+julia> φ₁ = 0.1;
+julia> ψ₁ = AMFMcomp(a₁,ω₁,φ₁);
+julia> z = AMFMmodel([ψ₀,ψ₁])
+AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 
-a₁(t) = 1.0
-ω₁(t) = 10*t
-φ₁ = 0.1
-ψ₁ = AMFMcomp(a₁,ω₁,φ₁)
-
-a₂(t) = 0.8*cos(2t)
-ω₂(t) = 10 + 7.5*sin(t)
-φ₂ = π
-ψ₂ = AMFMcomp(a₂,ω₂,φ₂)
-
-z = AMFMmodel([ψ₀,ψ₁,ψ₂])
 ```
-There is another method to define **AM--FM model** `AMFMmodel` by passing an
-vector of `AMFMtriplet` to the function `AMFMmodel()`.
+There is another method to define **AM--FM model** `AMFMmodel` by
+passing a vector of `AMFMtriplet` to the function `AMFMmodel()`.
 
-```@example
-using ISA
+```jldoctest models
+julia> using ISA
+julia> a₀(t) = exp(-t^2);
+julia> ω₀(t) = 2.0;
+julia> φ₀ = 0.0;
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
-C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
-
-z = AMFMmodel([C₀,C₁])
-
+julia> a₁(t) = 1.0;
+julia> ω₁(t) = 10*t;
+julia> φ₁ = 0.1;
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+julia> z = AMFMmodel([𝐶₀,𝐶₁])
+AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 ```
 
 ## Evaluating an AM--FM Model
-Once an  **AM--FM model** `AMFMmodel` is defined it can be evaluated at a time instant `Float64`
+Once an  **AM--FM model** `AMFMmodel` is defined,
+it can be evaluated at a time instant `Float64`.
 
-```@example
-using ISA
+```jldoctest models
+julia> using ISA
+julia> a₀(t) = exp(-t^2);
+julia> ω₀(t) = 2.0;
+julia> φ₀ = 0.0;
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
-C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
-
-𝑆 = compSet([C₀,C₁])
-z = AMFMmodel(𝑆)
-t₀ = 2.0
-z(t₀)
-
+julia> a₁(t) = 1.0;
+julia> ω₁(t) = 10*t;
+julia> φ₁ = 0.1;
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+julia> 𝑆 = compSet([𝐶₀,𝐶₁]);
+julia> z = AMFMmodel(𝑆);
+julia> t₀ = 2.0;
+julia> z(t₀)
+0.30292900716627164 + 0.9352632324337417im
 ```
 or over a step range of time instants.
 
-```@example
-using ISA
+```jldoctest models
+julia> using ISA
+julia> a₀(t) = exp(-t^2);
+julia> ω₀(t) = 2.0;
+julia> φ₀ = 0.0;
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-C₀ = AMFMtriplet(t->cos.(t),ω->100,0.1)
-C₁ = AMFMtriplet(t->2*t,ω->10,1.0)
-
-𝑆 = compSet([C₀,C₁])
-z = AMFMmodel(𝑆)
-t = 0.0:0.25:1.0
-z(t)
-
+julia> a₁(t) = 1.0;
+julia> ω₁(t) = 10*t;
+julia> φ₁ = 0.1;
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+julia> 𝑆 = compSet([𝐶₀,𝐶₁]);
+julia> z = AMFMmodel(𝑆);
+julia> t = 0.0:0.25:1.0;
+julia> z(t)
+5-element Vector{ComplexF64}:
+  1.9950041652780257 + 0.09983341664682815im
+   1.740533956870742 + 0.8512794956108032im
+  0.6397945459984344 + 1.631061619726915im
+ -0.9335680061860003 + 0.7954494882259775im
+ 0.22488587703875393 - 0.5913028530884702im
 ```
 
-Another example of evaluating an **AM--FM model** over a range of time instants using the `Plots` module follows.
-```
+Another example of evaluating an **AM--FM model** over
+a range of time instants using the `Plots` module follows.
+
+```julia
 using Plots
 t = 0.0:0.005:2.0
 p1 = plot(t, real(z(t)), xlab="t", ylab="real", legend = :false)
