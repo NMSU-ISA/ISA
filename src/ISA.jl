@@ -9,6 +9,6 @@ export compSet, AMFMmodel
 include("models/fourierSeries.jl")
 export fourierSeries
 
-include("../plots/GRrecipes.jl")
+include("plots/GRrecipes.jl")
 
 end # module
