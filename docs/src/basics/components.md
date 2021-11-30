@@ -22,8 +22,8 @@ julia> ω₀(t) = 2.0;
 julia> φ₀ = 0.0;
 julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 julia> ψ₀ = AMFMcomp(𝐶₀)
-AMFMcomp(AMFMtriplet(a₀, ω₀, 0.0))
 
+# output
 ```
 We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the
 function `AMFMcomp()` an instantaneous amplitude (IA) `Function`,
