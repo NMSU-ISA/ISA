@@ -14,11 +14,12 @@ Create a *component triplet* 'AMFMtriplet' consisting of an *instantenouse ampli
 Called with two inputs `a, ω`, this is equivalent to `AMFMtriplet(a, ω, 0.0)`.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+using ISA
+a₀(t) = exp(-t^2);
+ω₀(t) = 2.0;
+φ₀ = 0.0;
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 ```
 """
 struct AMFMtriplet
@@ -35,6 +36,8 @@ end
 # CONSTRUCTIONS
 AMFMtriplet(a, ω) = AMFMtriplet(a, ω, zero(Float64))
 
+#DISPLAY
+Base.show(io::IO, x::AMFMtriplet) = print(io, "cannonical triplet")
 
 # ----------------------
 # AM--FM COMPONENTS
@@ -81,3 +84,6 @@ end
 function (ψ::AMFMcomp)(t::UnitRange)
   return (ψ::AMFMcomp)(collect(t))
 end
+
+#DISPLAY
+Base.show(io::IO, x::AMFMcomp) = print(io, "AM-FM component")
