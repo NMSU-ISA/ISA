@@ -16,13 +16,12 @@ The function `AMFMtriplet()` will return the required
 **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` as follows
 
 ```jldoctest triplets
-julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
-AMFMtriplet(a₀, ω₀, 0.0)
-
+using ISA
+a₀(t) = exp(-t^2);
+ω₀(t) = 2.0;
+φ₀ = 0.0;
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+# output
 ```
 ## Component Sets
 A **component set** is a set of **cannonical triplet** of type `Vector{AMFMtriplet}`.
