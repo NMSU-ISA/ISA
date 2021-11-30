@@ -14,8 +14,9 @@ makedocs(;
                     ["Cannonical Triplets and Component Sets"   => "basics/triplets.md",
                      "AM--FM Components"     => "basics/components.md",
                      "AM--FM Models"         => "basics/models.md",
-                     "Instantaneous Spectra" => "basics/spectra.md",
-                     "Numerical Components"     => "basics/componentsNumerical.md",],
+                     "Instantaneous Spectra" => "basics/spectra.md",],
+        "Numerical ISA" =>
+                    ["Numerical Components"     => "numerical/componentsNumerical.md",],
         "Citation" => "cite.md",
     ],
     repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",
