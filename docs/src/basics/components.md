@@ -15,15 +15,14 @@ to function `AMFMtriplet`.
 Then we simply pass the object C to the function `AMFMcomp()` that will
 result into required **AM--FM component** as follows
 
-```jldoctest
-using ISA
-a₀(t) = exp(-t^2);
-ω₀(t) = 2.0;
-φ₀ = 0.0;
-𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
-ψ₀ = AMFMcomp(𝐶₀)
+```jldoctest components
+julia> using ISA
+julia> a₀(t) = exp(-t^2);
+julia> ω₀(t) = 2.0;
+julia> φ₀ = 0.0;
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+julia> ψ₀ = AMFMcomp(𝐶₀)
 
-# output
 ```
 We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the
 function `AMFMcomp()` an instantaneous amplitude (IA) `Function`,
