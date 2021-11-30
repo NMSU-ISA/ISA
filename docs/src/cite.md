@@ -2,7 +2,8 @@
 
 **If you use this module in your research, please cite the following work.**
 
-Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." *IEEE Transactions on Signal Processing* 66.21 (2018): 5679-5693.
+Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." *IEEE Transactions on Signal Processing*, vol. 66, pp. 5679–5693, Nov. 2018.
+
 ```
 @article{Sandoval2018ISA,
            title = {The Instantaneous Spectrum: A General Framework for
