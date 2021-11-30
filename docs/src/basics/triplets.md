@@ -15,7 +15,7 @@ an instantaneous frequency $\omega(t)$ a real valued function of time
 The function `AMFMtriplet()` will return the required
 **cannonical triplet**, 𝐶 as an object of type `AMFMtriplet` as follows
 
-```@example
+```@eval
 julia> using ISA
 julia> a₀(t) = exp(-t^2);
 julia> ω₀(t) = 2.0;
