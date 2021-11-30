@@ -17,7 +17,7 @@ makedocs(;
                      "Instantaneous Spectra" => "basics/spectra.md",],
         "Numerical ISA" =>
                     ["Numerical Components"     => "numerical/componentsNumerical.md",],
-        "Type/Methods" => "typesMethods.md",
+        "Types/Methods" => "typesMethods.md",
         "Citation" => "cite.md",
     ],
     repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",
