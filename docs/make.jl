@@ -9,7 +9,7 @@ makedocs(;
     sitename="ISA",
     format=Documenter.HTML(),
     pages=[
-        "Home" => "index.md",
+        "Home" => "home.md",
         "ISA Basics" =>
                     ["Cannonical Triplets and Component Sets"   => "basics/triplets.md",
                      "AM--FM Components"     => "basics/components.md",
@@ -17,6 +17,7 @@ makedocs(;
                      "Instantaneous Spectra" => "basics/spectra.md",],
         "Numerical ISA" =>
                     ["Numerical Components"     => "numerical/componentsNumerical.md",],
+        "Index" => "index.md",
         "Citation" => "cite.md",
     ],
     repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",
