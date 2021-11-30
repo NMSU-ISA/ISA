@@ -30,6 +30,9 @@ function compSet(W::Vector{AMFMcomp})
   return compSet(Vector(temp))
 end
 
+# DISPLAY
+Base.show(io::IO, x::compSet) = print(io, "component set")
+
 # ----------------------
 # AM--FM MODEL
 # ----------------------
@@ -77,3 +80,6 @@ end
 function (z::AMFMmodel)(t::UnitRange)
   return (z::AMFMmodel)(collect(t))
 end
+
+# DISPLAY
+Base.show(io::IO, x::AMFMmodel) = print(io, "AM--FM model")

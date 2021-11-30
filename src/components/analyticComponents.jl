@@ -36,7 +36,7 @@ end
 # CONSTRUCTIONS
 AMFMtriplet(a, ω) = AMFMtriplet(a, ω, zero(Float64))
 
-#DISPLAY
+# DISPLAY
 Base.show(io::IO, x::AMFMtriplet) = print(io, "cannonical triplet")
 
 # ----------------------
@@ -85,5 +85,5 @@ function (ψ::AMFMcomp)(t::UnitRange)
   return (ψ::AMFMcomp)(collect(t))
 end
 
-#DISPLAY
-Base.show(io::IO, x::AMFMcomp) = print(io, "AM-FM component")
+# DISPLAY
+Base.show(io::IO, x::AMFMcomp) = print(io, "AM--FM component")

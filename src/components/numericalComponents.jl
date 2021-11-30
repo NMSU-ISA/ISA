@@ -31,6 +31,9 @@ numComp(Ψ::Vector{ComplexF64}, t::Vector{Float64}) = numComp(Ψ, t, 1/(t[2]-t[1
 numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen) = numComp(Ψ, collect(t) )
 numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0:length(Ψ)-1), 1.0)
 
+# DISPLAY
+Base.show(io::IO, x::numComp) = print(io, "numerical AM-FM component")
+
 # ----------------------
 # DEMODULATED COMPONENT
 # ----------------------
@@ -57,3 +60,6 @@ struct demodComp
   σ::Vector{Float64}
   θ::Vector{Float64}
 end
+
+# DISPLAY
+Base.show(io::IO, x::numComp) = print(io, "demodulated numerical AM-FM component")

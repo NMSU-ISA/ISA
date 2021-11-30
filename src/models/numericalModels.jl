@@ -8,6 +8,9 @@ struct numModel
   fs::Float64
 end
 
+# DISPLAY
+Base.show(io::IO, x::numComp) = print(io, "numerical AM-FM model")
+
 # ----------------------
 # DEMODULATED MODEL
 # ----------------------
@@ -16,3 +19,6 @@ struct demodModel
   t::Vector{Float64}
   fs::Float64
 end
+
+# DISPLAY
+Base.show(io::IO, x::numComp) = print(io, "demodulated numerical AM-FM model")
