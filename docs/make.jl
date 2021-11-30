@@ -6,7 +6,7 @@ using Documenter, ISA
 makedocs(;
     modules=[ISA],
     authors="Steven Sandoval, Hasan Al-Shammari, Mamta Dalal",
-    sitename="ISA",
+    sitename="ISA.jl",
     format=Documenter.HTML(),
     pages=[
         "Home" => "home.md",

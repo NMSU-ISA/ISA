@@ -7,7 +7,7 @@
     S = compSet([C₁,C₂,…,Cₖ])
     S = compSet([ψ₁,ψ₂,…,ψₖ])
 
-Create a 'compSet' paramtertized by a vector of 'AMFMtriplet'.
+Create a *component set* 'compSet' paramtertized by set of canonical triplets stored in a vector of 'AMFMtriplet'.
 
 # Examples
 ```jldoctest
