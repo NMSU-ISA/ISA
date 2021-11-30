@@ -5,7 +5,7 @@ A **cannonical triplet** consists of an instantaneous amplitude (IA)
 `Function`, an instantaneous frequency (IF) `Function`, and
 a phase reference `Real`.
 
-$\mathscr{C}\triangleq\left\{a,\omega, \phi\vphantom{0^0}\right\}$
+$\mathscr{C}\triangleq\left\{a(t),\omega(t), \phi\vphantom{0^0}\right\}$
 
 ### Defining a Cannonical Triplet
 We define an **cannonical triplet**  by passing the function `AMFMtriplet()`
