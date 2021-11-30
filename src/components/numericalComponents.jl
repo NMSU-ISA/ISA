@@ -62,4 +62,4 @@ struct demodComp
 end
 
 # DISPLAY
-Base.show(io::IO, x::numComp) = print(io, "demodulated numerical AM-FM component")
+Base.show(io::IO, x::demodComp) = print(io, "demodulated numerical AM-FM component")
