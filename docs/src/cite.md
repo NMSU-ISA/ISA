@@ -8,7 +8,7 @@ Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General
            title = {The Instantaneous Spectrum: A General Framework for
                     Time-Frequency Analysis},
            author = {S.~Sandoval and P.~L.~{De~Leon}},
-           journal = {{IEEE Trans.~Sig.~Process.}},
+           journal = {{IEEE Trans.~Signal Process.}},
            volume = {66},
            year = {2018},
            month = {Nov},
