@@ -10,6 +10,7 @@ makedocs(;
     format=Documenter.HTML(),
     pages=[
         "Home" => "index.md",
+        "ISA Theory" =>" theory.md",
         "ISA Basics" =>
                     ["Cannonical Triplets and Component Sets"   => "basics/triplets.md",
                      "AM--FM Components"     => "basics/components.md",
