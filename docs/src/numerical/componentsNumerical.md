@@ -1,26 +1,23 @@
 # Numerical AM--FM Components
 
-A **Numerical AM--FM component** `AMFMcompN` is a complex vector `Vector{ComplexF64}` which has be demodulated using the function `AMFMdemod()`.
+A **Numerical AM--FM component** `numComp`
 
-```
+```@example
 using ISA
-
-
-a₀(t) = exp(-t^2)
-ω₀(t) = 2.0*t
-φ₀ = 0.0
-C₀ = AMFMtriplet(a₀,ω₀,φ₀)
-ψ₀ = AMFMcomp(C₀)
-
-a₁(t) = cos.(t)
-ω₁(t) = 10*exp(-t)
-φ₁ = 0.1
-C₁ = AMFMtriplet(a₁,ω₁,φ₁)
-ψ₁ = AMFMcomp(C₁)
-
-
-# Numerical
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
+ψ₀ = AMFMcomp(𝐶₀)
 fs = 16_000
-Ψ = numComp( ψ₀(0:1/fs :1) ,fs )
+Ψ = numComp( ψ₀(0:1/fs :1),fs )
+𝚿 = AMFMdemod(Ψ)
+```
+
+A **Numerical AM--FM component** `numComp` can be demodulated using the function `AMFMdemod()`.
+
+```@example
+using ISA
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+fs = 16_000
+Ψ = numComp( ψ₀(0:1/fs :1),fs )
 𝚿 = AMFMdemod(Ψ)
 ```
