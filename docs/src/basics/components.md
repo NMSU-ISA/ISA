@@ -30,9 +30,9 @@ follows:
 
 ```@example
  using ISA
- a₀(t) = exp(-t^2);
- ω₀(t) = 2.0;
- φ₀ = 1.0;
+ a₀(t) = exp(-t^2)
+ ω₀(t) = 2.0
+ φ₀ = 1.0
  ψ₀ = AMFMcomp(a₀,ω₀,φ₀)
 ```
 ## Evaluating an AM--FM Component
@@ -41,24 +41,24 @@ a time instant `Float64`.
 
 ```@example
  using ISA
- a₀(t) = exp(-t^2);
- ω₀(t) = 2.0;
- φ₀ = 0.0;
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
- ψ₀ = AMFMcomp(𝐶₀);
- t₀ = 0.15;
+ a₀(t) = exp(-t^2)
+ ω₀(t) = 2.0
+ φ₀ = 0.0
+ 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ ψ₀ = AMFMcomp(𝐶₀)
+ t₀ = 0.15
  ψ₀(t₀)
 ```
 or over a step range of time instants.
 
 ```@example
  using ISA
- a₀(t) = exp(-t^2);
- ω₀(t) = 2.0;
- φ₀ = 0.0;
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
- ψ₀ = AMFMcomp(𝐶₀);
- t = 0.0:0.25:1.0;
+ a₀(t) = exp(-t^2)
+ ω₀(t) = 2.0
+ φ₀ = 0.0
+ 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ ψ₀ = AMFMcomp(𝐶₀)
+ t = 0.0:0.25:1.0
  ψ₀(t)
 ```
 

@@ -17,9 +17,9 @@ The function `AMFMtriplet()` will return the required
 
 ```@example
 using ISA
-a₀(t) = exp(-t^2);
-ω₀(t) = 2.0;
-φ₀ = 0.0;
+a₀(t) = exp(-t^2)
+ω₀(t) = 2.0
+φ₀ = 0.0
 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 ```
 ## Component Sets
@@ -34,40 +34,8 @@ a vector of **cannonical triplets**.
 
 ```@example
  using ISA
- a₀(t) = exp(-t^2);
- ω₀(t) = 2.0;
- φ₀ = 0.0;
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
-
- a₁(t) = 1.0;
- ω₁(t) = 10*t;
- φ₁ = 0.1;
- 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
-
- a₂(t) = 0.8*cos(2t);
- ω₂(t) = 10 + 7.5*sin(t);
- φ₂ = π;
- 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂);
-
+ 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+ 𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
+ 𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
  𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
-```
-
-We also allow another method to define a **component set**
-by providing the vector of AM-FM components as follows
-
-```@example
- using ISA
- a₀(t) = cos.(t);
- ω₀(t) = 100;
- φ₀ = 0.0;
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
-
- a₁(t) = 2*t;
- ω₁(t) = 10;
- φ₁ = 1.0;
- 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
-
- ψ₀ = AMFMcomp(C₀);
- ψ₁ = AMFMcomp(C₁);
- S = compSet([ψ₀,ψ₁])
 ```

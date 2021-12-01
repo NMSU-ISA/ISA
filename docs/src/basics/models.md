@@ -12,16 +12,16 @@ vector of type `AMFMtriplet` to the function `compSet`.
 
 ```jldoctest models
 julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+julia> a₀(t) = exp(-t^2)
+julia> ω₀(t) = 2.0
+julia> φ₀ = 0.0
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
-julia> a₁(t) = 1.0;
-julia> ω₁(t) = 10*t;
-julia> φ₁ = 0.1;
-julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
-julia> 𝑆 = compSet([𝐶₀,𝐶₁]);
+julia> a₁(t) = 1.0
+julia> ω₁(t) = 10*t
+julia> φ₁ = 0.1
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁)
+julia> 𝑆 = compSet([𝐶₀,𝐶₁])
 julia> z = AMFMmodel(𝑆)
 AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 ```
@@ -31,15 +31,15 @@ vector of `AMFMcomp` to the function `AMFMmodel()`.
 
 ```jldoctest models
 julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> ψ₀ = AMFMcomp(a₀,ω₀,φ₀);
+julia> a₀(t) = exp(-t^2)
+julia> ω₀(t) = 2.0
+julia> φ₀ = 0.0
+julia> ψ₀ = AMFMcomp(a₀,ω₀,φ₀)
 
-julia> a₁(t) = 1.0;
-julia> ω₁(t) = 10*t;
-julia> φ₁ = 0.1;
-julia> ψ₁ = AMFMcomp(a₁,ω₁,φ₁);
+julia> a₁(t) = 1.0
+julia> ω₁(t) = 10*t
+julia> φ₁ = 0.1
+julia> ψ₁ = AMFMcomp(a₁,ω₁,φ₁)
 julia> z = AMFMmodel([ψ₀,ψ₁])
 AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 
@@ -49,15 +49,15 @@ passing a vector of `AMFMtriplet` to the function `AMFMmodel()`.
 
 ```jldoctest models
 julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+julia> a₀(t) = exp(-t^2)
+julia> ω₀(t) = 2.0
+julia> φ₀ = 0.0
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
-julia> a₁(t) = 1.0;
-julia> ω₁(t) = 10*t;
-julia> φ₁ = 0.1;
-julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+julia> a₁(t) = 1.0
+julia> ω₁(t) = 10*t
+julia> φ₁ = 0.1
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁)
 julia> z = AMFMmodel([𝐶₀,𝐶₁])
 AMFMmodel(compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1)]))
 ```
@@ -68,18 +68,18 @@ it can be evaluated at a time instant `Float64`.
 
 ```jldoctest models
 julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+julia> a₀(t) = exp(-t^2)
+julia> ω₀(t) = 2.0
+julia> φ₀ = 0.0
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
-julia> a₁(t) = 1.0;
-julia> ω₁(t) = 10*t;
-julia> φ₁ = 0.1;
-julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
-julia> 𝑆 = compSet([𝐶₀,𝐶₁]);
-julia> z = AMFMmodel(𝑆);
-julia> t₀ = 2.0;
+julia> a₁(t) = 1.0
+julia> ω₁(t) = 10*t
+julia> φ₁ = 0.1
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁)
+julia> 𝑆 = compSet([𝐶₀,𝐶₁])
+julia> z = AMFMmodel(𝑆)
+julia> t₀ = 2.0
 julia> z(t₀)
 0.30292900716627164 + 0.9352632324337417im
 ```
@@ -87,18 +87,18 @@ or over a step range of time instants.
 
 ```jldoctest models
 julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+julia> a₀(t) = exp(-t^2)
+julia> ω₀(t) = 2.0
+julia> φ₀ = 0.0
+julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
-julia> a₁(t) = 1.0;
-julia> ω₁(t) = 10*t;
-julia> φ₁ = 0.1;
-julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
-julia> 𝑆 = compSet([𝐶₀,𝐶₁]);
-julia> z = AMFMmodel(𝑆);
-julia> t = 0.0:0.25:1.0;
+julia> a₁(t) = 1.0
+julia> ω₁(t) = 10*t
+julia> φ₁ = 0.1
+julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁)
+julia> 𝑆 = compSet([𝐶₀,𝐶₁])
+julia> z = AMFMmodel(𝑆)
+julia> t = 0.0:0.25:1.0
 julia> z(t)
 5-element Vector{ComplexF64}:
   1.9950041652780257 + 0.09983341664682815im
