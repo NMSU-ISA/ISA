@@ -11,9 +11,7 @@ We define an **AM--FM component** by passing the function `AMFMcomp()`
 an object of type `AMFMtriplet`. First we create an object say, C
 of type `AMFMtriplet` by providing an instantaneous amplitude $a(t)$,
 an instantaneous frequency $\omega(t)$, and a phase reference $\phi$
-to function `AMFMtriplet`.
-Then we simply pass the object C to the function `AMFMcomp()` that will
-result into required **AM--FM component** as follows
+to function `AMFMtriplet`. Then we simply pass the object C to the function `AMFMcomp()` that will result into required **AM--FM component** as follows
 
 ```@example
  using ISA
@@ -41,10 +39,7 @@ a time instant `Float64`.
 
 ```@example
  using ISA
- a₀(t) = exp(-t^2)
- ω₀(t) = 2.0
- φ₀ = 0.0
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
  ψ₀ = AMFMcomp(𝐶₀)
  t₀ = 0.15
  ψ₀(t₀)
@@ -53,10 +48,7 @@ or over a step range of time instants.
 
 ```@example
  using ISA
- a₀(t) = exp(-t^2)
- ω₀(t) = 2.0
- φ₀ = 0.0
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
  ψ₀ = AMFMcomp(𝐶₀)
  t = 0.0:0.25:1.0
  ψ₀(t)
