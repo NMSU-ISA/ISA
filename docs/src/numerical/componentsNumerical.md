@@ -1,6 +1,6 @@
 # Numerical AM--FM Components
 
-A **Numerical AM--FM component** `numComp`
+A **Numerical AM--FM component** `numComp`...
 
 ```@example
 using ISA
@@ -8,7 +8,6 @@ using ISA
 ψ₀ = AMFMcomp(𝐶₀)
 fs = 16_000
 Ψ = numComp( ψ₀(0:1/fs :1),fs )
-𝚿 = AMFMdemod(Ψ)
 ```
 
 A **Numerical AM--FM component** `numComp` can be demodulated using the function `AMFMdemod()`.
