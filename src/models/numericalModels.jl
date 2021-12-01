@@ -21,4 +21,4 @@ struct demodModel
 end
 
 # DISPLAY
-Base.show(io::IO, x::demodModel) = print(io, "demodulated numerical AM-FM model")
+Base.show(io::IO, x::demodModel) = print(io, "demodulated AM-FM model")
