@@ -32,45 +32,42 @@ We define a **component set** primarily by defining a structure or
 a constructor method which contains the object 𝑆 that creates
 a vector of **cannonical triplets**.
 
-```jldoctest triplets
-julia> using ISA
-julia> a₀(t) = exp(-t^2);
-julia> ω₀(t) = 2.0;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+```@example
+ using ISA
+ a₀(t) = exp(-t^2);
+ ω₀(t) = 2.0;
+ φ₀ = 0.0;
+ 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-julia> a₁(t) = 1.0;
-julia> ω₁(t) = 10*t;
-julia> φ₁ = 0.1;
-julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+ a₁(t) = 1.0;
+ ω₁(t) = 10*t;
+ φ₁ = 0.1;
+ 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
 
-julia> a₂(t) = 0.8*cos(2t);
-julia> ω₂(t) = 10 + 7.5*sin(t);
-julia> φ₂ = π;
-julia> 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂);
+ a₂(t) = 0.8*cos(2t);
+ ω₂(t) = 10 + 7.5*sin(t);
+ φ₂ = π;
+ 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂);
 
-julia> 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
-compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1), AMFMtriplet(a₂, ω₂, π)])
+ 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 ```
 
 We also allow another method to define a **component set**
 by providing the vector of AM-FM components as follows
 
-```jldoctest triplets
-julia> using ISA
-julia> a₀(t) = cos.(t);
-julia> ω₀(t) = 100;
-julia> φ₀ = 0.0;
-julia> 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+```@example
+ using ISA
+ a₀(t) = cos.(t);
+ ω₀(t) = 100;
+ φ₀ = 0.0;
+ 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-julia> a₁(t) = 2*t;
-julia> ω₁(t) = 10;
-julia> φ₁ = 1.0;
-julia> 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+ a₁(t) = 2*t;
+ ω₁(t) = 10;
+ φ₁ = 1.0;
+ 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
 
-julia> ψ₀ = AMFMcomp(C₀);
-julia> ψ₁ = AMFMcomp(C₁);
-julia> S = compSet([ψ₀,ψ₁])
-
-compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 1.0)])
+ ψ₀ = AMFMcomp(C₀);
+ ψ₁ = AMFMcomp(C₁);
+ S = compSet([ψ₀,ψ₁])
 ```
