@@ -4,33 +4,23 @@ A **Numerical AM--FM component** `AMFMcompN` is a complex vector `Vector{Complex
 
 ```
 using ISA
-using Plots
+
 
 a₀(t) = exp(-t^2)
-ω₀(t) = 25
-φ₀ = 0
-𝐶₀ = Tuple([a₀,ω₀,φ₀])
-ψ₀ = AMFMcomp(𝐶₀)
-a₁(t) = exp(-0.5t^2)
-ω₁(t) = 10 + 3*sin(t)
-φ₁ = 0
-𝐶₁ = Tuple([a₁,ω₁,φ₁])
-ψ₁ = AMFMcomp(𝐶₁)
+ω₀(t) = 2.0*t
+φ₀ = 0.0
+C₀ = AMFMtriplet(a₀,ω₀,φ₀)
+ψ₀ = AMFMcomp(C₀)
 
-t = -1.0:0.01:1.0
+a₁(t) = cos.(t)
+ω₁(t) = 10*exp(-t)
+φ₁ = 0.1
+C₁ = AMFMtriplet(a₁,ω₁,φ₁)
+ψ₁ = AMFMcomp(C₁)
 
-p1 = isaPlot3d(ψ₀,t)
-p2 = isaPlot3d(AMFMmodel([ψ₀,ψ₁]),t)
 
-#COMPONENT OBSERVATION
-Ψ₀ = ψ₀(t)
-Ψ₁ = ψ₁(t)
-
-#ESTIMATE NUMERICAL COMPONENT
-𝚿₀ = AMFMdemod(Ψ₀,t)
-𝚿₁ = AMFMdemod(Ψ₁,t)
-
-p3 = isaPlot3d(𝚿₀)
-p4 = isaPlot3d([𝚿₀,𝚿₁])
-plot(p1,p2,p3,p4)
+# Numerical
+fs = 16_000
+Ψ = numComp( ψ₀(0:1/fs :1) ,fs )
+𝚿 = AMFMdemod(Ψ)
 ```
