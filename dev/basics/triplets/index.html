@@ -3,36 +3,33 @@
 a₀(t) = exp(-t^2);
 ω₀(t) = 2.0;
 φ₀ = 0.0;
-𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)</code></pre><pre><code class="language-none">cannonical triplet</code></pre><h2 id="Component-Sets-1"><a class="docs-heading-anchor" href="#Component-Sets-1">Component Sets</a><a class="docs-heading-anchor-permalink" href="#Component-Sets-1" title="Permalink"></a></h2><p>A <strong>component set</strong> is a set of <strong>cannonical triplet</strong> of type <code>Vector{AMFMtriplet}</code>.</p><div>\[\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}\]</div><h3 id="Defining-a-Component-Set-1"><a class="docs-heading-anchor" href="#Defining-a-Component-Set-1">Defining a Component Set</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Component-Set-1" title="Permalink"></a></h3><p>We define a <strong>component set</strong> primarily by defining a structure or a constructor method which contains the object 𝑆 that creates a vector of <strong>cannonical triplets</strong>.</p><pre><code class="language-julia-repl">julia&gt; using ISA
-julia&gt; a₀(t) = exp(-t^2);
-julia&gt; ω₀(t) = 2.0;
-julia&gt; φ₀ = 0.0;
-julia&gt; 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)</code></pre><pre><code class="language-none">cannonical triplet</code></pre><h2 id="Component-Sets-1"><a class="docs-heading-anchor" href="#Component-Sets-1">Component Sets</a><a class="docs-heading-anchor-permalink" href="#Component-Sets-1" title="Permalink"></a></h2><p>A <strong>component set</strong> is a set of <strong>cannonical triplet</strong> of type <code>Vector{AMFMtriplet}</code>.</p><div>\[\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}\]</div><h3 id="Defining-a-Component-Set-1"><a class="docs-heading-anchor" href="#Defining-a-Component-Set-1">Defining a Component Set</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Component-Set-1" title="Permalink"></a></h3><p>We define a <strong>component set</strong> primarily by defining a structure or a constructor method which contains the object 𝑆 that creates a vector of <strong>cannonical triplets</strong>.</p><pre><code class="language-julia"> using ISA
+ a₀(t) = exp(-t^2);
+ ω₀(t) = 2.0;
+ φ₀ = 0.0;
+ 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-julia&gt; a₁(t) = 1.0;
-julia&gt; ω₁(t) = 10*t;
-julia&gt; φ₁ = 0.1;
-julia&gt; 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+ a₁(t) = 1.0;
+ ω₁(t) = 10*t;
+ φ₁ = 0.1;
+ 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
 
-julia&gt; a₂(t) = 0.8*cos(2t);
-julia&gt; ω₂(t) = 10 + 7.5*sin(t);
-julia&gt; φ₂ = π;
-julia&gt; 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂);
+ a₂(t) = 0.8*cos(2t);
+ ω₂(t) = 10 + 7.5*sin(t);
+ φ₂ = π;
+ 𝐶₂ = AMFMtriplet(a₂,ω₂,φ₂);
 
-julia&gt; 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
-compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 0.1), AMFMtriplet(a₂, ω₂, π)])</code></pre><p>We also allow another method to define a <strong>component set</strong> by providing the vector of AM-FM components as follows</p><pre><code class="language-julia-repl">julia&gt; using ISA
-julia&gt; a₀(t) = cos.(t);
-julia&gt; ω₀(t) = 100;
-julia&gt; φ₀ = 0.0;
-julia&gt; 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+ 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])</code></pre><pre><code class="language-none">component set</code></pre><p>We also allow another method to define a <strong>component set</strong> by providing the vector of AM-FM components as follows</p><pre><code class="language-"> using ISA
+ a₀(t) = cos.(t);
+ ω₀(t) = 100;
+ φ₀ = 0.0;
+ 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
 
-julia&gt; a₁(t) = 2*t;
-julia&gt; ω₁(t) = 10;
-julia&gt; φ₁ = 1.0;
-julia&gt; 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
+ a₁(t) = 2*t;
+ ω₁(t) = 10;
+ φ₁ = 1.0;
+ 𝐶₁ = AMFMtriplet(a₁,ω₁,φ₁);
 
-julia&gt; ψ₀ = AMFMcomp(C₀);
-julia&gt; ψ₁ = AMFMcomp(C₁);
-julia&gt; S = compSet([ψ₀,ψ₁])
-
-compSet(AMFMtriplet[AMFMtriplet(a₀, ω₀, 0.0), AMFMtriplet(a₁, ω₁, 1.0)])</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../components/">AM–FM Components »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 1 December 2021 00:05">Wednesday 1 December 2021</span>. Using Julia version 1.6.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+ ψ₀ = AMFMcomp(C₀);
+ ψ₁ = AMFMcomp(C₁);
+ S = compSet([ψ₀,ψ₁])</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../components/">AM–FM Components »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 1 December 2021 00:10">Wednesday 1 December 2021</span>. Using Julia version 1.6.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
