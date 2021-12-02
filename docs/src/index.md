@@ -1,4 +1,4 @@
-# ISA.jl: Instantaneous Spectral Analysis in Julia
+# [ISA.jl: Instantaneous Spectral Analysis in Julia](https://github.com/NMSU-ISA/ISA/)
 
 ## Installation
 
