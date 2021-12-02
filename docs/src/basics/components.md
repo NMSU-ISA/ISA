@@ -28,7 +28,7 @@ a time instant $t_0$ (`Real`)
  t₀ = 0.15
  ψ₀(t₀)
 ```
-or over a step range of time instants.
+or over a range of time instants.
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)

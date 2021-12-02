@@ -32,25 +32,8 @@ using ISA
 z = AMFMmodel([ψ₀,ψ₁,ψ₂])
 ```
 
-
-
-
-
-We also allow an **AM--FM model** `AMFMmodel` to be defined by passing an
-vector of `AMFMcomp` to the function `AMFMmodel()`.
-
-```@example
-using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->10*t,0.1)
-ψ₂ = AMFMcomp(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
-z = AMFMmodel([ψ₀,ψ₁,ψ₂])
-```
-
 ## Evaluating an AM--FM Model
-Once an  **AM--FM model** `AMFMmodel` is defined,
-it can be evaluated at a time instant `Float64`.
-
+Once an  **AM--FM model** $z(t)$ `AMFMmodel` is defined, it can be evaluated at a time instant $t_0$ (`Real`).
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
@@ -61,8 +44,7 @@ z = AMFMmodel(𝑆)
 t₀ = 2.0
 z(t₀)
 ```
-or over a step range of time instants.
-
+or over a range of time instants
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
@@ -73,15 +55,3 @@ z = AMFMmodel(𝑆)
 t = 0.0:0.25:1.0
 z(t)
 ```
-
-Another example of evaluating an **AM--FM model** over
-a range of time instants using the `Plots` module follows.
-
-```@example
-using Plots
-t = 0.0:0.005:2.0
-p1 = plot(t, real(z(t)), xlab="t", ylab="real", legend = :false)
-p2 = plot(t, imag(z(t)), xlab="t", ylab="imag", legend = :false)
-plot(p1, p2, layout = (2,1))
-```
-[![](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ModelEval.png)](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ModelEval.png)
