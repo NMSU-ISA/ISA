@@ -20,8 +20,8 @@ Pages = ["theory.md",
 "basics/components.md",
 "basics/models.md",
 "basics/spectra.md",
-"basics/numerical/componentsNumerical.md",
-"basics/typesMethods.md",
-"basics/cite.md",
+"numerical/componentsNumerical.md",
+"typesMethods.md",
+"cite.md",
 ]
 ```
