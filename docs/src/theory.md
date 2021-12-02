@@ -1,7 +1,5 @@
 # Instantaneous Spectral Analysis Theory
 
-## Introduction
-
 ## Canonical Triplets and AM--FM Components
 
 ## Component Sets and AM--FM Models
