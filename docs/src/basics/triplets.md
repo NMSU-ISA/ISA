@@ -1,9 +1,9 @@
 # Cannonical Triplets and Component Sets
 
 ## Cannonical Triplets
-A **cannonical triplet** consists of an instantaneous amplitude (IA)
-`Function`, an instantaneous frequency (IF) `Function`, and
-a phase reference `Real`.
+A **cannonical triplet** $\mathscr{C}$ is parameterized by an instantaneous amplitude (IA)
+$a(t)$ (`Function`), an instantaneous frequency (IF) $\omega(t)$ `Function`, and
+a phase reference $\phi$ (`Real`).
 
 $\mathscr{C}\triangleq\left\{a(t),\omega(t), \phi\vphantom{0^0}\right\}$
 

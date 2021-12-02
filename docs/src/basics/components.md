@@ -1,13 +1,13 @@
 # AM--FM Components
 
-A **component triplet**  maps to an **AM--FM component** `AMFMcomp`.
+A **component triplet** $\mathscr{C}_k$  maps to an **AM--FM component** $\psi_k$.
 
 $\psi_k \left( t ; \mathscr{C}_k \vphantom{0^0}\right) \triangleq a_k(t) \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right)$
 
 This mapping is provided in the ISA module.
 
 ## Defining an AM--FM Component
-We define an **AM--FM component** by passing the function `AMFMcomp()`
+We define an **AM--FM component** $\psi_k$ (`AMFMcomp`) by passing the function `AMFMcomp()`
 an object of type `AMFMtriplet`. First we create an object say, C
 of type `AMFMtriplet` by providing an instantaneous amplitude $a(t)$,
 an instantaneous frequency $\omega(t)$, and a phase reference $\phi$
