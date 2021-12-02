@@ -17,4 +17,6 @@ a₂(t) = 0.54 - 0.46 * cos.(2π*t)
 
 plot(𝐶₀,timeaxis=0.0:1/fs:1.0)
 plot!(𝐶₁,timeaxis=0.0:1/fs:1.0)
-plot!(𝐶₂, timeaxis=0.0:1/fs:1.0, camera = (0,90) )
+plot!(𝐶₂, timeaxis=0.0:1/fs:1.0, camera = (7.5,80),
+xticks=:false,yticks=:false ,zticks=:false,
+xlabel = "",ylabel = "",zlabel = "")

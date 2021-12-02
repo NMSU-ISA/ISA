@@ -15,4 +15,13 @@
 
 ## Table of Contents
 ```@contents
+Pages = ["theory.md",
+"basics/triplets.md",
+"basics/components.md",
+"basics/models.md",
+"basics/spectra.md",
+"basics/numerical/componentsNumerical.md",
+"basics/typesMethods.md",
+"basics/cite.md",
+]
 ```
