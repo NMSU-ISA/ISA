@@ -12,11 +12,12 @@
 Create a 'numComp' consisting of a complex-valed signal `Ψ`, and time index `t`, and sampling frequency `fs`.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+using ISA
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+fs = 16_000
+Ψ = numComp( ψ₀(0:1/fs :1),fs )
 ```
 """
 struct numComp
@@ -43,11 +44,13 @@ Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
 Create a 'demodComp'.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+using ISA
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+fs = 16_000
+Ψ = numComp( ψ₀(0:1/fs :1),fs )
+𝚿 = AMFMdemod(Ψ)
 ```
 """
 struct demodComp
