@@ -13,7 +13,7 @@ $\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left
 
 ## Visualizing Instantaneous Spectra
 
-We can visualize a 3D IS as follows. First, define a **component set**, then pass it to the 'plot()' along with the time range.
+We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **component set**, then pass it to the 'plot()' along with the time range.
 ```@example
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->200.0,0.0)

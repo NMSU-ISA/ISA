@@ -4,7 +4,7 @@
 
 # ISA.jl: Instantaneous Spectral Analysis in Julia
 
-[![](https://github.com/NMSU-ISA/ISA/blob/master/docs/src/assets/logo.png)](https://github.com/NMSU-ISA/ISA/blob/master/docs/src/assets/logo.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/logo.png)
 
 
 ## Installation
