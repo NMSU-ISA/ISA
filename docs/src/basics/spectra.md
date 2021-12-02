@@ -22,11 +22,7 @@ using ISA, Plots
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 plot(𝑆; timeaxis=0.0:0.005:3.0)
 ```
-<p align="center">
-<img width="400px" src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png"/>
-</p>
-
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex1.png)
 
 We can obtain a 2D IS plot via an orthographic projection of the 3D IS
 ```@example
@@ -37,6 +33,4 @@ using ISA, Plots
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 plot(𝑆; timeaxis=0.0:0.005:3.0, camera=(0,90), zlabel="", zticks=:false,  left_margin=15Plots.mm, margin=5Plots.mm, yrotation = 90)
 ```
-<p align="center">
-<img width="400px" src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png"/>
-</p>
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png)
