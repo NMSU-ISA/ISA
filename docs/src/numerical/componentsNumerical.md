@@ -1,7 +1,6 @@
 # Numerical AM--FM Components
 
-A **Numerical AM--FM component** `numComp`...
-
+A **Numerical AM--FM component** `numComp` is parameterized by the discrete-time observation of a **AM--FM component** `AMFMcomp`.
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
@@ -11,7 +10,6 @@ fs = 16_000
 ```
 
 A **Numerical AM--FM component** `numComp` can be demodulated using the function `AMFMdemod()`.
-
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)

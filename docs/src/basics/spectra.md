@@ -11,7 +11,7 @@ and  three-dimensional (3D) IS in the time-frequency-real coordinates is given b
 $\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) ~{}^{2}\delta\left(\omega-\omega_k(t),s-s_k(t)\vphantom{0^0}\right).$
 
 
-## Visualizing an Instantaneous Spectrum
+## Visualizing Instantaneous Spectra
 
 We can visualize a 3D IS as follows. First, define a **component set**, then pass it to the 'plot()' along with the time range.
 ```@example
