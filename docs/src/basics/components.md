@@ -1,42 +1,26 @@
 # AM--FM Components
 
-A **component triplet** $\mathscr{C}_k$  maps to an **AM--FM component** $\psi_k$.
+An **AM--FM component** $\psi_k$ (`AMFMcomp`) is parameterized by **canonical triplet** $\mathscr{C}$ (`AMFMtriplet`).
 
 $\psi_k \left( t ; \mathscr{C}_k \vphantom{0^0}\right) \triangleq a_k(t) \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right)$
 
-This mapping is provided in the ISA module.
-
 ## Defining an AM--FM Component
-We define an **AM--FM component** $\psi_k$ (`AMFMcomp`) by passing the function `AMFMcomp()`
-an object of type `AMFMtriplet`. First we create an object say, C
-of type `AMFMtriplet` by providing an instantaneous amplitude $a(t)$,
-an instantaneous frequency $\omega(t)$, and a phase reference $\phi$
-to function `AMFMtriplet`. Then we simply pass the object C to the function `AMFMcomp()` that will result into required **AM--FM component** as follows
-
+We can define a  **AM--FM component** $\psi_k$ (`AMFMcomp`) by calling `AMFMcomp()` with a **canonical triplet** $\mathscr{C}$ (`AMFMtriplet`).
 ```@example
  using ISA
- a₀(t) = exp(-t^2);
- ω₀(t) = 2.0;
- φ₀ = 0.0;
- 𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀);
+ 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
  ψ₀ = AMFMcomp(𝐶₀)
 ```
-We also allow an **AM--FM component** `AMFMcomp` to be defined by passing the
-function `AMFMcomp()` an instantaneous amplitude (IA) `Function`,
-an instantaneous frequency (IF) `Function`, and a phase reference `Real` as
-follows:
 
+For convenience, we can also define a  **AM--FM component** $\psi_k$ (`AMFMcomp`) by calling `AMFMcomp()` withteh parameters of **canonical triplet**, specifically, an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
 ```@example
  using ISA
- a₀(t) = exp(-t^2)
- ω₀(t) = 2.0
- φ₀ = 1.0
- ψ₀ = AMFMcomp(a₀,ω₀,φ₀)
+ ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 ```
-## Evaluating an AM--FM Component
-Once an  **AM--FM component** `AMFMcomp` is defined it can be evaluated at
-a time instant `Float64`.
 
+## Evaluating an AM--FM Component
+Once an  **AM--FM component** $\psi_k$ (`AMFMcomp`) is defined, it can be evaluated at
+a time instant $t_0$ (`Real`)
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
@@ -45,7 +29,6 @@ a time instant `Float64`.
  ψ₀(t₀)
 ```
 or over a step range of time instants.
-
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
@@ -53,16 +36,3 @@ or over a step range of time instants.
  t = 0.0:0.25:1.0
  ψ₀(t)
 ```
-
-Another example of evaluating an **AM--FM component** over a
-range of time instants using the `Plots` module follows.
-
-
-```@example
-using ISA, Plots
-t = 0.0:0.005:2.0
-p1 = plot(t, real(ψ₀(t)), xlab="t", ylab="real", legend = :false)
-p2 = plot(t, imag(ψ₀(t)), xlab="t", ylab="imag", legend = :false)
-plot(p1, p2, layout = (2,1))
-```
-[![](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/CompEval.png)](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/CompEval.png)
