@@ -22,5 +22,6 @@ include("latent/latentSignalAnalysis.jl")
 export latentSig, latentComp
 
 include("plots/GRrecipes.jl")
+export timeFreq, timeReal, timeFreqReal, freqReal
 
 end # module
