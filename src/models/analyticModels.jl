@@ -10,11 +10,12 @@
 Create a *component set* 'compSet' paramtertized by set of canonical triplets stored in a vector of 'AMFMtriplet'.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+ using ISA
+ 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+ 𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
+ 𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+ 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 ```
 """
 struct compSet
@@ -43,11 +44,15 @@ Base.show(io::IO, x::compSet) = print(io, "component set")
 Create a 'AMFMmodel' paramtertized by a 'compSet'.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+using ISA
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+z = AMFMmodel(𝑆)
+t = 0.0:0.25:1.0
+z(t)
 ```
 """
 mutable struct AMFMmodel

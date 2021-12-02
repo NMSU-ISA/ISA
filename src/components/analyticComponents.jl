@@ -50,11 +50,10 @@ Base.show(io::IO, x::AMFMtriplet) = print(io, "cannonical triplet")
 Create a 'AMFMcomp' paramtertized by a single 'AMFMtriplet'.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+ using ISA
+ 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+ ψ₀ = AMFMcomp(𝐶₀)
 ```
 """
 struct AMFMcomp
