@@ -22,6 +22,17 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 
-```
+plot(z) # default timeaxis
+plot(z, timeaxis=0.0:0.005:3.0) # custom timeaxis
 
-[![](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ISexample.png)](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ISexample.png)
+plot(𝑆)
+plot(𝑆,timeaxis=0.0:0.005:3.0)
+
+plot(ψ₀,timeaxis=0.0:0.005:2.0)
+plot!(ψ₁,timeaxis=0.0:0.005:2.0)
+plot!(ψ₂,timeaxis=0.0:0.005:2.0)
+
+plot(𝐶₀,timeaxis=0.0:0.005:5.0)
+plot!(𝐶₁,timeaxis=0.0:0.005:5.0)
+plot!(𝐶₂,timeaxis=0.0:0.005:5.0)
+```

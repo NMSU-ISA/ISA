@@ -1,5 +1,4 @@
-using ISA
-using Plots
+using ISA, Plots
 
 fs = 16_000
 
@@ -22,3 +21,4 @@ xticks=:false,yticks=:false ,zticks=:false,
 xlabel = "",ylabel = "",zlabel = "")
 
 savefig("logo.png")
+savefig("logo-dark.png")
