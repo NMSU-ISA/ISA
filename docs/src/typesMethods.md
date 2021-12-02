@@ -1,9 +1,9 @@
+# Types/Methods/Functions
 
-
-# Index
+## Index
 ```@index
 ```
-# Public Interface
+## Public Interface
 ```@autodocs
 Modules = [ISA]
 ```

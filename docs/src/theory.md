@@ -1,4 +1,4 @@
-# Instantaneous Spectral Analysis
+# Instantaneous Spectral Analysis Theory
 
 ## Introduction
 

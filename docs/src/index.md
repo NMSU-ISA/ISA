@@ -16,12 +16,12 @@
 ## Table of Contents
 ```@contents
 Pages = ["theory.md",
-"basics/triplets.md",
-"basics/components.md",
-"basics/models.md",
-"basics/spectra.md",
-"numerical/componentsNumerical.md",
-"typesMethods.md",
-"cite.md",
-]
+         "basics/triplets.md",
+         "basics/components.md",
+         "basics/models.md",
+         "basics/spectra.md",
+         "numerical/componentsNumerical.md",
+         "typesMethods.md",
+         "cite.md",
+         ]
 ```
