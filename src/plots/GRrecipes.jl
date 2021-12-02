@@ -17,7 +17,7 @@ end
 
 # Method 1: z::AMFMmodel, t::Vector{Float64} or t::StepRangeLen
 @recipe function temp(z::AMFMmodel;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time"
+   xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
    background_color --> cubeYF()[1]
@@ -41,7 +41,7 @@ end
 
 #Method 2: S::compSet, t::Vector{Float64} or t::StepRangeLen
 @recipe function temp(S::compSet;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time"
+   xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
    background_color --> cubeYF()[1]
@@ -65,7 +65,7 @@ end
 
 #Method 3: ψ::AMFMcomp
 @recipe function temp(ψ::AMFMcomp;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time"
+   xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
    background_color --> cubeYF()[1]
@@ -82,7 +82,7 @@ end
 
 #Method 4: 𝐶::AMFMtriplet
 @recipe function temp(𝐶::AMFMtriplet;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time"
+   xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
    background_color --> cubeYF()[1]
