@@ -1,6 +1,6 @@
 # Cite
 
-**If you use this software in you research, please cite the following work.**
+**If you use this software in you research, please cite the following works.**
 
 [S. Sandoval, and P L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." *IEEE Transactions on Signal Processing*, vol. 66, pp. 5679–5693, Nov. 2018.](https://web.nmsu.edu/~spsandov/ISA/literature.html#openModal1)
 
