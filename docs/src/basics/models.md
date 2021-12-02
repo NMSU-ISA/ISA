@@ -15,7 +15,7 @@ using ISA
 z = AMFMmodel(𝑆)
 ```
 
-For convenience, we can also define an **AM--FM model** $z(t)$ (`AMFMmodel`) by calling `AMFMmodel()` with either a *vector of* **canonical triplets**
+For convenience, we can also define an **AM--FM model** $z(t)$ (`AMFMmodel`) by calling `AMFMmodel()` with either a *vector of canonical triplets*
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)

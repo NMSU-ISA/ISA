@@ -23,7 +23,7 @@ A **component set** $\mathscr{S}$ (`compSet`) is parameterized by a *set of cano
 $\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 
 ### Defining a Component Set
-We can define a **component set** $\mathscr{S}$ (`comSet`) by calling `compSet()` with a *vector of* **canonical triplets**.
+We can define a **component set** $\mathscr{S}$ (`comSet`) by calling `compSet()` with a *vector of canonical triplets*.
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
