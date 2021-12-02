@@ -1,4 +1,5 @@
-using ISA, Plots
+using ISA
+using Plots
 
 fs = 16_000
 

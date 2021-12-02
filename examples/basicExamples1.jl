@@ -2,18 +2,15 @@ using ISA
 a₀(t) = exp(-t^2)
 ω₀(t) = 2.0*t
 φ₀ = 0.0
+C₀ = AMFMtriplet(a₀,ω₀,φ₀)
 
 a₁(t) = cos.(t)
 ω₁(t) = 10*exp(-t)
 φ₁ = 0.1
-
-C₀ = AMFMtriplet(a₀,ω₀,φ₀)
 C₁ = AMFMtriplet(a₁,ω₁,φ₁)
 
 ψ₀ = AMFMcomp(C₀)
-
 numComp( ψ₀(0:1/10:1) )
-
 ψ₁ = AMFMcomp(C₁)
 
 #Evaluating the AM-FM components at a time instant
