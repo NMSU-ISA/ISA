@@ -1,4 +1,4 @@
-# ISA.jl: The Julia Library for Instantaneous Spectral Analysis
+# ISA.jl: Instantaneous Spectral Analysis in Julia
 
 ## Installation
 

@@ -2,9 +2,9 @@
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://nmsu-isa.github.io/ISA/dev/)
 
 
-# ISA.jl: The Julia Library for Instantaneous Spectral Analysis
+# ISA.jl: Instantaneous Spectral Analysis in Julia
 
-[![](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ISexample.png)](https://raw.githubusercontent.com/ssandova/ISAdocs/master/images/ISexample.png)
+[![](https://github.com/NMSU-ISA/ISA/blob/master/docs/src/assets/logo.png)](https://github.com/NMSU-ISA/ISA/blob/master/docs/src/assets/logo.png)
 
 
 ## Installation
