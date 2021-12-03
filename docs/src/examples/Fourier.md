@@ -19,7 +19,7 @@ and a component of the form
 
 $\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
-
+A partial sum (over $k$) of a Fourier series can be visualized as an IS.
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->1,t->100,0.0)
