@@ -21,16 +21,11 @@ $\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
 
 ```julia
-using ISA, Plots, Interact
-@manipulate for a= 0:0.05:1, ω = -5:0.1:20, φ = -pi:pi/50:pi
-    a₀(t) = a
-    ω₀(t) = ω
-    φ₀ = φ
-    𝐶₀ = AMFMcomp(a₀,ω₀,φ₀)
-    plot(𝐶₀)
-end
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->1,t->100,0.0)
+plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
 ```
-[IMAGE HERE]
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourierComp.png)
 
 
 ## Fourier Series
