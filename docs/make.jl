@@ -11,7 +11,7 @@ makedocs(;
     pages=[
         "Home" => "index.md",
         #"ISA Theory" => "theory.md",
-        "ISA Basics" =>
+        "ISA" =>
                     ["Cannonical Triplets and Component Sets"   => "basics/triplets.md",
                      "AM--FM Components"     => "basics/components.md",
                      "AM--FM Models"         => "basics/models.md",
@@ -19,6 +19,11 @@ makedocs(;
         "Numerical ISA" =>
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",],
+        "Examples" =>
+                    ["Fourier Components"     => "examples/Fourier.md",
+                     "AM Components"     => "examples/AM.md",
+                     "FM Components"     => "examples/FM.md",
+                     "AM--FM Components"     => "examples/AMFM.md",],
         "Types/Methods/Functions" => "typesMethods.md",
         "Cite" => "cite.md",
     ],
