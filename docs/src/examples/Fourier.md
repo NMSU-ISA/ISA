@@ -23,7 +23,8 @@ $\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->1,t->100,0.0)
-plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourierComp.png)
 

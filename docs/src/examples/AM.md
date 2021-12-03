@@ -13,18 +13,17 @@ and a component of the form
 $\psi_0(t) = a_0(t) \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
 
-```@example
+```julia
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=-1.0:0.001:1.0)
-png("IS_exAM1.png")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM1.png)
 
-```@exampleusing ISA, Plots
+```julia
+using ISA, Plots
 𝐶₀ = AMFMtriplet(t->sin(11t),t->250,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=-1.0:0.001:1.0)
-png("IS_exAM2.png")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM2.png)
