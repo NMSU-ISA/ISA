@@ -30,12 +30,22 @@ end
 ```
 [IMAGE HERE]
 
+
 # Fourier Series
 
-
 $\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\}.$
-
 
 An AM--FM model that consists of SHCs with frequencies at integer multiples of a fundamental is termed a Fourier Series
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
+
+
+```@example
+using ISA, Plots
+T = 1.0
+aₖ(k) = 1.0
+kInds = collect(-25:25)
+z = fourierSeries(T, aₖ, kInds)
+plot(z; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier.png)

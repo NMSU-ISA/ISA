@@ -13,11 +13,12 @@ Create a 'AMFMmodel' by specifiying components drawn from a Fourier Series
 
 # Examples
 ```@example
+using ISA, Plots
 T = 1.0
 aₖ(k) = 1.0
-kInds = -25:25
+kInds = collect(-25:25)
 z = fourierSeries(T, aₖ, kInds)
-plot(z)
+plot(z; timeaxis=-1.0:0.001:1.0)
 ```
 """
 function fourierSeries(T::Real, aₖ::Function, kInds::Array{Int,1}=Vector(-100:100))
