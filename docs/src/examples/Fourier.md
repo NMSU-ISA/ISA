@@ -37,9 +37,9 @@ end
 
 Next consider a component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_0,\mathscr{C}_1,\cdots,\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\}.$
+$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots,\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\cdots .$
 
-Then the AM--FM model corresponding to the this set is a Fourier Series
+The AM--FM model corresponding to this set is a Fourier Series
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
