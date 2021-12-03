@@ -12,11 +12,12 @@ Create a 'AMFMmodel' by specifiying components drawn from a Fourier Series
   consider in the partial sum.
 
 # Examples
-```jldoctest
-julia>
-
-<EXAMPLE HERE>
-
+```@example
+T = 1.0
+aₖ(k) = 1.0
+kInds = -25:25
+z = fourierSeries(T, aₖ, kInds)
+plot(z)
 ```
 """
 function fourierSeries(T::Real, aₖ::Function, kInds::Array{Int,1}=Vector(-100:100))
@@ -41,3 +42,10 @@ function fourierSeries(T::Real, aₖ::Function, kInds::Array{Int,1}=Vector(-100:
   S = [ AMFMcomp( getIA(k), getIF(k), getPh(k) ) for k ∈ kInds]
   return AMFMmodel(S)
 end
+
+# CONSTRUCTIONS
+fourierSeries(T::Real, aₖ::Function, kInds::StepRangeLen) = fourierSeries(T, aₖ, collect(kInds))
+fourierSeries(T::Real, aₖ::Function, kInds::UnitRange) = fourierSeries(T, aₖ, collect(kInds))
+
+# DISPLAY
+Base.show(io::IO, x::compSet) = print(io, "Fourier Series")
