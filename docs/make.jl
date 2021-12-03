@@ -19,7 +19,7 @@ makedocs(;
         "Numerical ISA" =>
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",],
-        "Examples" =>
+        "Basic Examples" =>
                     ["Fourier Components"     => "examples/Fourier.md",
                      "AM Components"     => "examples/AM.md",
                      "FM Components"     => "examples/FM.md",
