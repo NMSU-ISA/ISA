@@ -15,6 +15,10 @@ $\mathscr{C} = \left\{a_0,\omega_0, \phi_0\vphantom{0^0}\right\}.$
 
 # Fourier Series
 
+
+$\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\}.$
+
+
 An AM--FM model that consists of SHCs with frequencies at integer multiples of a fundamental is termed a Fourier Series
 
-$z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_k t +\phi_k)}$
+$z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
