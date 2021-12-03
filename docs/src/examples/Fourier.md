@@ -10,8 +10,12 @@ $\omega_0(t)\rightarrow \omega_0$
 
 and thus corresponds to a canonical triplet with the form
 
-$\mathscr{C} = \left\{a_0,\omega_0, \phi_0\vphantom{0^0}\right\}.$
+$\mathscr{C}_0 = \left\{a_0,\omega_0, \phi_0\vphantom{0^0}\right\}$
 
+
+and a component of the form
+
+$\psi_0(t) = a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_0)}.$
 
 # Fourier Series
 
