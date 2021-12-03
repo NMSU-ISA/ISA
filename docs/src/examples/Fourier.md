@@ -17,6 +17,19 @@ and a component of the form
 
 $\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
+
+```@example
+using ISA, Plots, Interact
+@manipulate for a= 0:0.05:1, ω = -5:0.1:20, φ = -pi:pi/50:pi
+    a₀(t) = a
+    ω₀(t) = ω
+    φ₀ = φ
+    𝐶₀ = AMFMcomp(a₀,ω₀,φ₀)
+    plot(𝐶₀)
+end
+```
+[IMAGE HERE]
+
 # Fourier Series
 
 
