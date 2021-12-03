@@ -18,7 +18,7 @@ and a component of the form
 $\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
 
-```@example
+```julia
 using ISA, Plots, Interact
 @manipulate for a= 0:0.05:1, ω = -5:0.1:20, φ = -pi:pi/50:pi
     a₀(t) = a
@@ -40,7 +40,7 @@ An AM--FM model that consists of SHCs with frequencies at integer multiples of a
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
 
-```@example
+```julia
 using ISA, Plots
 T = 1.0
 aₖ(k) = 1.0
