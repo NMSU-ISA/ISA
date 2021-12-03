@@ -15,7 +15,7 @@ where $\delta(\cdot)$ is the [Dirac delta](https://en.wikipedia.org/wiki/Dirac_d
 ## Visualizing Instantaneous Spectra
 
 We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **component set**, then pass it to the 'plot()' along with the time range.
-```@example
+```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->200.0,0.0)
 𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
@@ -25,8 +25,8 @@ plot(𝑆; timeaxis=0.0:0.001:3.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex1.png)
 
-We can obtain a 2D IS plot via an orthographic projection of the 3D IS
-```@example
+We can visualize the time-frequency plane associated with the IS (i.e. the 2D IS) plot via an orthographic projection of the 3D IS
+```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
 𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
