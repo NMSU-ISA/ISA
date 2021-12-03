@@ -20,7 +20,7 @@ makedocs(;
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",],
         "Basic Examples" =>
-                    ["Fourier Components"     => "examples/Fourier.md",
+                    ["Fourier Components/Series"     => "examples/Fourier.md",
                      "AM Components"     => "examples/AM.md",
                      "FM Components"     => "examples/FM.md",
                      "AM--FM Components"     => "examples/AMFM.md",],
