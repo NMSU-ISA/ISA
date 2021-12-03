@@ -19,7 +19,6 @@ and a component of the form
 
 $\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
-A partial sum (over $k$) of a Fourier series can be visualized as an IS.
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->1,t->100,0.0)
@@ -35,9 +34,11 @@ Next consider a component set consisting of a set of harmonicly related SHCs
 
 $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots,\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\cdots .$
 
-The AM--FM model corresponding to this set is a Fourier Series
+The AM--FM model corresponding to this set is a [Fourier Series](https://en.wikipedia.org/wiki/Fourier_series)
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
+
+A partial sum (over $k$) of a Fourier series can be visualized as an IS.
 
 ```julia
 using ISA, Plots
