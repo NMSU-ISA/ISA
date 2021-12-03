@@ -4,10 +4,10 @@
 # NUMERICAL COMPONENT
 # ----------------------
 """
-    Ψ = numComp(Ψ, t, fs)
-    Ψ = numComp(Ψ, t)
-    Ψ = numComp(Ψ, fs)
-    Ψ = numComp(Ψ)
+    Ξ = numComp(Ψ, t, fs)
+    Ξ = numComp(Ψ, t)
+    Ξ = numComp(Ψ, fs)
+    Ξ = numComp(Ψ)
 
 Create a 'numComp' consisting of a complex-valed signal `Ψ`, and time index `t`, and sampling frequency `fs`.
 
@@ -17,7 +17,7 @@ using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 fs = 16_000
-Ψ = numComp( ψ₀(0:1/fs :1),fs )
+Ξ = numComp( ψ₀(0:1/fs :1),fs )
 ```
 """
 struct numComp
@@ -39,7 +39,7 @@ Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
 # DEMODULATED COMPONENT
 # ----------------------
 """
-    𝚿 = demodComp(Ψ, t, fs, a, ω, s, σ, θ)
+    𝚿 = demodComp(Ξ, t, fs, a, ω, s, σ, θ)
 
 Create a 'demodComp'.
 
@@ -49,8 +49,8 @@ using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 fs = 16_000
-Ψ = numComp( ψ₀(0:1/fs :1),fs )
-𝚿 = AMFMdemod(Ψ)
+Ξ = numComp( ψ₀(0:1/fs :1),fs )
+𝚿 = AMFMdemod(Ξ)
 ```
 """
 struct demodComp

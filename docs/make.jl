@@ -17,7 +17,8 @@ makedocs(;
                      "AM--FM Models"         => "basics/models.md",
                      "Instantaneous Spectra" => "basics/spectra.md",],
         "Numerical ISA" =>
-                    ["Numerical Components"     => "numerical/componentsNumerical.md",],
+                    ["Numerical Components"     => "numerical/componentsNumerical.md",
+                     "Numerical Models"     => "numerical/modelsNumerical.md",],
         "Types/Methods/Functions" => "typesMethods.md",
         "Cite" => "cite.md",
     ],
