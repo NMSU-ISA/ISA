@@ -17,7 +17,16 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
-Finally, the corresponding 3D IS
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->1,t->100,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC1.png)
+
+
+The corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
@@ -33,7 +42,7 @@ using ISA, Plots
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC1.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC2.png)
 
 ```julia
 using ISA, Plots
@@ -45,4 +54,4 @@ plot!( camera=(0,90),
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC2.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC3.png)
