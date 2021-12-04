@@ -27,6 +27,10 @@ Additionally, the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S})$
 
+and 2D IS
+
+$\mathcal{S}(t,\omega;\mathscr{S})$
+
 can also be visualized.
 
 ```julia
@@ -39,3 +43,18 @@ z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier2.png)
+
+```julia
+using ISA, Plots
+T = 1.0
+aₖ(k) = 1.0
+kInds = -25:25
+𝑆 = fourierSeries(T, aₖ, kInds)
+z = AMFMmodel(𝑆)
+plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot!( camera=(0,90),
+       zlabel="", zticks=:false,
+       left_margin=15Plots.mm, margin=5Plots.mm,
+       yrotation = 90, ymirror=true)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier3.png)
