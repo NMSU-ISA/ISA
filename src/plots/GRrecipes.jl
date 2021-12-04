@@ -88,7 +88,7 @@ end
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
-   a_max = maximum([maximum(abs.(S.S[2].a.(t))) for k in 1:length(S.S)])
+   a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
 
    for k in 1:length(S.S)
       seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),1) ]
