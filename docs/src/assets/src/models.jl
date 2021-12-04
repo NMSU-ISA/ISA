@@ -1,3 +1,4 @@
+path = "docs/src/assets/"
 
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
@@ -6,4 +7,4 @@ using ISA, Plots
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=0.0:0.001:3.0)
-png("IS_models.png")
+png(path*"IS_models.png")
