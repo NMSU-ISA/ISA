@@ -19,7 +19,7 @@ using ISA, Plots
 # 3D Argand Digram
 @recipe function temp(z::AMFMmodel;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time(s)"
-   yguide --> "freq("*FreqUnits*")"
+   yguide --> "imag"
    zguide --> "real"
    background_color --> cubeYF()[1]
    foreground_color --> :white
