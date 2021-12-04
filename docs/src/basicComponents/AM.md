@@ -36,7 +36,7 @@ can be visualized as follows.
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+plot(𝐶₀; timeaxis=-1.0:0.0005:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM2.png)
 
@@ -44,7 +44,7 @@ plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+plot(𝐶₀; timeaxis=-1.0:0.0005:1.0)
 plot!( camera=(0,90),
        zlabel="", zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
@@ -59,7 +59,7 @@ For another choice of parameters of the canonical triplet, we have the following
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->sin(11t),t->250,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+plot(ψ₀; timeaxis=-1.0:0.0005:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM4.png)
 
@@ -67,7 +67,7 @@ plot(ψ₀; timeaxis=-1.0:0.001:1.0)
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->sin(11t),t->250,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+plot(𝐶₀; timeaxis=-1.0:0.0005:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM5.png)
 
@@ -75,7 +75,7 @@ plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->sin(11t),t->250,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+plot(𝐶₀; timeaxis=-1.0:0.0005:1.0)
 plot!( camera=(0,90),
        zlabel="", zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
