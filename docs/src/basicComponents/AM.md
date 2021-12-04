@@ -12,6 +12,16 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0(t) \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM1.png)
+
+
 Finally, the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
@@ -28,7 +38,7 @@ using ISA, Plots
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM1.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM2.png)
 
 ```julia
 using ISA, Plots
@@ -40,10 +50,18 @@ plot!( camera=(0,90),
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM2.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM3.png)
 
-For another choice of parameters of the canonical triplet, we have the following 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$ and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
+For another choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->sin(11t),t->250,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM4.png)
 
 ```julia
 using ISA, Plots
@@ -51,7 +69,7 @@ using ISA, Plots
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM3.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM5.png)
 
 ```julia
 using ISA, Plots
@@ -63,4 +81,4 @@ plot!( camera=(0,90),
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM4.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM6.png)

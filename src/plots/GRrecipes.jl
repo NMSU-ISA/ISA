@@ -74,7 +74,6 @@ function getFnorm(FreqUnits)
    end
 end
 
-
 # 3D IS Plot
 @recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time(s)"
