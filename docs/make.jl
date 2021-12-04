@@ -26,7 +26,7 @@ makedocs(;
         "Numerical ISA" =>
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",],
-        "Types/Methods/Functions" => "typesMethods.md",
+        "Types/Methods/Functions" => "typesMethodsFunctions.md",
         "Cite" => "cite.md",
     ],
     repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",
