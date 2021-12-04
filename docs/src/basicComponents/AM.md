@@ -22,7 +22,7 @@ plot(ψ₀; timeaxis=-1.0:0.001:1.0)
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM1.png)
 
 
-Finally, the corresponding 3D IS
+The corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
