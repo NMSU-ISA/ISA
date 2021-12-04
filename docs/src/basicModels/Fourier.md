@@ -30,7 +30,7 @@ A partial sum (over $k$) of a Fourier series can be visualized as an IS.
 using ISA, Plots
 T = 1.0
 aₖ(k) = 1.0
-kInds = collect(-10:10)
+kInds = collect(-25:25)
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
