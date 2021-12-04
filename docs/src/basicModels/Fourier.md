@@ -15,7 +15,7 @@ The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series c
 using ISA, Plots
 T = 0.5
 aₖ(k) = 1/T
-kInds = -25:25
+kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0, ylims=(-1.0,1.0))
@@ -37,7 +37,7 @@ can also be visualized.
 using ISA, Plots
 T = 0.5
 aₖ(k) = 1/T
-kInds = -25:25
+kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -48,7 +48,7 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 using ISA, Plots
 T = 0.5
 aₖ(k) = 1/T
-kInds = -25:25
+kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -66,7 +66,7 @@ For another choice of parameters of the component set, we have the following Arg
 using ISA, Plots
 T = 0.5
 aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
-kInds = -25:25
+kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0)
@@ -78,7 +78,7 @@ plot(z; timeaxis=-1.0:0.001:1.0)
 using ISA, Plots
 T = 0.5
 aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
-kInds = -25:25
+kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -90,7 +90,7 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 using ISA, Plots
 T = 0.5
 aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
-kInds = -25:25
+kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
