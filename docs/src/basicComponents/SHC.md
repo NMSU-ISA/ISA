@@ -1,6 +1,4 @@
-# Simple Harmonic Components / Fourier Components
-
-## Simple Harmonic Components
+# Simple Harmonic Components
 
 A simple harmonic component (SHC), or Fourier component, has a constant instantaneous amplitude
 
