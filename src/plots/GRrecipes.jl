@@ -30,7 +30,8 @@ using ISA, Plots
    framestyle --> :origin
    t = timeaxis
    a_max = maximum(abs.(z(t)))
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z(t)) .* 256/a_max ),256),1) ]
+   clim = (0,1)
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z(t)) .* 256/a_max ),256),50) ]
    timeaxis, imag(z(t)), real(z(t))
 end
 # 3D Argand Digram
@@ -45,7 +46,7 @@ end
    framestyle --> :origin
    t = timeaxis
    a_max = maximum(abs.(ψ.C.a.(t)))
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),1) ]
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),50) ]
    t,imag(ψ.(t)),real(ψ.(t))
 end
 
