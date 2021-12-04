@@ -1,3 +1,4 @@
+path = "docs/src/assets/"
 
 using ISA, Plots
 T = 0.5
@@ -6,7 +7,7 @@ kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0, ylims=(-1.0,1.0))
-png("IS_exFourier1.png")
+png(path*"IS_exFourier1.png")
 
 
 using ISA, Plots
@@ -16,7 +17,7 @@ kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
-png("IS_exFourier2.png")
+png(path*"IS_exFourier2.png")
 
 
 using ISA, Plots
@@ -30,7 +31,7 @@ plot!( camera=(0,90),
        zlabel="", zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
-png("IS_exFourier3.png")
+png(path*"IS_exFourier3.png")
 
 # -----------------
 
@@ -42,7 +43,7 @@ kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0, ylims=(-1.0,1.0))
-png("IS_exFourier4.png")
+png(path*"IS_exFourier4.png")
 
 
 using ISA, Plots
@@ -52,7 +53,7 @@ kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
-png("IS_exFourier5.png")
+png(path*"IS_exFourier5.png")
 
 
 using ISA, Plots
@@ -66,4 +67,4 @@ plot!( camera=(0,90),
        zlabel="", zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
-png("IS_exFourier6.png")
+png(path*"IS_exFourier6.png")
