@@ -14,7 +14,7 @@ where $\delta(\cdot)$ is the [Dirac delta](https://en.wikipedia.org/wiki/Dirac_d
 
 ## Visualizing Instantaneous Spectra
 
-We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **component set**, then pass it to the 'plot()' along with the time range.
+We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **component set**, then  call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/)  along with a time range.
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->200.0,0.0)

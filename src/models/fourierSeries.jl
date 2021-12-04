@@ -38,7 +38,7 @@ function fourierSeries(T::Real, aₖ::Function, kInds::Array{Int,1}=Vector(-100:
     return ph
   end
   S = [ AMFMcomp( getIA(k), getIF(k), getPh(k) ) for k ∈ kInds]
-  return AMFMmodel(S)
+  return compSet(S)
 end
 
 # CONSTRUCTIONS
