@@ -9,8 +9,8 @@ We can define an **AM--FM model** $z(t)$ (`AMFMmodel`) by calling `AMFMmodel()` 
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₁ = AMFMtriplet(t->0.5,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.2*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 ```
@@ -19,16 +19,16 @@ For convenience, we can also define an **AM--FM model** $z(t)$ (`AMFMmodel`) by 
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₁ = AMFMtriplet(t->0.5,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.2*cos(2t),t->10 + 7.5*sin(t),π)
 z = AMFMmodel([𝐶₀,𝐶₁,𝐶₂])
 ```
 or a *vector of AMFM--components*
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->10*t,0.1)
-ψ₂ = AMFMcomp(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+ψ₁ = AMFMcomp(t->0.5,t->100*t,0.1)
+ψ₂ = AMFMcomp(t->0.2*cos(2t),t->10 + 7.5*sin(t),π)
 z = AMFMmodel([ψ₀,ψ₁,ψ₂])
 ```
 
@@ -37,8 +37,8 @@ Once an  **AM--FM model** $z(t)$ `AMFMmodel` is defined, it can be evaluated at 
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₁ = AMFMtriplet(t->0.5,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.2*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 t₀ = 2.0
@@ -48,8 +48,8 @@ or over a range of time instants
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₁ = AMFMtriplet(t->0.5,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.2*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 t = 0.0:0.25:1.0
@@ -61,8 +61,8 @@ We can visualize an **AM--FM model** $z(t)$ (`AMFMmodel`) by evoking a pre-defin
 ```@example
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₁ = AMFMtriplet(t->0.5,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.2*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=0.0:0.001:3.0)
