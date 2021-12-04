@@ -91,7 +91,7 @@ end
    a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
 
    for k in 1:length(S.S)
-      seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),1) ]
+      seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
       @series begin
          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
@@ -112,6 +112,6 @@ end
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
    a_max = maximum(abs.(𝐶.a.(t)))
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),1) ]
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
    t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
 end
