@@ -12,8 +12,7 @@
 
 ## Table of Contents
 ```@contents
-Pages = ["theory.md",
-         "basics/triplets.md",
+Pages = ["basics/triplets.md",
          "basics/components.md",
          "basics/models.md",
          "basics/spectra.md",
@@ -26,6 +25,5 @@ Pages = ["theory.md",
          "numerical/components.md",
          "numerical/models.md",
          "typesMethodsFunctions.md",
-         "cite.md",
-         ]
+         "cite.md"]
 ```
