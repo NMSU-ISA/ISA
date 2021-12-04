@@ -38,7 +38,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 plot!( camera=(0,90),
        zlabel="", zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90)
+       yrotation = 90, ymirror=true)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFM2.png)
 
@@ -60,6 +60,6 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 plot!( camera=(0,90),
        zlabel="", zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90)
+       yrotation = 90, ymirror=true)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFM4.png)
