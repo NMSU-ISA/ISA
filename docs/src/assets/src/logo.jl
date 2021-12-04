@@ -21,4 +21,3 @@ xticks=:false,yticks=:false ,zticks=:false,
 xlabel = "",ylabel = "",zlabel = "")
 
 savefig("logo.png")
-savefig("logo-dark.png")
