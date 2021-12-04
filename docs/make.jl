@@ -15,14 +15,14 @@ makedocs(;
                      "AM--FM Components"     => "basics/components.md",
                      "AM--FM Models"         => "basics/models.md",
                      "Instantaneous Spectra" => "basics/spectra.md",],
-        "Numerical ISA" =>
-                    ["Numerical AM--FM Components"     => "numerical/components.md",
-                     "Numerical AM--FM Models"     => "numerical/models.md",],
         "Basic Examples" =>
                     ["Fourier Components/Series"     => "examples/Fourier.md",
                      "AM Components"     => "examples/AM.md",
                      "FM Components"     => "examples/FM.md",
                      "AM--FM Components"     => "examples/AMFM.md",],
+        "Numerical ISA" =>
+                    ["Numerical AM--FM Components"     => "numerical/components.md",
+                     "Numerical AM--FM Models"     => "numerical/models.md",],
         "Types/Methods/Functions" => "typesMethods.md",
         "Cite" => "cite.md",
     ],
