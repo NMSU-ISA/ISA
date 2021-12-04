@@ -9,6 +9,7 @@ The AM--FM model corresponding to this set is a [Fourier Series](https://en.wiki
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
+A partial sum (over $k$) of a Fourier series can be visualized.
 
 ```julia
 using ISA, Plots
@@ -22,9 +23,11 @@ plot(z; timeaxis=-1.0:0.001:1.0, ylims=(-1.0,1.0))
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier1.png)
 
 
+Additionally, the corresponding 3D IS
 
+$\mathcal{S}(t,\omega,s;\mathscr{S})$
 
-A partial sum (over $k$) of a Fourier series can be visualized as an IS.
+can also be visualized.
 
 ```julia
 using ISA, Plots
