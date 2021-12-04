@@ -6,7 +6,8 @@ include(raw"colorMaps/cubeYF.jl")
 include(raw"colorMaps/viridis.jl")
 
 """
-    S = plot()
+    plot(z::AMFMmodel; timeaxis = 0.0:0.005:1.0)
+    plot(ψ::AMFMcomp;  timeaxis = 0.0:0.005:1.0)
 
 Create a 3D Argand Digram ...
 
@@ -17,7 +18,7 @@ using ISA, Plots
 ```
 """
 # 3D Argand Digram
-@recipe function temp(z::AMFMmodel;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+@recipe function temp(z::AMFMmodel; timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s")
    xguide --> "time(s)"
    yguide --> "imag"
    zguide --> "real"
@@ -33,7 +34,7 @@ using ISA, Plots
    timeaxis, imag(z(t)), real(z(t))
 end
 # 3D Argand Digram
-@recipe function temp(ψ::AMFMcomp;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+@recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time(s)"
    yguide --> "imag"
    zguide --> "real"
@@ -50,7 +51,8 @@ end
 
 
 """
-    S = plot()
+    plot(S::compSet;     timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s")
+    plot(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s")
 
 Create a 3D Instantaneous Spectrum...
 
@@ -74,7 +76,7 @@ end
 
 
 # 3D IS Plot
-@recipe function temp(S::compSet;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+@recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
@@ -98,7 +100,7 @@ end
 end
 
 # 3D IS Plot
-@recipe function temp(𝐶::AMFMtriplet;timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+@recipe function temp(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
    zguide --> "real"
