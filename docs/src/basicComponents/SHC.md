@@ -17,7 +17,7 @@ $\mathscr{C}_0 = \left\{a_0,\omega_0, \phi_0\vphantom{0^0}\right\}$
 
 and a component of the form
 
-$\psi_0(t) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
+$\psi_0(t;\mathscr{C}_0) = a_0 \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
 ```julia
 using ISA, Plots

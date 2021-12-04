@@ -10,7 +10,7 @@ $\mathscr{C}_0 = \left\{a_0,\omega_0(t), \phi_0\vphantom{0^0}\right\}.$
 
 and a component of the form
 
-$\psi_0(t) = a_0 \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right).$
+$\psi_0(t;\mathscr{C}_0) = a_0 \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right).$
 
 ```julia
 using ISA, Plots
