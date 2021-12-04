@@ -42,7 +42,7 @@ plot!( camera=(0,90),
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFM2.png)
 
-For another choice of parameters of the canonical triplet, we have the following.
+For another choice of parameters of the canonical triplet, we have the following 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$ and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
 ```julia
 using ISA, Plots
