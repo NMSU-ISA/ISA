@@ -57,7 +57,7 @@ z(t)
 ```
 
 ## Visualizing an AM--FM Model
-We can visualize an **AM--FM model** $z(t)$ (`AMFMmodel`) by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an **AM--FM model** $z(t)$ (`AMFMmodel`) and a time range.
+We can visualize an **AM--FM model** $z(t)$ (`AMFMmodel`) by evoking a pre-defined plotting recipe by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an **AM--FM model** $z(t)$ (`AMFMmodel`) and a time range.
 ```@example
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)

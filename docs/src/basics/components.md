@@ -39,7 +39,7 @@ or over a range of time instants.
 
 
 ## Visualizing an AM--FM Component
-We can visualize an  **AM--FM component** $\psi_k$ (`AMFMcomp`) by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an  **AM--FM component** $\psi_k$ (`AMFMcomp`) and a time range.
+We can visualize an  **AM--FM component** $\psi_k$ (`AMFMcomp`) by evoking a pre-defined plotting recipe by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an  **AM--FM component** $\psi_k$ (`AMFMcomp`) and a time range.
 ```@example
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2), t->50.0, 0.0)
