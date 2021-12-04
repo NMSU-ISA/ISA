@@ -2,9 +2,6 @@
 
 using QuadGK #for numerical integration
 
-# ----------------------
-# COMPONENT TRIPLETS
-# ----------------------
 """
     C = AMFMtriplet(a, ω, φ)
     C = AMFMtriplet(a, ω)
@@ -39,9 +36,6 @@ AMFMtriplet(a, ω) = AMFMtriplet(a, ω, zero(Float64))
 # DISPLAY
 Base.show(io::IO, x::AMFMtriplet) = print(io, "cannonical triplet")
 
-# ----------------------
-# AM--FM COMPONENTS
-# ----------------------
 """
     ψ = AMFMcomp(C)
     ψ = AMFMcomp(a, ω, φ)

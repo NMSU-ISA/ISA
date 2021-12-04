@@ -2,9 +2,6 @@
 
 using DSP #for phase unwrapping
 
-# ----------------------
-# NUMERICAL DEMODULATION
-# ----------------------
 """
     𝚿 = AMFMdemod(Ψ)
 
@@ -30,9 +27,6 @@ function AMFMdemod(Ψ::numComp; derivMethod="center11")::demodComp
                      )
 end
 
-# ----------------------
-# NUMERICAL DIFFERENTIATION
-# ----------------------
 """
     f′ = derivApprox(f; fs, method)
 

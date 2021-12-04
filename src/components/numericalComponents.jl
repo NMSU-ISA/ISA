@@ -1,8 +1,5 @@
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
 
-# ----------------------
-# NUMERICAL COMPONENT
-# ----------------------
 """
     Ξ = numComp(Ψ, t, fs)
     Ξ = numComp(Ψ, t)
@@ -35,9 +32,6 @@ numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0:length(Ψ)-1), 1.0)
 # DISPLAY
 Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
 
-# ----------------------
-# DEMODULATED COMPONENT
-# ----------------------
 """
     𝚿 = demodComp(Ξ, t, fs, a, ω, s, σ, θ)
 

@@ -1,8 +1,5 @@
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
 
-# ----------------------
-# NUMERICAL MODEL
-# ----------------------
 """
     Ξ = numModel([𝛹₀,𝛹₁,𝛹₂],t,fs)
 
@@ -31,9 +28,6 @@ end
 # DISPLAY
 Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model")
 
-# ----------------------
-# DEMODULATED MODEL
-# ----------------------
 """
     𝚿 = demodMode(Ξ)
 
