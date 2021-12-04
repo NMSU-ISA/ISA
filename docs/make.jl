@@ -16,7 +16,7 @@ makedocs(;
                      "AM--FM Models"         => "basics/models.md",
                      "Instantaneous Spectra" => "basics/spectra.md",],
         "Basic Components" =>
-                    ["SHCs"     => "basicComponents/SHC.md",
+                    ["Simple Harmonic Components"     => "basicComponents/SHC.md",
                      "AM Components"     => "basicComponents/AM.md",
                      "FM Components"     => "basicComponents/FM.md",
                      "AM--FM Components"     => "basicComponents/AMFM.md",],
