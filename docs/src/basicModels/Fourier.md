@@ -9,7 +9,7 @@ The AM--FM model corresponding to this set is a [Fourier Series](https://en.wiki
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
-A partial sum (over $k$) of a Fourier series can be visualized.
+The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series can be visualized.
 
 ```julia
 using ISA, Plots
