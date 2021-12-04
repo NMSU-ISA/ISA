@@ -28,7 +28,7 @@ function fourierSeries(T::Real, aₖ::Function, kInds::Array{Int,1}=Vector(-100:
   end
   function getIF(k)
       function ω(t::Real)
-        omega = k/T
+        omega = 2*π*k/T
         return omega::Real
       end
     return ω
