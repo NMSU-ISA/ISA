@@ -46,6 +46,7 @@ end
    framestyle --> :origin
    t = timeaxis
    a_max = maximum(abs.(ψ.C.a.(t)))
+   clim = (0,1)
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),50) ]
    t,imag(ψ.(t)),real(ψ.(t))
 end
@@ -89,6 +90,7 @@ end
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
    a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
+   clim = (0,1)
 
    for k in 1:length(S.S)
       seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
@@ -112,6 +114,7 @@ end
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
    a_max = maximum(abs.(𝐶.a.(t)))
+   clim = (0,1)
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
    t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
 end
