@@ -11,7 +11,7 @@ $\mathscr{C}\triangleq\left\{a(t),\omega(t), \phi\vphantom{0^0}\right\}$
 We can define a **canonical triplet** $\mathscr{C}$ (`AMFMtriplet`) by calling `AMFMtriplet()` with an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
 ```@example
 using ISA
-a(t) = exp(-t^2/5)
+a(t) = exp(-t^2/5) 
 ω(t) = 200.0
 φ = 0.0
 𝐶 = AMFMtriplet(a,ω,φ)
