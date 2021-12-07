@@ -4,7 +4,7 @@
 
 Consider a component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\cdots,\pm\infty .$
+$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots,\pm\infty .$
 
 The AM--FM model corresponding to this set is a [Fourier Series](https://en.wikipedia.org/wiki/Fourier_series)
 
@@ -30,13 +30,13 @@ $z(t) = \sum\limits_{k=-\infty}^{\infty}\delta(t-kT)$
 
 We can represent this signal with component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\cdots,K .$
+$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots,K.$
 
 where
 
-$a_k = \abs(1/T)~~~\text{and}~~~\phi_k= \mathrm{angle}(1/T).$
+$a_k = \abs(1/T)~~~\mathrm{and}~~~\phi_k= \mathrm{angle}(1/T).$
 
-For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$--keep in mind we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\cdots,K$, not $k = 0,\pm 1,\pm2,\cdots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$, not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
 
 ```julia
 using ISA, Plots
@@ -82,19 +82,19 @@ Consider a signal $z(t)$ which consists of a
 the periodic square wave (fundamental period $T$) with a 50% duty cycle where one period is defined by
 
 $z(t) = \begin{cases}
-        1 &   |t|<T/4  \\
-        0 &   T/4<|t|<T/2        
+        1, &   |t|<T/4  \\
+        0, &   T/4<|t|<T/2        
         \end{cases}.$
 
 We can represent this signal with component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\cdots,K .$
+$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots,K .$
 
 where
 
-$a_k = \abs\left(\frac{\sin(k\pi/2)}{k\pi}\right)~~~\text{and}~~~\phi_k= \mathrm{angle}\left(\frac{\sin(k\pi/2)}{k\pi}\right).$
+$a_k = \abs\left(\frac{\sin(k\pi/2)}{k\pi}\right)~~~\mathrm{and}~~~\phi_k= \mathrm{angle}\left(\frac{\sin(k\pi/2)}{k\pi}\right).$
 
-For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$--keep in mind we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\cdots,K$, not $k = 0,\pm 1,\pm2,\cdots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$, not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
 
 ```julia
 using ISA, Plots
@@ -134,3 +134,21 @@ plot!( camera=(0,90),
        yrotation = 90, ymirror=true)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier6.png)
+
+
+### Example 3
+
+Consider a signal $z(t)$ which consists of a
+the periodic square wave (fundamental period $T$) with a 50% duty cycle where one period is defined by
+
+$z(t) = \begin{cases}
+        1, &   0<|t|<T/3  \\
+        \exp(\mathrm{j 2\pi/3} ), &   T/3<|t|<2T/3  \\
+        \exp(\mathrm{j} 4\pi/3),  &   2T/3<|t|<T        
+        \end{cases}.$
+
+We can represent this signal with component set consisting of a set of harmonicly related SHCs
+
+$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots,K .$
+
+where
