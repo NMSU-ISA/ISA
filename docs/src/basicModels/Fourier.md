@@ -75,8 +75,7 @@ plot!( camera=(0,90),
 
 ### Example 2
 
-Consider a signal $z(t)$ which consists of a
-the periodic square wave (fundamental period $T$) with a 50% duty cycle where one period is defined by
+Consider a signal $z(t)$ which consists of a periodic square wave with a 50% duty cycle where one period $T$ is defined by
 
 $z(t) = \begin{cases}
         1, &   |t|<T/4  \\
