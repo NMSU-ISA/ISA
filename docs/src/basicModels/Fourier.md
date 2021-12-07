@@ -28,7 +28,7 @@ $\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=-K}^{K} \psi_k\left(
 can also be visualized.
 
 ### Example 1
-Consider a signal $z(t)$ which consists of a Dirac delta impulse train with fundamental period $T$.
+Consider a signal $z(t)$ which consists of a [Dirac delta](https://en.wikipedia.org/wiki/Dirac_delta_function) impulse train with fundamental period $T$.
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty}\delta(t-kT)$
 
