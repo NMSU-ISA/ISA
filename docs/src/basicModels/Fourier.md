@@ -10,10 +10,7 @@ The AM--FM model corresponding to this set is a [Fourier Series](https://en.wiki
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
-The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series can be visualized.
-
-
-Additionally, the corresponding 3D IS
+The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series can be visualized. Additionally, the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S})$
 
@@ -34,9 +31,9 @@ $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1
 
 where
 
-$a_k = \mathrm{abs}(1/T)~~~\mathrm{and}~~~\phi_k= \mathrm{angle}(1/T).$
+$a_k = \mathrm{abs}(1/T)~~~\mathrm{and}~~~\phi_k= \mathrm{arg}(1/T).$
 
-For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$, not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
 
 ```julia
 using ISA, Plots
@@ -92,9 +89,9 @@ $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1
 
 where
 
-$a_k = \mathrm{abs}\left(\frac{\sin(k\pi/2)}{k\pi}\right)~~~\mathrm{and}~~~\phi_k= \mathrm{angle}\left(\frac{\sin(k\pi/2)}{k\pi}\right).$
+$a_k = \mathrm{abs}\left(\frac{\sin(k\pi/2)}{k\pi}\right)~~~\mathrm{and}~~~\phi_k= \mathrm{arg}\left(\frac{\sin(k\pi/2)}{k\pi}\right).$
 
-For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$, not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
 
 ```julia
 using ISA, Plots
