@@ -4,7 +4,7 @@ An **amplitude modulation (AM) component** $\psi_0(t;\mathscr{C}_0)$ has constan
 
 $\omega_0(t)\rightarrow \omega_0.$
 
-This *special case* corresponds to a canonical triplet with the form
+This *special case (of an AM--FM component)* corresponds to a canonical triplet with the form
 
 $\mathscr{C}_0 = \left\{a_0(t),\omega_0, \phi_0\vphantom{0^0}\right\}$
 
@@ -89,6 +89,6 @@ plot!( camera=(0,90),
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM6.png)
 
-### Example 3 
+### Example 3
 
 <ADD EXAMPLE>
