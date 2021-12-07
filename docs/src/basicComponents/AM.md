@@ -1,4 +1,4 @@
-# Amplitude Modulation (AM) Components
+## Amplitude Modulation (AM) Components
 
 An amplitude modulation (AM) component has constant instantaneous frequency
 

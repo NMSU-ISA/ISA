@@ -1,4 +1,4 @@
-# Numerical AM--FM Model
+## Numerical AM--FM Model
 
 A **numerical AM--FM model** `numModel` is parameterized by a *vector of  numerical AM--FM components** `numComp`.
 ```@example

@@ -27,6 +27,7 @@ makedocs(;
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",],
         "Types/Methods/Functions" => "typesMethodsFunctions.md",
+        "Plotting Recipes" => "recipes.md",
         "Cite" => "cite.md",
     ],
     repo="https://github.com/NMSU-ISA/ISA.jl/blob/{commit}{path}#{line}",

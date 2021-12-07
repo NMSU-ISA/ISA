@@ -1,4 +1,4 @@
-# Frequency Modulation (FM) Components
+## Frequency Modulation (FM) Components
 
 An frequency modulation (FM) component has constant instantaneous amplitude
 

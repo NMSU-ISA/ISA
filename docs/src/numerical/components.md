@@ -1,4 +1,6 @@
-# Numerical AM--FM Components
+# Numerical ISA
+
+## Numerical AM--FM Components
 
 A **numerical AM--FM component** `numComp` is parameterized by the discrete-time observation of a (complex-valued) **AM--FM component** `AMFMcomp`.
 ```@example
