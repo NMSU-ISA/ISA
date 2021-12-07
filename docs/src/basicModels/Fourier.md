@@ -34,9 +34,9 @@ $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1
 
 where
 
-$a_k = 1/T.$
+$a_k = \abs(1/T)~~~\text{and}~~~\phi_k= \mathrm{angle}(1/T).$
 
-For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$---keep in mind we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\cdots,K$, not $k = 0,\pm 1,\pm2,\cdots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$--keep in mind we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\cdots,K$, not $k = 0,\pm 1,\pm2,\cdots,\pm\infty$.
 
 ```julia
 using ISA, Plots
@@ -92,9 +92,9 @@ $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1
 
 where
 
-$a_k = 1/T.$
+$a_k = \abs\left(\frac{\sin(k\pi/2)}{k\pi}\right)~~~\text{and}~~~\phi_k= \mathrm{angle}\left(\frac{\sin(k\pi/2)}{k\pi}\right).$
 
-For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$---keep in mind we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\cdots,K$, not $k = 0,\pm 1,\pm2,\cdots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$--keep in mind we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\cdots,K$, not $k = 0,\pm 1,\pm2,\cdots,\pm\infty$.
 
 ```julia
 using ISA, Plots
