@@ -5,18 +5,21 @@
 A **numerical AM--FM component** `numComp` is parameterized by the discrete-time observation of a (complex-valued) **AM--FM component** `AMFMcomp`.
 ```@example
 using ISA
-𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
-ψ₀ = AMFMcomp(𝐶₀)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
-𝛹 = numComp( ψ₀(0:1/fs:1), fs )
+t = collect(0:1/fs:1)
+𝚿₀ = numComp( ψ₀(t), fs )
 ```
 
-A **demodulated AM--FM component** `demodComp` is returned by calling `AMFMdemod()` with a **numerical AM--FM component** `numComp`.
+
+## Numerical AM--FM Triplet
+
+A **numerical AM--FM triplet** `numTriplet` ...
 ```@example
 using ISA
-𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
-ψ₀ = AMFMcomp(𝐶₀)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
-𝛹 = numComp( ψ₀(0:1/fs:1), fs )
-𝚿 = AMFMdemod(𝛹)
+t = collect(0:1/fs:1)
+𝚿₀ = numComp( ψ₀(t), fs )
+𝐂₀ = AMFMdemod(𝚿₀)
 ```

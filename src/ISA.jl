@@ -10,10 +10,10 @@ include("models/fourierSeries.jl")
 export fourierSeries
 
 include("components/numericalComponents.jl")
-export latentSig, latentComp, numComp, demodComp
+export latentSig, latentComp, numComp, numTriplet
 
 include("models/numericalModels.jl")
-export numModel, demodModel
+export numSet
 
 include("demod/demodulation.jl")
 export derivApprox, AMFMdemod

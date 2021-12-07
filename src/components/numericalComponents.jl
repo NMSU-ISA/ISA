@@ -1,20 +1,20 @@
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
 
 """
-    Ξ = numComp(Ψ, t, fs)
-    Ξ = numComp(Ψ, t)
-    Ξ = numComp(Ψ, fs)
-    Ξ = numComp(Ψ)
+    𝚿 = numComp(Ψ, t, fs)
+    𝚿 = numComp(Ψ, t)
+    𝚿 = numComp(Ψ, fs)
+    𝚿 = numComp(Ψ)
 
 Create a 'numComp' consisting of a complex-valed signal `Ψ`, and time index `t`, and sampling frequency `fs`.
 
 # Examples
 ```@example
 using ISA
-𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
-ψ₀ = AMFMcomp(𝐶₀)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
-Ξ = numComp( ψ₀(0:1/fs :1),fs )
+t = collect(0:1/fs:1)
+𝚿₀ = numComp( ψ₀(t), fs )
 ```
 """
 struct numComp
@@ -29,25 +29,39 @@ numComp(Ψ::Vector{ComplexF64}, t::Vector{Float64}) = numComp(Ψ, t, 1/(t[2]-t[1
 numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen) = numComp(Ψ, collect(t) )
 numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0:length(Ψ)-1), 1.0)
 
+# METHODS
+function (𝚿::numComp)(t::Vector{<:Int})
+  return 𝚿.Ψ[t]
+end
+function (𝚿::numComp)(t::Int)
+  return 𝚿.Ψ[t]
+end
+function (𝚿::numComp)(t::StepRangeLen)
+  return 𝚿.Ψ[t]
+end
+function (𝚿::numComp)(t::UnitRange)
+  return 𝚿.Ψ[t]
+end
+
 # DISPLAY
-Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
+Base.show(io::IO, x::numComp) = print(io, "complex-valed component observation")
 
 """
-    𝚿 = demodComp(Ξ, t, fs, a, ω, s, σ, θ)
+    𝐂 = numTriplet( )
 
-Create a 'demodComp'.
+Create a 'numTriplet'...
 
 # Examples
 ```@example
 using ISA
-𝐶₀ = AMFMtriplet(t->exp(-t^2), t->2.0, 0.0)
-ψ₀ = AMFMcomp(𝐶₀)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
-Ξ = numComp( ψ₀(0:1/fs :1),fs )
-𝚿 = AMFMdemod(Ξ)
+t = collect(0:1/fs:1)
+𝚿₀ = numComp( ψ₀(t), fs )
+𝐂₀ = AMFMdemod(𝚿₀)
 ```
 """
-struct demodComp
+struct numTriplet
   Ψ::Vector{ComplexF64}
   t::Vector{Float64}
   fs::Float64
@@ -59,4 +73,4 @@ struct demodComp
 end
 
 # DISPLAY
-Base.show(io::IO, x::demodComp) = print(io, "demodulated AM--FM component")
+Base.show(io::IO, x::numTriplet) = print(io, "numerical AM--FM triplet")

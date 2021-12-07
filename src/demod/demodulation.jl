@@ -3,27 +3,26 @@
 using DSP #for phase unwrapping
 
 """
-    𝚿 = AMFMdemod(Ψ)
+    𝐂 = numComp(𝚿)
 
-Create a demodComp' from a 'numComp'.
+Create a 'numTriplet' from a 'numComp'.
 
 # Examples
-```jldoctest
-julia>
+```@example
 
 <EXAMPLE HERE>
 
 ```
 """
-function AMFMdemod(Ψ::numComp; derivMethod="center11")::demodComp
-  return demodComp( Ψ.Ψ,
-                    Ψ.t,
-                    Ψ.fs,
-                    abs.(Ψ.Ψ),
-                    derivApprox(unwrap(angle.(Ψ.Ψ)),fs=Ψ.fs, method=derivMethod),
-                    real.(Ψ.Ψ),
-                    imag.(Ψ.Ψ),
-                    unwrap(angle.(Ψ.Ψ)),
+function AMFMdemod(Ψ::numComp; derivMethod="center11")::numTriplet
+  return numTriplet( Ψ.Ψ,
+                     Ψ.t,
+                     Ψ.fs,
+                     abs.(Ψ.Ψ),
+                     derivApprox(unwrap(angle.(Ψ.Ψ)),fs=Ψ.fs, method=derivMethod),
+                     real.(Ψ.Ψ),
+                     imag.(Ψ.Ψ),
+                     unwrap(angle.(Ψ.Ψ)),
                      )
 end
 
@@ -35,8 +34,7 @@ Numerically approximate the derivative of a sampled signal.
 Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
 
 # Examples
-```jldoctest
-julia>
+```@example
 
 <EXAMPLE HERE>
 

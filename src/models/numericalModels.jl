@@ -1,37 +1,9 @@
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
 
 """
-    Ξ = numModel([𝛹₀,𝛹₁,𝛹₂],t,fs)
+    𝐒 = numSet( )
 
-Create a *numerical AM-FM Model* 'numModel' paramtertized by set of canonical triplets stored in a vector of 'AMFMtriplet'.
-
-# Examples
-```@example
-using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->10*t,0.1)
-ψ₂ = AMFMcomp(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
-fs = 16_000
-t = collect{0:1/fs:1}
-𝛹₀ = numComp( ψ₀(t), fs )
-𝛹₁ = numComp( ψ₁(t), fs )
-𝛹₂ = numComp( ψ₂(t), fs )
-Ξ = numModel([𝛹₀,𝛹₁,𝛹₂],t,fs)
-```
-"""
-struct numModel
-  C::Vector{numComp}
-  t::Vector{Float64}
-  fs::Float64
-end
-
-# DISPLAY
-Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model")
-
-"""
-    𝚿 = demodMode(Ξ)
-
-Create a *demodulated AM-FM Model* 'demodModel' ...
+Create a 'numSet'...
 
 # Examples
 ```@example
@@ -41,18 +13,18 @@ using ISA
 ψ₂ = AMFMcomp(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
 fs = 16_000
 t = collect(0:1/fs:1)
-𝛹₀ = numComp( ψ₀(t), fs )
-𝛹₁ = numComp( ψ₁(t), fs )
-𝛹₂ = numComp( ψ₂(t), fs )
-Ξ = numModel([𝛹₀,𝛹₁,𝛹₂],t,fs)
-𝚿 = AMFMdemod(Ξ,t,fs)
+𝚿₀ = numComp( ψ₀(t), fs )
+𝚿₁ = numComp( ψ₁(t), fs )
+𝚿₂ = numComp( ψ₂(t), fs )
+𝐂₀ = AMFMdemod(𝚿₀)
+𝐂₁ = AMFMdemod(𝚿₁)
+𝐂₂ = AMFMdemod(𝚿₂)
+𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 ```
 """
-struct demodModel
-  D::Vector{demodComp}
-  t::Vector{Float64}
-  fs::Float64
+struct numSet
+  S::Vector{numTriplet}
 end
 
 # DISPLAY
-Base.show(io::IO, x::demodModel) = print(io, "demodulated AM-FM model")
+Base.show(io::IO, x::numSet) = print(io, "numerical AM--FM component set")
