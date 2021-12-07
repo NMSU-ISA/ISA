@@ -15,11 +15,11 @@ $z\left( t ; \mathscr{S} \vphantom{0^0}\right)  = \sum\limits_{k=0}^{K-1}\psi_k\
 
 The Argand diagram for the aforementioned AM--FM model along with the corresponding 3D IS
 
-$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,{}^{2}\delta\!\left(\omega-\omega_k(t),s-s_k(t)\vphantom{0^0}\right)$
+$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,\!{}^{2}\delta\!\left(\omega-\omega_k(t),s-s_k(t)\vphantom{0^0}\right)$
 
 and 2D IS (i.e. time-frequency plane)
 
-$\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right)\,\delta\!\left(\vphantom{0^0}\omega-{\omega}_k(t)\vphantom{0^0}\right)$
+$\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right)\,\!\delta\!\left(\vphantom{0^0}\omega-{\omega}_k(t)\vphantom{0^0}\right)$
 
 can be visualized.
 
