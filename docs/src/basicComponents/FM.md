@@ -12,16 +12,6 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0 \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right).$
 
-
-```julia
-using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->t^2,0.0)
-ψ₀ = AMFMcomp(𝐶₀)
-plot(ψ₀; timeaxis=0.0:0.001:10.0)
-```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFM1.png)
-
-
 The corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
@@ -30,7 +20,21 @@ and 2D IS
 
 $\mathcal{S}(t,\omega;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
-can be visualized as follows.  
+can be visualized.  
+
+
+
+
+# Example 1
+
+For one choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->1,t->t^2,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=0.0:0.001:10.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFM1.png)
 
 ```julia
 using ISA, Plots
@@ -52,8 +56,9 @@ plot!( camera=(0,90),
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFM3.png)
 
-For another choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
+# Example 2
+For another choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)

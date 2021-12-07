@@ -7,9 +7,9 @@
 ### 3D Argand Diagrams
 An [Argand Diagram](https://mathworld.wolfram.com/ArgandDiagram.html) is a geometric representation of a complex number.
 
-<DESCRIBE FUNCTIONALITY HERE>
+<DOCUMENT FUNCTIONALITY HERE>
 
 ### Instantaneous Spectra
 An [Instantaneous Spectrum](https://web.nmsu.edu/~spsandov/ISA/literature.html#openModal1) allows visualization of multiple aspects of the signal model simultaneously, including both magnitude and phase of each signal component. While it may take some time to become comfortable with the 3D visualization, we believe it has significant advantages in terms of interpretability over other time-frequency visualizations.
 
-<DESCRIBE FUNCTIONALITY HERE>
+<DOCUMENT FUNCTIONALITY HERE>

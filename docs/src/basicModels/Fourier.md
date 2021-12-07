@@ -1,5 +1,6 @@
+# Basic ISA
 
-# Fourier Series
+## Fourier Series
 
 Consider a component set consisting of a set of harmonicly related SHCs
 
