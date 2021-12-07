@@ -29,7 +29,7 @@ $\mathcal{S}(t,\omega;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
 can be visualized.  
 
-# Example 1
+### Example 1
 For one choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 ```julia
 using ISA, Plots
