@@ -2,7 +2,7 @@
 
 ## Simple Harmonic Components
 
-A simple harmonic component (SHC), or Fourier component, has a constant instantaneous amplitude
+A **simple harmonic component (SHC)**, or Fourier component, has a constant instantaneous amplitude
 
 $a_0(t)\rightarrow a_0$
 
@@ -10,7 +10,7 @@ and constant instantaneous frequency
 
 $\omega_0(t)\rightarrow \omega_0.$
 
-This special case corresponds to a canonical triplet with the form
+This *special case* corresponds to a canonical triplet with the form
 
 $\mathscr{C}_0 = \left\{a_0,\omega_0, \phi_0\vphantom{0^0}\right\}$
 
