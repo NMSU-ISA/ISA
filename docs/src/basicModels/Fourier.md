@@ -34,7 +34,7 @@ $z(t) = \sum\limits_{k=-\infty}^{\infty}\delta(t-kT)$
 
 We can represent this signal with a component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots.$
+$\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
 where
 
@@ -91,7 +91,7 @@ $z(t) = \begin{cases}
 
 We can represent this signal with a component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots.$
+$\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
 where
 
@@ -152,6 +152,6 @@ $z(t) = \begin{cases}
 
 We can represent this signal with component set consisting of a set of harmonicly related SHCs
 
-$\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots,K .$
+$\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
 where
