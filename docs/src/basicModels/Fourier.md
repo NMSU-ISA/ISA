@@ -14,13 +14,13 @@ The AM--FM model corresponding to this set is a [Fourier Series](https://en.wiki
 
 $z(t) = \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
-The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series can be visualized. Additionally, the corresponding 3D IS
+The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series can be visualized. Additionally, the 3D IS corresponding to partial sum (over $k$)
 
-$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=\infty}^{\infty} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,\!{}^{2}\delta\!\left(\omega-\omega_k,s-s_k(t)\vphantom{0^0}\right)$
+$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=-K}^{K} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,\!{}^{2}\delta\!\left(\omega-\omega_k,s-s_k(t)\vphantom{0^0}\right)$
 
-and 2D IS (i.e. time-frequency plane)
+and the 2D IS corresponding to partial sum (over $k$)  (i.e. time-frequency plane)
 
-$\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=-\infty}^{\infty} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right)\,\!\delta\!\left(\vphantom{0^0}\omega-{\omega}_k\vphantom{0^0}\right)$
+$\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=-K}^{K} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right)\,\!\delta\!\left(\vphantom{0^0}\omega-{\omega}_k\vphantom{0^0}\right)$
 
 can also be visualized.
 
