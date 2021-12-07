@@ -2,11 +2,11 @@
 
 An amplitude modulation (AM) component has constant instantaneous frequency
 
-$\omega_0(t)\rightarrow \omega_0$
+$\omega_0(t)\rightarrow \omega_0.$
 
-and thus corresponds to a canonical triplet with the form
+This special case corresponds to a canonical triplet with the form
 
-$\mathscr{C}_0 = \left\{a_0(t),\omega_0, \phi_0\vphantom{0^0}\right\}.$
+$\mathscr{C}_0 = \left\{a_0(t),\omega_0, \phi_0\vphantom{0^0}\right\}$
 
 and a component of the form
 
@@ -20,7 +20,7 @@ and 2D IS
 
 $\mathcal{S}(t,\omega;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
-can be visualized. 
+can be visualized.
 
 
 ### Example 1

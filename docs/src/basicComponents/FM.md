@@ -2,11 +2,11 @@
 
 An frequency modulation (FM) component has constant instantaneous amplitude
 
-$a_0(t)\rightarrow a_0$
+$a_0(t)\rightarrow a_0.$
 
-and thus corresponds to a canonical triplet with the form
+This special case corresponds to a canonical triplet with the form
 
-$\mathscr{C}_0 = \left\{a_0,\omega_0(t), \phi_0\vphantom{0^0}\right\}.$
+$\mathscr{C}_0 = \left\{a_0,\omega_0(t), \phi_0\vphantom{0^0}\right\}$
 
 and a component of the form
 
@@ -20,7 +20,7 @@ and 2D IS
 
 $\mathcal{S}(t,\omega;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
-can be visualized. 
+can be visualized.
 
 
 
