@@ -7,7 +7,7 @@ $\mathscr{S}=\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphanto
 
 AM--FM components model of general form
 
-$\psi_k \left( t ; \mathscr{C}_k \vphantom{0^0}\right) \triangleq a_k(t) \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right)$
+$\psi_k \left( t ; \mathscr{C}_k \vphantom{0^0}\right) = a_k(t) \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right),$
 
 and an AM--FM signal model of general form
 
