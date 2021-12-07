@@ -7,12 +7,12 @@ $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1
 
 As a result, the components are of the form
 
-$\psi_k \left(t ; \mathscr{C}_k \vphantom{0^0}\right) = a_k \exp\left(\mathrm{j} \left[ k\omega_0 +\phi_k\right] \right)$
+$\psi_k \left(t ; \mathscr{C}_k \vphantom{0^0}\right) = a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
 
 The AM--FM model corresponding to this set is a [Fourier Series](https://en.wikipedia.org/wiki/Fourier_series)
 
-$z(t) = \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
+$z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
 
 The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series can be visualized. Additionally, the 3D IS corresponding to partial sum (over $k$)
 
