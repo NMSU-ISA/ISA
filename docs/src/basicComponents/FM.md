@@ -27,7 +27,7 @@ can be visualized.
 
 ### Example 1
 
-For one choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
+For one choice of parameters of the canonical triplet, we have the following Argand Diagram for $\psi_0(t;\mathscr{C}_0)$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->1,t->t^2,0.0)
@@ -58,7 +58,7 @@ plot!( camera=(0,90),
 
 
 ### Example 2
-For another choice of parameters of the canonical triplet, we have the following Argand Diagram, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
+For another choice of parameters of the canonical triplet, we have the following Argand Diagram for $\psi_0(t;\mathscr{C}_0)$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
