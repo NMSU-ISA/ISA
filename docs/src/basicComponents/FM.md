@@ -12,7 +12,7 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0 \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right).$
 
-This component along with the corresponding 3D IS
+The Argand diagram for the aforementioned component along with the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 

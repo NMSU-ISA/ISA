@@ -12,7 +12,7 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0(t) \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
-This component along with the corresponding 3D IS
+The Argand diagram for the aforementioned component along with the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
