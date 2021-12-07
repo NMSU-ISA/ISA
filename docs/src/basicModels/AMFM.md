@@ -3,11 +3,11 @@
 
 AM--FM models correspond to sets of canonical triplets of general form
 
-$\mathscr{C}_k\triangleq\left\{a_k(t),\omega_k(t), \phi_k\vphantom{0^0}\right\}.$
+$\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\},~\mathscr{C}_k=\left\{a_k(t),\omega_k(t), \phi_k\vphantom{0^0}\right\}.$
 
-and a signal model of the form
+and an AM--FM signal model of the form
 
-$z\left( t ; \mathscr{S} \vphantom{0^0}\right)  \triangleq \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right),~\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
+$z\left( t ; \mathscr{S} \vphantom{0^0}\right)  = \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right)$
 
 The Argand diagram for the aforementioned AM--FM model along with the corresponding 3D IS
 
