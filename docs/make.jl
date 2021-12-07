@@ -20,9 +20,9 @@ makedocs(;
                      "AM Components"     => "basicComponents/AM.md",
                      "FM Components"     => "basicComponents/FM.md",
                      "AM--FM Components"     => "basicComponents/AMFM.md",],
-        "Basic ISA" =>
+        "Basic Signal Models" =>
                     ["Fourier Series"     => "basicModels/Fourier.md",
-                    "AM--FM Models"     => "basicModels/AMFM.md",],
+                     "AM--FM Models"     => "basicModels/AMFM.md",],
         "Numerical ISA" =>
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",],
