@@ -1,13 +1,23 @@
 
 ## AM--FM Models
 
-Generally speaking, AM--FM models consist of a component sets that are composed of canonical triplets of general form
-
-$\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
-
-where
+AM--FM models correspond to sets of canonical triplets of general form
 
 $\mathscr{C}_k\triangleq\left\{a_k(t),\omega_k(t), \phi_k\vphantom{0^0}\right\}.$
+
+and a signal model of the form
+
+$z\left( t ; \mathscr{S} \vphantom{0^0}\right)  \triangleq \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right),~\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
+
+The Argand diagram for the aforementioned AM--FM model along with the corresponding 3D IS
+
+$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,{}^{2}\delta\!\left(\omega-\omega_k(t),s-s_k(t)\vphantom{0^0}\right)$
+
+and 2D IS (i.e. time-frequency plane)
+
+$\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right)\,\delta\!\left(\vphantom{0^0}\omega-{\omega}_k(t)\vphantom{0^0}\right)$
+
+can be visualized.
 
 
 ### Example 1
