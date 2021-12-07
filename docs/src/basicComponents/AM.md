@@ -1,6 +1,6 @@
 ## Amplitude Modulation (AM) Components
 
-An **amplitude modulation (AM) component** has constant instantaneous frequency
+An **amplitude modulation (AM) component** $\psi_0(t;\mathscr{C}_0)$ has constant instantaneous frequency
 
 $\omega_0(t)\rightarrow \omega_0.$
 

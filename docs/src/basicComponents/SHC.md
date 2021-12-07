@@ -2,7 +2,7 @@
 
 ## Simple Harmonic Components
 
-A **simple harmonic component (SHC)**, or Fourier component, has a constant instantaneous amplitude
+A **simple harmonic component (SHC)**, or Fourier component, $\psi_0(t;\mathscr{C}_0)$ has a constant instantaneous amplitude
 
 $a_0(t)\rightarrow a_0$
 

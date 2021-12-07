@@ -1,6 +1,6 @@
 ## Frequency Modulation (FM) Components
 
-An **frequency modulation (FM) component** has constant instantaneous amplitude
+An **frequency modulation (FM) component** $\psi_0(t;\mathscr{C}_0)$ has constant instantaneous amplitude
 
 $a_0(t)\rightarrow a_0.$
 
