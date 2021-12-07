@@ -12,7 +12,7 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0 \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right).$
 
-The corresponding 3D IS
+This component along with the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
@@ -20,7 +20,7 @@ and 2D IS
 
 $\mathcal{S}(t,\omega;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
-can be visualized.  
+can be visualized. 
 
 
 

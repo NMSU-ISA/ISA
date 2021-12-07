@@ -12,7 +12,7 @@ and a component of the form
 
 $\psi_0(t;\mathscr{C}_0) = a_0(t) \mathrm{e}^{\,\mathrm{j}(\omega_0 t +\phi_0)}.$
 
-The corresponding 3D IS
+This component along with the corresponding 3D IS
 
 $\mathcal{S}(t,\omega,s;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
@@ -20,7 +20,7 @@ and 2D IS
 
 $\mathcal{S}(t,\omega;\mathscr{S}),~\mathscr{S} = \{\mathscr{C}_0\}$
 
-can be visualized.  
+can be visualized. 
 
 
 ### Example 1
