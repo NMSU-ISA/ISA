@@ -1,4 +1,4 @@
-# Recipes
+# Plotting Recipes
 
 [Recipes](https://docs.juliaplots.org/latest/recipes/) are a way of defining visualizations in your own packages and code, without having to depend on [Plots](http://docs.juliaplots.org/latest/). The functionality relies on [RecipesBase](http://juliaplots.org/RecipesBase.jl/stable/), a super lightweight but powerful package which allows users to create advanced plotting logic without Plots.
 

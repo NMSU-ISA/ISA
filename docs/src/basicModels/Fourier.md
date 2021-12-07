@@ -143,8 +143,8 @@ the periodic square wave (fundamental period $T$) with a 50% duty cycle where on
 
 $z(t) = \begin{cases}
         1, &   0<|t|<T/3  \\
-        \exp(\mathrm{j 2\pi/3} ), &   T/3<|t|<2T/3  \\
-        \exp(\mathrm{j} 4\pi/3),  &   2T/3<|t|<T        
+        \mathrm{e}{\,\mathrm{j 2\pi/3}} , &   T/3<|t|<2T/3  \\
+        \mathrm{e}{\,\mathrm{j} 4\pi/3},  &   2T/3<|t|<T        
         \end{cases}.$
 
 We can represent this signal with component set consisting of a set of harmonicly related SHCs
