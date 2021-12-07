@@ -8,7 +8,7 @@ $\mathcal{S}(t,\omega;\mathscr{S})  =  2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left
 
 and  three-dimensional (3D) IS in the time-frequency-real coordinates is given by
 
-$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,{}^{2}\delta\!\left(\omega-\omega_k(t),s-s_k(t)\vphantom{0^0}\right).$
+$\mathcal{S}(t,\omega,s;\mathscr{S}) = 2 \pi \sum\limits_{k=0}^{K-1} \psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right) \,{}^{2}\delta\!\left(\omega-\omega_k(t),s-s_k(t)\vphantom{0^0}\right)$
 
 where $\delta(\cdot)$ is the [Dirac delta](https://en.wikipedia.org/wiki/Dirac_delta_function).
 
