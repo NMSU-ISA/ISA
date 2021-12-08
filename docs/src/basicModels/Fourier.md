@@ -1,4 +1,4 @@
-# Basic ISA
+# Basic Signal Models
 
 ## Fourier Series
 Consider a component set consisting of a set of harmonicly related SHCs

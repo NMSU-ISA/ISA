@@ -1,5 +1,6 @@
+# Numerical Canonical Triplets and Component Sets
 
-## Numerical Canonical Triplets
+## Defining a Numerical Canonical Triplet
 
 A **numerical canonical triplet** `𝐂₀` (`numTriplet`) can be defined by calling `AMFMdemod()` with a **numerical AM--FM component** `𝚿₀` (`numComp`).
 ```@example
@@ -11,7 +12,7 @@ t = collect(0:1/fs:1)
 𝐂₀ = AMFMdemod(𝚿₀)
 ```
 
-## Numerical Component Sets
+## Defining a Numerical Component Set
 
 A **numerical component set** `𝐒` (`numSet`) is parameterized by a *set of numerical canonical triplet* `[𝐂₀,𝐂₁,𝐂₂]`.
 ```@example
@@ -29,7 +30,6 @@ t = 0:1/fs:1
 𝐂₂ = AMFMdemod(𝚿₂)
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 ```
-
 
 
 ## Visualizing a Numerical Instantaneous Spectra

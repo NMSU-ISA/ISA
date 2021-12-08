@@ -1,4 +1,4 @@
-# Numerical ISA
+# Numerical AM--FM Components
 
 ## Defining a Numerical AM--FM Components
 
