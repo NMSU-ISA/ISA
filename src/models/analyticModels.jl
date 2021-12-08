@@ -20,12 +20,8 @@ struct compSet
 end
 
 # CONSTRUCTIONS
-function compSet(W::Vector{AMFMcomp})
-  temp = []
-  for i ∈ 1:length(W)
-    push!(temp,W[i].C)
-  end
-  return compSet(Vector(temp))
+function compSet(V::Vector{AMFMcomp})
+  return compSet([ψ.C  for ψ ∈ V])
 end
 
 # DISPLAY
