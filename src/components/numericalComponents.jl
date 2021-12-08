@@ -34,7 +34,6 @@ numComp(Ψ::Vector{ComplexF64}, t::Vector{Float64}) = numComp(Ψ, t, 1/(t[2]-t[1
 numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen) = numComp(Ψ, collect(t) )
 numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0:length(Ψ)-1), 1.0)
 
-
 # METHODS
 function (𝚿::numComp)(t::Real)
   return ifelse(𝚿.t[1]<=t<=𝚿.t[end] ,𝚿.s(t)+1im*𝚿.σ(t),NaN)
@@ -48,11 +47,6 @@ end
 function (𝚿::numComp)(t::UnitRange)
   return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end] ,𝚿.s(tₖ)+1im*𝚿.σ(tₖ),NaN) for tₖ∈t]
 end
-
-
-
-
-
 
 # DISPLAY
 Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")

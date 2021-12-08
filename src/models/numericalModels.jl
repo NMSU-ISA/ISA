@@ -78,6 +78,5 @@ function (𝐳::numModel)(t::UnitRange)
   return 𝐳.(collect(t))
 end
 
-
 # DISPLAY
 Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model")

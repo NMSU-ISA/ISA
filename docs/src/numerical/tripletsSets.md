@@ -1,7 +1,7 @@
 
 ## Numerical Canonical Triplets
 
-A **numerical canonical triplet** `numTriplet` ...
+A **numerical canonical triplet** `𝐂₀` (`numTriplet`) can be defined by calling `AMFMdemod()` with a **numerical AM--FM component** `𝚿₀` (`numComp`).
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
@@ -13,7 +13,7 @@ t = collect(0:1/fs:1)
 
 ## Numerical Component Sets
 
-A **numerical  component set** `numSet` ...
+A **numerical component set** `𝐒` (`numSet`) is parameterized by a *set of numerical canonical triplet* `[𝐂₀,𝐂₁,𝐂₂]`.
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)

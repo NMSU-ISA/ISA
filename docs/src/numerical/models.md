@@ -1,6 +1,6 @@
 ## Numerical AM--FM Model
 
-A **numerical AM--FM model** `numModel` is parameterized by a *vector of  numerical AM--FM components** `numComp`.
+A **numerical AM--FM model** `𝐳` (`numModel`) is parameterized by a *vector of  numerical AM--FM components** `[𝚿₀,𝚿₁,𝚿₂]`.
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
@@ -11,11 +11,11 @@ t = collect(0:1/fs:1)
 𝚿₀ = numComp( ψ₀(t), fs )
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
-𝐒 = numSet([𝚿₀,𝚿₁,𝚿₂])
+𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
 ```
 
 ## Evaluating a Numerical AM--FM Model
-Once an  **numerical AM--FM model** (`numModel`) is defined, it can be evaluated at
+Once an  **numerical AM--FM model** `𝐳` (`numModel`) is defined, it can be evaluated at
 a time instant $t_0$ (`Real`)
 ```@example
 using ISA

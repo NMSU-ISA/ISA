@@ -2,7 +2,7 @@
 
 ## Defining a Numerical AM--FM Components
 
-A **numerical AM--FM component** `numComp` is parameterized by the discrete-time observation of a (complex-valued) **AM--FM component** `AMFMcomp`.
+A **numerical AM--FM component** `𝚿₀` (`numComp`) is parameterized by the discrete-time observation of a (complex-valued) **AM--FM component** `AMFMcomp`.
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
@@ -11,7 +11,7 @@ t = collect(0:1/fs:1)
 𝚿₀ = numComp( ψ₀(t), fs )
 ```
 ## Evaluating a Numerical AM--FM Components
-Once an  **numerical AM--FM component** $\Psi_$ (`numComp`) is defined, it can be evaluated at
+Once an  **numerical AM--FM component** `𝚿₀` (`numComp`) is defined, it can be evaluated at
 a time instant $t_0$ (`Real`)
 ```@example
 using ISA
