@@ -68,6 +68,16 @@ function (𝐳::numModel)(t::Real)
   end
   return out
 end
+function (𝐳::numModel)(t::Vector{<:Real})
+  return 𝐳.(t)
+end
+function (𝐳::numModel)(t::StepRangeLen)
+  return 𝐳.(collect(t))
+end
+function (𝐳::numModel)(t::UnitRange)
+  return 𝐳.(collect(t))
+end
+
 
 # DISPLAY
 Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model")
