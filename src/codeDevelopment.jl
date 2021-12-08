@@ -6,10 +6,12 @@ using ISA
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
-𝚿₀(t)
-
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
+
+𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
+𝐳(0.5)
+
 𝐂₀ = AMFMdemod(𝚿₀)
 𝐂₁ = AMFMdemod(𝚿₁)
 𝐂₂ = AMFMdemod(𝚿₂)

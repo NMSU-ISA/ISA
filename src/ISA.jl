@@ -13,7 +13,7 @@ include("components/numericalComponents.jl")
 export latentSig, latentComp, numComp, numTriplet
 
 include("models/numericalModels.jl")
-export numSet
+export numSet, numModel
 
 include("demod/demodulation.jl")
 export derivApprox, AMFMdemod
