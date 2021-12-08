@@ -1,6 +1,6 @@
 # Basic Components
 
-## Simple Harmonic Components
+## Simple Harmonic Components (SHCs)
 
 A **simple harmonic component (SHC)**, or Fourier component, $\psi_0(t;\mathscr{C}_0)$ has a constant instantaneous amplitude
 
