@@ -33,3 +33,5 @@ t = 0:1/fs:1
 ```
 
 MAKE NOTE ABOUT INTERPOLATION & DOMAIN HERE
+
+## Visualizing a Numerical AM--FM Component

@@ -11,7 +11,6 @@ t = collect(0:1/fs:1)
 𝐂₀ = AMFMdemod(𝚿₀)
 ```
 
-
 ## Numerical Component Sets
 
 A **numerical  component set** `numSet` ...
