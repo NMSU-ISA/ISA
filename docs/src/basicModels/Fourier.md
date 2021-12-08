@@ -13,6 +13,8 @@ and the AM--FM model corresponding to this set is a [Fourier Series](https://en.
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}.$
 
+### Partial Sums of Fourier Series
+
 The AM--FM model corresponding to a partial sum (over $k$) of a Fourier series
 
 $z(t) = \sum\limits_{k=-K}^{K} a_k \mathrm{e}^{\,\mathrm{j}(k\omega_0 t +\phi_k)}$
