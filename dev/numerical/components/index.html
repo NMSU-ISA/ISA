@@ -9,9 +9,29 @@ fs = 16_000
 t = collect(0:1/fs:1)
 𝚿₀ = numComp( ψ₀(t), fs )
 t₀ = 0.5
-𝚿₀(t₀)</code></pre><pre><code class="language-none">0.4207878589053929 + 0.6553382619002561im</code></pre><p>or over a range of time instants.</p><pre><code class="language-">using ISA
+𝚿₀(t₀)</code></pre><pre><code class="language-none">0.4207878589053929 + 0.6553382619002561im</code></pre><p>or over a range of time instants.</p><pre><code class="language-julia">using ISA
 ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;2.0,0.0)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
-𝚿(t)</code></pre><p>MAKE NOTE ABOUT INTERPOLATION &amp; DOMAIN HERE</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../basicModels/AMFM/">« AM–FM Models</a><a class="docs-footer-nextpage" href="../tripletsSets/">Numerical Triplets and Sets »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 8 December 2021 00:22">Wednesday 8 December 2021</span>. Using Julia version 1.6.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+𝚿₀(t)</code></pre><pre><code class="language-none">16001-element Vector{ComplexF64}:
+   1.0000000000000002 - 2.9417221904280605e-21im
+   0.9999999882812499 + 0.00012499999918619796im
+    0.999999953125001 + 0.0002499999934895834im
+   0.9999998945312539 + 0.0003749999780273444im
+    0.999999812500012 + 0.0004999999479166692im
+   0.9999997070312802 + 0.0006249998982747471im
+   0.9999995781250628 + 0.0007499998242187695im
+    0.999999425781366 + 0.000874999720865927im
+   0.9999992500001982 + 0.0009999995833334149im
+   0.9999990507815673 + 0.0011249994067384279im
+                      ⋮
+ -0.15291007280874896 + 0.33499950221562613im
+  -0.1529328377142834 + 0.33493853553339087im
+ -0.15295559096068978 + 0.3348775710069303im
+  -0.1529783325493386 + 0.3348166086383847im
+ -0.15300106248160136 + 0.33475564842989414im
+ -0.15302378075884931 + 0.33469469038359784im
+  -0.1530464873824546 + 0.334633734501635im
+  -0.1530691823537894 + 0.33457278078614366im
+  -0.1530918656742263 + 0.33451182923926226im</code></pre><p>MAKE NOTE ABOUT INTERPOLATION &amp; DOMAIN HERE</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../basicModels/AMFM/">« AM–FM Models</a><a class="docs-footer-nextpage" href="../tripletsSets/">Numerical Triplets and Sets »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 8 December 2021 00:22">Wednesday 8 December 2021</span>. Using Julia version 1.6.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
