@@ -26,7 +26,8 @@ makedocs(;
         "Numerical ISA" =>
                     ["Numerical AM--FM Components"     => "numerical/components.md",
                      "Numerical AM--FM Models"     => "numerical/models.md",
-                     "Numerical Triplets and Sets"     => "numerical/tripletsSets.md",],
+                     "Numerical Triplets and Sets"     => "numerical/tripletsSets.md",
+                     "Numerical Instantaneous Spectra"     => "numerical/spectra.md",],
         "Types/Methods/Functions" => "typesMethodsFunctions.md",
         "Plotting Recipes" => "recipes.md",
         "Cite" => "cite.md",
