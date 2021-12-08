@@ -30,8 +30,3 @@ t = 0:1/fs:1
 𝐂₂ = AMFMdemod(𝚿₂)
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 ```
-
-# Numerical Instantaneous Spectra
-
-## Visualizing Numerical Instantaneous Spectra
-<DOCUMENT FUNCTIONALITY HERE>
