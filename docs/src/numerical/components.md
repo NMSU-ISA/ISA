@@ -29,7 +29,7 @@ using ISA
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
-𝚿(t)
+𝚿₀(t)
 ```
 
 MAKE NOTE ABOUT INTERPOLATION & DOMAIN HERE
