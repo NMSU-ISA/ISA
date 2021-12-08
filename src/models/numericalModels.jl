@@ -27,4 +27,4 @@ struct numSet
 end
 
 # DISPLAY
-Base.show(io::IO, x::numSet) = print(io, "numerical AM--FM component set")
+Base.show(io::IO, x::numSet) = print(io, "numerical component set")

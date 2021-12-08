@@ -55,7 +55,7 @@ end
 
 
 # DISPLAY
-Base.show(io::IO, x::numComp) = print(io, "complex-valed component observation")
+Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
 
 """
     𝐂 = numTriplet( )
@@ -84,4 +84,4 @@ struct numTriplet
 end
 
 # DISPLAY
-Base.show(io::IO, x::numTriplet) = print(io, "numerical AM--FM triplet")
+Base.show(io::IO, x::numTriplet) = print(io, "numerical canonical triplet")

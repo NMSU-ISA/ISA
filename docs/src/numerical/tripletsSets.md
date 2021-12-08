@@ -1,7 +1,7 @@
 
-## Numerical AM--FM Triplets
+## Numerical Canonical Triplets
 
-A **numerical AM--FM triplet** `numTriplet` ...
+A **numerical canonical triplet** `numTriplet` ...
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
@@ -12,9 +12,9 @@ t = collect(0:1/fs:1)
 ```
 
 
-## Numerical AM--FM component sets
+## Numerical Component Sets
 
-A **numerical AM--FM component set** `numSet` ...
+A **numerical  component set** `numSet` ...
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
