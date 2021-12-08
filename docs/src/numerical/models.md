@@ -46,3 +46,4 @@ t = 0:1/fs:1
 ```
 
 ## Visualizing a Numerical AM--FM Model
+<DOCUMENT FUNCTIONALITY HERE>
