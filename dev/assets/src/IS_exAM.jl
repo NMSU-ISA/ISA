@@ -45,3 +45,27 @@ plot!( camera=(0,90),
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
 png(path*"IS_exAM6.png")
+
+#------------------------------------
+
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->cos(t)+exp(-t),t->100,1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.0005:1.0)
+png(path*"IS_exAM7.png")
+
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->cos(t)+exp(-t),t->100,1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(𝐶₀; timeaxis=-1.0:0.0005:1.0)
+png(path*"IS_exAM8.png")
+
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->cos(t)+exp(-t),t->100,1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(𝐶₀; timeaxis=-1.0:0.0005:1.0)
+plot!( camera=(0,90),
+       zlabel="", zticks=:false,
+       left_margin=15Plots.mm, margin=5Plots.mm,
+       yrotation = 90, ymirror=true)
+png(path*"IS_exAM9.png")
