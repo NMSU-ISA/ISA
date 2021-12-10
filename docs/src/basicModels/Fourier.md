@@ -157,3 +157,44 @@ We can represent this signal with component set consisting of a set of harmonicl
 $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
 where
+
+$a_k = \mathrm{abs}\left((3-j√3)\frac{\sin(k2\pi/3)}{2k\pi}+j√3\frac{\sin(k4\pi/3)}{k\pi}\right)~~~\mathrm{and}~~~\phi_k= \mathrm{arg}\left((3-j√3)\frac{\sin(k2\pi/3)}{2k\pi}+j√3\frac{\sin(k4\pi/3)}{k\pi}\right).$
+
+For a this choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
+
+```julia
+using ISA, Plots
+T = 0.5
+aₖ(k) = ifelse( k==0, 0, (3-im*√3)*sin(k*2π/3)/(2*k*π) + im*√3*(sin(k*4π/3)/(k*π)))
+kInds = -10:10
+𝑆 = fourierSeries(T, aₖ, kInds)
+z = AMFMmodel(𝑆)
+plot(z; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier7.png)
+
+```julia
+using ISA, Plots
+T = 0.5
+aₖ(k) = ifelse( k==0, 0, (3-im*√3)*sin(k*2π/3)/(2*k*π) + im*√3*(sin(k*4π/3)/(k*π)))
+kInds = -10:10
+𝑆 = fourierSeries(T, aₖ, kInds)
+z = AMFMmodel(𝑆)
+plot(𝑆; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier8.png)
+
+```julia
+using ISA, Plots
+T = 0.5
+aₖ(k) = ifelse( k==0, 0, (3-im*√3)*sin(k*2π/3)/(2*k*π) + im*√3*(sin(k*4π/3)/(k*π)))
+kInds = -10:10
+𝑆 = fourierSeries(T, aₖ, kInds)
+z = AMFMmodel(𝑆)
+plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot!( camera=(0,90),
+       zlabel="", zticks=:false,
+       left_margin=15Plots.mm, margin=5Plots.mm,
+       yrotation = 90, ymirror=true)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier9.png)
