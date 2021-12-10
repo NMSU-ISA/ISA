@@ -62,9 +62,63 @@ plot!( camera=(0,90),
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC3.png)
 
 ### Example 2
+For another choice of parameters of the canonical triplet, we have the following Argand Diagram for $\psi_0(t;\mathscr{C}_0)$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
-<ADD EXAMPLE>
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->1,t->10π,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC4.png)
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->1,t->10π,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC5.png)
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->1,t->10π,0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+plot!( camera=(0,90),
+       zlabel="", zticks=:false,
+       left_margin=15Plots.mm, margin=5Plots.mm,
+       yrotation = 90, ymirror=true)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC6.png)
 
 ### Example 3
+For another choice of parameters of the canonical triplet, we have the following Argand Diagram for $\psi_0(t;\mathscr{C}_0)$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
-<ADD EXAMPLE>
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10,t->exp(π),1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC7.png)
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10,t->exp(π),1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC8.png)
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10,t->exp(π),1.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(𝐶₀; timeaxis=-1.0:0.001:1.0)
+plot!( camera=(0,90),
+       zlabel="", zticks=:false,
+       left_margin=15Plots.mm, margin=5Plots.mm,
+       yrotation = 90, ymirror=true)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exSHC9.png)

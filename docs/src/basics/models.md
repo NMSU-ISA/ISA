@@ -23,7 +23,7 @@ using ISA
 𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
 z = AMFMmodel([𝐶₀,𝐶₁,𝐶₂])
 ```
-or a *vector of AMFM--components*
+or a *vector of AMFM--components*.
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2/5),t->200.0,0.0)
@@ -44,7 +44,7 @@ z = AMFMmodel(𝑆)
 t₀ = 2.0
 z(t₀)
 ```
-or over a range of time instants
+or over a range of time instants.
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
