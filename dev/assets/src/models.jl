@@ -34,8 +34,8 @@ png(path*"IS_exAMFMmodel3.png")
 #--------------------------------
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->t^2+100t,0.1)
-𝐶₂ = AMFMtriplet(t->cos(0.1t),t->sin(0.1t),π)
+𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
+𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=0.0:0.001:3.0)
@@ -43,8 +43,8 @@ png(path*"IS_exAMFMmodel4.png")
 
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->t^2+100t,0.1)
-𝐶₂ = AMFMtriplet(t->cos(0.1t),t->sin(0.1t),π)
+𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
+𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -52,8 +52,8 @@ png(path*"IS_exAMFMmodel5.png")
 
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->t^2+100t,0.1)
-𝐶₂ = AMFMtriplet(t->cos(0.1t),t->sin(0.1t),π)
+𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
+𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
