@@ -6,7 +6,7 @@ using QuadGK #for numerical integration
     C = AMFMtriplet(a, ω, φ)
     C = AMFMtriplet(a, ω)
 
-Create a *component triplet* 'AMFMtriplet' consisting of an *instantenouse amplitude function* `a`, an *instantaneous frequency function* `ω`, and a *phase reference* `φ`.
+Create a *canonical triplet* 'AMFMtriplet' consisting of an *instantenouse amplitude function* `a`, an *instantaneous frequency function* `ω`, and a *phase reference* `φ`.
 
 Called with two inputs `a, ω`, this is equivalent to `AMFMtriplet(a, ω, 0.0)`.
 
