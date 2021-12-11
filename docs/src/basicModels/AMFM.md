@@ -25,7 +25,7 @@ can be visualized.
 
 
 ### Example 1
-For a this choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
+For a this choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
 ```julia
 using ISA, Plots
@@ -66,13 +66,13 @@ plot!( camera=(0,90),
 
 ### Example 2
 
-For another choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
+For another choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->t^2+100t,0.1)
-𝐶₂ = AMFMtriplet(t->cos(0.1t),t->sin(0.1t),π)
+𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
+𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=0.0:0.001:3.0)
@@ -82,8 +82,8 @@ plot(z; timeaxis=0.0:0.001:3.0)
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->t^2+100t,0.1)
-𝐶₂ = AMFMtriplet(t->cos(0.1t),t->sin(0.1t),π)
+𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
+𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -93,8 +93,8 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 ```julia
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->t^2+100t,0.1)
-𝐶₂ = AMFMtriplet(t->cos(0.1t),t->sin(0.1t),π)
+𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
+𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -107,7 +107,7 @@ plot!( camera=(0,90),
 
 
 ### Example 3
-For another choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
+For another choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 
 ```julia
 using ISA, Plots
