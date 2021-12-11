@@ -4,8 +4,8 @@
     S = compSet([C₁,C₂,…,Cₖ])
     S = compSet([ψ₁,ψ₂,…,ψₖ])
 
-Create a *component set* 'compSet' paramtertized by
-vector of canonical triplets.
+Create a *component set* 'compSet' by providing a
+vector of *canonical triplets*.
 
 # Examples
 ```@example
@@ -15,8 +15,8 @@ vector of canonical triplets.
  𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
  𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 ```
-Another way to create a *component set* 'compSet' paramtertized
-by vector of numerical AM--FM components.
+Another way to create a *component set* 'compSet'
+by providing a vector of numerical *AM--FM components*.
 
 # Examples
 ```@example
@@ -58,8 +58,8 @@ using ISA
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 ```
-Another convenient way to create a 'AMFMmodel' paramtertized
-by vector of numerical AM--FM components.
+Another convenient way to create a 'AMFMmodel'
+by providing a vector of numerical *AM--FM components*.
 
 # Examples
 ```@example
@@ -72,8 +72,8 @@ by vector of numerical AM--FM components.
  ψ₂ = AMFMcomp(𝐶₂)
  z = AMFMmodel([ψ₀,ψ₁,ψ₂])
 ```
-Another convenient way to create a 'AMFMmodel' paramtertized
-by vector of canonical triplets.
+Another convenient way to create a 'AMFMmodel'
+by providing a vector of *canonical triplets*.
 
 # Examples
 ```@example
