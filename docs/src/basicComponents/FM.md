@@ -93,7 +93,7 @@ For another choice of parameters of the canonical triplet, we have the following
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->cos(2t)+t,1.0)
+𝐶₀ = AMFMtriplet(t->1,t->10+t*cos(10t),1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -101,7 +101,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->cos(2t)+t,1.0)
+𝐶₀ = AMFMtriplet(t->1,t->10+t*cos(10t),1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -109,7 +109,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->cos(2t)+t,1.0)
+𝐶₀ = AMFMtriplet(t->1,t->10+t*cos(10t),1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 plot!( camera=(0,90),
