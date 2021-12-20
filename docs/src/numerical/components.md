@@ -7,7 +7,7 @@ A **numerical AM--FM component** `𝚿₀` (`numComp`) is parameterized by the d
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
-t = collect(0:1/fs:1)
+t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 ```
 ## Evaluating a Numerical AM--FM Component
@@ -17,7 +17,7 @@ a time instant $t_0$ (`Real`)
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
-t = collect(0:1/fs:1)
+t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 t₀ = 0.5
 𝚿₀(t₀)
