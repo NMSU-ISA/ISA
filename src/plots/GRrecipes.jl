@@ -118,3 +118,19 @@ end
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
    t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
 end
+
+
+
+@recipe function temp(𝚿::numComp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+   xguide --> "time(s)"
+   yguide --> "imag"
+   zguide --> "real"
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
+   camera --> (45,45)
+   framestyle --> :origin
+   t = timeaxis
+   clim = (0,1)
+   t,imag(𝚿.(t)),real(𝚿.(t))
+end

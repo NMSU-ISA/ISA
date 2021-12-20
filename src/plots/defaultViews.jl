@@ -27,8 +27,8 @@ using ISA, Plots
    t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
 end
 
-plot(𝐶₀; timeaxis=0.0:0.001:10.0,view="D")
-
-default(ymirror =false)
-
-plot(𝐶₀; timeaxis=0.0:0.001:10.0,view="TF")
+# plot(𝐶₀; timeaxis=0.0:0.001:10.0,view="D")
+#
+# default(ymirror =false)
+#
+# plot(𝐶₀; timeaxis=0.0:0.001:10.0,view="TF")
