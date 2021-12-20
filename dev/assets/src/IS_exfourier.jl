@@ -72,8 +72,7 @@ png(path*"IS_exFourier6.png")
 #-------------------------------
 using ISA, Plots
 T = 0.5
-aₖ(k) = ifelse( k==0, 0, sin(k*2π/3)/(k*π)-exp(im*2π/3)*(sin(k*2π/3)/(k*π))
-+exp(im*2π/3)*(sin(k*4π/3)/(k*π))-exp(im*4π/3)*(sin(k*4π/3)/(k*π)))
+aₖ(k) = ifelse( k==0, 0, (3-im*√3)*sin(k*2π/3)/(2*k*π) + im*√3*(sin(k*4π/3)/(k*π)))
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
@@ -83,8 +82,7 @@ png(path*"IS_exFourier7.png")
 
 using ISA, Plots
 T = 0.5
-aₖ(k) = ifelse( k==0, 0, sin(k*2π/3)/(k*π)-exp(im*2π/3)*(sin(k*2π/3)/(k*π))
-+exp(im*2π/3)*(sin(k*4π/3)/(k*π))-exp(im*4π/3)*(sin(k*4π/3)/(k*π)))
+aₖ(k) = ifelse( k==0, 0, (3-im*√3)*sin(k*2π/3)/(2*k*π) + im*√3*(sin(k*4π/3)/(k*π)))
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
@@ -94,8 +92,7 @@ png(path*"IS_exFourier8.png")
 
 using ISA, Plots
 T = 0.5
-aₖ(k) = ifelse( k==0, 0, sin(k*2π/3)/(k*π)-exp(im*2π/3)*(sin(k*2π/3)/(k*π))
-+exp(im*2π/3)*(sin(k*4π/3)/(k*π))-exp(im*4π/3)*(sin(k*4π/3)/(k*π)))
+aₖ(k) = ifelse( k==0, 0, (3-im*√3)*sin(k*2π/3)/(2*k*π) + im*√3*(sin(k*4π/3)/(k*π)))
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
