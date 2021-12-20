@@ -26,7 +26,7 @@ For one choice of parameters of the canonical triplet, we have the following Arg
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->t^2,t->2cos(10t),0.0)
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -34,7 +34,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->t^2,t->2cos(10t),0.0)
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -42,7 +42,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->t^2,t->2cos(10t),0.0)
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 plot!( camera=(0,90),
@@ -59,7 +59,7 @@ For another choice of parameters of the canonical triplet, we have the following
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(t),t->cos(5t)+50,1.0)
+𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -67,7 +67,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(t),t->cos(5t)+50,1.0)
+𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
@@ -76,7 +76,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(t),t->cos(5t)+50,1.0)
+𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 plot!( camera=(0,90),
