@@ -70,9 +70,9 @@ For another choice of parameters of the component set, we have the following Arg
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
-𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
+𝐶₁ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
+𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=0.0:0.001:3.0)
@@ -81,9 +81,9 @@ plot(z; timeaxis=0.0:0.001:3.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
-𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
+𝐶₁ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
+𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -92,9 +92,9 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(0.01t^2)+10t,t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->0.1,t->t^2+10t,0.1)
-𝐶₂ = AMFMtriplet(t->-10t^2,t->sin(10t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
+𝐶₁ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
+𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -111,9 +111,9 @@ For another choice of parameters of the component set, we have the following Arg
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1.0,t->exp(-t^2),0.0)
-𝐶₁ = AMFMtriplet(t->t^2+10,t->100.0,0.1)
-𝐶₂ = AMFMtriplet(t->10.0,t->sin(10t)+2t,1.0)
+𝐶₀ = AMFMtriplet(t->10,t->10t^2+2t+1,1.0)
+𝐶₁ = AMFMtriplet(t->5exp(0.1t),t->250,0.0)
+𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t),0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=0.0:0.001:3.0)
@@ -122,9 +122,9 @@ plot(z; timeaxis=0.0:0.001:3.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1.0,t->exp(-t^2),0.0)
-𝐶₁ = AMFMtriplet(t->t^2+10,t->100.0,0.1)
-𝐶₂ = AMFMtriplet(t->10.0,t->sin(10t)+2t,1.0)
+𝐶₀ = AMFMtriplet(t->10,t->10t^2+2t+1,1.0)
+𝐶₁ = AMFMtriplet(t->5exp(0.1t),t->250,0.0)
+𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t),0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -133,9 +133,9 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1.0,t->exp(-t^2),0.0)
-𝐶₁ = AMFMtriplet(t->t^2+10,t->100.0,0.1)
-𝐶₂ = AMFMtriplet(t->10.0,t->sin(10t)+2t,1.0)
+𝐶₀ = AMFMtriplet(t->10,t->10t^2+2t+1,1.0)
+𝐶₁ = AMFMtriplet(t->5exp(0.1t),t->250,0.0)
+𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t),0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
