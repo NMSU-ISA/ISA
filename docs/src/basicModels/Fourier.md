@@ -158,7 +158,7 @@ $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\r
 
 where
 
-$a_k = \mathrm{abs}\left(\frac{\sin(k2\pi/3)}{k\pi}-e^{j2π/3}\frac{\sin(k2\pi/3)}{k\pi}+e^{j2π/3}\frac{\sin(k4\pi/3)}{k\pi}-e^{j4π/3}\frac{\sin(k4\pi/3)}{k\pi}\right)~~~\mathrm{and}~~~
+$a_k = \mathrm{abs}\left(\frac{\sin(k2\pi/3)}{k\pi}-e^{j2π/3}\frac{\sin(k2\pi/3)}{k\pi}+e^{j2π/3}\frac{\sin(k4\pi/3)}{k\pi}-e^{j4π/3}\frac{\sin(k4\pi/3)}{k\pi}\right)~~~\mathrm{and}~~~\\
 
 \phi_k= \mathrm{arg}\left(\frac{\sin(k2\pi/3)}{k\pi}-e^{j2π/3}\frac{\sin(k2\pi/3)}{k\pi}+e^{j2π/3}\frac{\sin(k4\pi/3)}{k\pi}-e^{j4π/3}\frac{\sin(k4\pi/3)}{k\pi}\right).$
 
