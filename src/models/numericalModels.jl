@@ -1,7 +1,9 @@
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
 
+using Dierckx #for interpolation
+
 """
-    𝐒 = numSet( )
+    𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 
 Create a *numerical component set* 'numSet' by providing a
 vector of *numerical canonical triplets* 'numTriplet'.
@@ -56,7 +58,8 @@ t = 0:1/fs:1
 𝐳 = numModel(𝐒)
 ```
 
-Create a 'numModel' by providing a vector of *numerical components*
+
+Another convenient way to create a 'numModel' by providing a vector of *numerical components*
 'numComp'.
 
 # Examples
