@@ -3,15 +3,19 @@
 using DSP #for phase unwrapping
 
 """
-    𝐂 = numComp(𝚿)
+    𝐂 = AMFMdemod(𝚿)
 
-Create a 'numTriplet' from a 'numComp'.
+Create a *numerical canonical triplet* 'numTriplet' from
+a *numerical component* 'numComp'.
 
 # Examples
 ```@example
-
-<EXAMPLE HERE>
-
+using ISA
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
+fs = 16_000
+t = 0:1/fs:1
+𝚿₀ = numComp( ψ₀(t), fs )
+𝐂₀ = AMFMdemod(𝚿₀)
 ```
 """
 function AMFMdemod(Ψ::numComp; derivMethod="center11")::numTriplet

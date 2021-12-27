@@ -51,21 +51,7 @@ end
 # DISPLAY
 Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
 
-"""
-    𝐂 = numTriplet( )
 
-Create a 'numTriplet'...
-
-# Examples
-```@example
-using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
-fs = 16_000
-t = 0:1/fs:1
-𝚿₀ = numComp( ψ₀(t), fs )
-𝐂₀ = AMFMdemod(𝚿₀)
-```
-"""
 struct numTriplet
   Ψ::Vector{ComplexF64}
   t::Vector{Float64}
