@@ -147,41 +147,43 @@ Consider a signal $z(t)$ which consists of a
 the periodic square wave (fundamental period $T$) with a 50% duty cycle where one period is defined by
 
 $z(t) = \begin{cases}
-        1, &   0<|t|<T/3  \\
-        \mathrm{e}^{\,\mathrm{j 2\pi/3}} , &   T/3<|t|<2T/3  \\
-        \mathrm{e}^{\,\mathrm{j} 4\pi/3},  &   2T/3<|t|<T        
+        1, &   0<t<T/3  \\
+        \mathrm{e}^{\,\mathrm{j 2\pi/3}} , &   T/3<t<2T/3  \\
+        \mathrm{e}^{\,\mathrm{j} 4\pi/3},  &   2T/3<t<T        
         \end{cases}.$
 
-We can represent this signal with component set consisting of a set of harmonicly related SHCs
+We can represent this signal with component set consisting of a set of harmonically related SHCs
 
 $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
 where
 
-$a_k = \mathrm{abs}\left(\frac{\sin(k2\pi/3)}{k\pi}-e^{j2π/3}\frac{\sin(k2\pi/3)}{k\pi}+e^{j2π/3}\frac{\sin(k4\pi/3)}{k\pi}-e^{j4π/3}\frac{\sin(k4\pi/3)}{k\pi}\right)~~~\mathrm{and}~~~\\
+$a_k = \mathrm{abs}\left(\frac{1-e^{-jk2π/3}-e^{j2π/3}e^{-jk4π/3}+e^{j2π/3}e^{-jk2π/3}-e^{j4π3}e^{-jk2π}+e^{j4π/3}e^{-jk4π/3}}{jk2π}\right)~~~\mathrm{and}~~~\\
 
-\phi_k= \mathrm{arg}\left(\frac{\sin(k2\pi/3)}{k\pi}-e^{j2π/3}\frac{\sin(k2\pi/3)}{k\pi}+e^{j2π/3}\frac{\sin(k4\pi/3)}{k\pi}-e^{j4π/3}\frac{\sin(k4\pi/3)}{k\pi}\right).$
+\phi_k= \mathrm{arg}\left(\frac{1-e^{-jk2π/3}-e^{j2π/3}e^{-jk4π/3}+e^{j2π/3}e^{-jk2π/3}-e^{j4π3}e^{-jk2π}+e^{j4π/3}e^{-jk4π/3}}{jk2π}\right).$
 
 For a this choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
 
 ```julia
 using ISA, Plots
 T = 0.5
-aₖ(k) = ifelse( k==0, 0, sin(k*2π/3)/(k*π)-exp(im*2π/3)*sin(k*2π/3)/(k*π)+
-exp(im*2π/3)*sin(k*4π/3)/(k*π)-exp(im*4π/3)*sin(k*4π/3)/(k*π) )
+aₖ(k) = ifelse( k==0, 0, (1-exp(-im*k*2π/3)-exp(im*2π/3)*
+exp(-im*k*4π/3)+exp(im*2π/3)*exp(-im*k*2π/3)-exp(im*4π/3)*
+exp(-im*k*2π)+exp(im*4π/3)*exp(-im*k*4π/3))/(im*k*2π) )
 
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(z; timeaxis=-1.0:0.001:1.0, ylims=(-5.0,5.0))
+plot(z; timeaxis=-1.0:0.001:1.0, ylims=(-1.0,1.0))
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier7.png)
 
 ```julia
 using ISA, Plots
 T = 0.5
-aₖ(k) = ifelse( k==0, 0, sin(k*2π/3)/(k*π)-exp(im*2π/3)*sin(k*2π/3)/(k*π)+
-exp(im*2π/3)*sin(k*4π/3)/(k*π)-exp(im*4π/3)*sin(k*4π/3)/(k*π) )
+aₖ(k) = ifelse( k==0, 0, (1-exp(-im*k*2π/3)-exp(im*2π/3)*
+exp(-im*k*4π/3)+exp(im*2π/3)*exp(-im*k*2π/3)-exp(im*4π/3)*
+exp(-im*k*2π)+exp(im*4π/3)*exp(-im*k*4π/3))/(im*k*2π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
@@ -192,8 +194,9 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 ```julia
 using ISA, Plots
 T = 0.5
-aₖ(k) = ifelse( k==0, 0, sin(k*2π/3)/(k*π)-exp(im*2π/3)*sin(k*2π/3)/(k*π)+
-exp(im*2π/3)*sin(k*4π/3)/(k*π)-exp(im*4π/3)*sin(k*4π/3)/(k*π) )
+aₖ(k) = ifelse( k==0, 0, (1-exp(-im*k*2π/3)-exp(im*2π/3)*
+exp(-im*k*4π/3)+exp(im*2π/3)*exp(-im*k*2π/3)-exp(im*4π/3)*
+exp(-im*k*2π)+exp(im*4π/3)*exp(-im*k*4π/3))/(im*k*2π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
