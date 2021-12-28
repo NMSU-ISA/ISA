@@ -1,11 +1,9 @@
 #References: Sandoval, Steven, and Phillip L. De Leon. "The Instantaneous Spectrum: A General Framework for Time-Frequency Analysis." IEEE Transactions on Signal Processing 66.21 (2018): 5679-5693.
 
-
 """
-    𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
+    𝐒 = numSet( )
 
-Create a *numerical component set* 'numSet' by providing a
-vector of *numerical canonical triplets* 'numTriplet'.
+Create a 'numSet'...
 
 # Examples
 ```@example
@@ -29,14 +27,21 @@ struct numSet
 end
 
 # DISPLAY
-Base.show(io::IO, x::numSet) = print(io, "numerical component set")
+function displayS(x)
+  text = ""
+  for i in 1:length(x.S)
+    text *= "\n"*"$(x.S[i])"
+  end
+  return text
+end
+Base.show(io::IO, x::numSet) = print(io, "numerical component set with $(length(x.S)) components $(displayS(x))")
+
 
 
 """
     𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
 
-Create a 'numModel' by providing a vector of *numerical components*
-'numComp'.
+Create a 'numModel'...
 
 # Examples
 ```@example
@@ -49,10 +54,13 @@ t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
-𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
+𝐂₀ = AMFMdemod(𝚿₀)
+𝐂₁ = AMFMdemod(𝚿₁)
+𝐂₂ = AMFMdemod(𝚿₂)
+𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
+𝐳 = numModel(𝐒) **METHOD DOESN'T EXIST**
 ```
 """
-
 struct numModel
   𝚿ₖ::Vector{numComp}
 end
@@ -78,4 +86,11 @@ function (𝐳::numModel)(t::UnitRange)
 end
 
 # DISPLAY
-Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model")
+function display𝐳(x)
+  text = ""
+  for i in 1:length(x.𝚿ₖ)
+    text *= "\n"*"$(x.𝚿ₖ[i])"
+  end
+  return text
+end
+Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model with $(length(x.𝚿ₖ)) components $(display𝐳(x))")

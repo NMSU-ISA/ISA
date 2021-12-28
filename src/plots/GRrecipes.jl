@@ -14,7 +14,8 @@ Create a 3D Argand Digram ...
 # Examples
 ```@example
 using ISA, Plots
-
+ψ₀ = AMFMcomp(t->10t,t->25cos(t),0.0)
+plot(ψ₀)
 ```
 """
 # 3D Argand Digram
@@ -117,4 +118,81 @@ end
    clim = (0,1)
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
    t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
+end
+
+
+
+#------------------numerical plotting
+# 3D numComp
+@recipe function temp(𝚿::numComp;FreqUnits = "rad/s")
+   xguide --> "time(s)"
+   yguide --> "imag"
+   zguide --> "real"
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
+   camera --> (45,45)
+   framestyle --> :origin
+   clim = (0,1)
+   a_max = maximum(abs.(𝚿₀.(t)))
+   clim = (0,1)
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝚿₀.(t)) .* 256/a_max ),256),50) ]
+   𝚿.t,imag(𝚿.Ψ),real(𝚿.Ψ)
+end
+
+# 3D numTriplet
+@recipe function temp(𝐂::numTriplet;FreqUnits = "rad/s")
+   xguide --> "time(s)"
+   yguide --> "freq("*FreqUnits*")"
+   zguide --> "real"
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
+   ymirror --> true
+   camera --> (20,80)
+   framestyle --> :origin
+   Fnorm = getFnorm(FreqUnits)
+   a_max = maximum(abs.(𝐂₀.a))
+   clim = (0,1)
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐂₀.Ψ)) .* 256/a_max ),256),50) ]
+   𝐂.t,𝐂.ω,real.(𝐂.Ψ)
+end
+
+# 3D numSet
+@recipe function temp(𝐒::numSet;FreqUnits = "rad/s")
+   xguide --> "time(s)"
+   yguide --> "freq("*FreqUnits*")"
+   zguide --> "real"
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
+   camera --> (20,80)
+   ymirror --> true
+   framestyle --> :origin
+   Fnorm = getFnorm(FreqUnits)
+   a_max = maximum([maximum(abs.(𝐒.S[k].a)) for k in 1:length(𝐒.S)])
+
+   for k in 1:length(𝐒.S)
+      #seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐒.S[k].Ψ)) .* 256/a_max ),256),50) ]
+      @series begin
+         𝐒.S[k].t,𝐒.S[k].ω,real.(𝐒.S[k].Ψ)
+      end
+   end
+end
+
+# numerical model
+@recipe function temp(𝐳::numModel; FreqUnits = "rad/s")
+   xguide --> "time(s)"
+   yguide --> "imag"
+   zguide --> "real"
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
+   camera --> (45,45)
+   ymirror --> true
+   framestyle --> :origin
+   a_max = maximum(abs.(𝐳(t)))
+   clim = (0,1)
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(t)) .* 256/a_max ),256),50) ]
+   𝐳.𝚿ₖ[1].t, imag(𝐳(t)), real(𝐳(t))
 end
