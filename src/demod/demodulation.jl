@@ -33,10 +33,26 @@ end
 """
     f′ = derivApprox(f; fs, method)
 
-Numerically approximate the derivative of a sampled signal.
+Numerically approximate the derivative of a sampled signal
+associated with a method where the method refers to
+a numerical differentiation method consisting of the
+following
+
+'forward' - forward difference
+'backward' - backward difference
+'center3' - 3-pt stencil central difference
+'center5' - 5-pt stencil central difference
+'center7' - 7-pt stencil central difference
+'center9' - 9-pt stencil central difference
+'center11' - 11-pt stencil central difference [default]
+'center13' - 13-pt stencil central difference
+'center15' - 15-pt stencil central difference
+
 
 Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
-
+[References:]
+(http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
+(https://web.media.mit.edu/~crtaylor/calculator.html)
 # Examples
 ```@example
 
