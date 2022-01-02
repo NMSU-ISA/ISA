@@ -56,12 +56,11 @@ following
 
 'center15' - 15-pt stencil central difference
 
-
-Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
-
 **References**:
 [Numerical Differentiation](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
- ,[Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
+ , [Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
+
+Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
 
 # Examples
 ```@example

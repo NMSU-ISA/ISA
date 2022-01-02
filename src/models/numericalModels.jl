@@ -3,7 +3,8 @@
 """
     𝐒 = numSet( )
 
-Create a 'numSet'...
+Create a numerical component set 'numSet' by providing a vector of
+numerical canonical triplets.
 
 # Examples
 ```@example
@@ -41,7 +42,8 @@ Base.show(io::IO, x::numSet) = print(io, "numerical component set with $(length(
 """
     𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
 
-Create a 'numModel'...
+Create a 'numModel' by providing a vector of numerical components
+'numComp'.
 
 # Examples
 ```@example
@@ -54,11 +56,7 @@ t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
-𝐂₀ = AMFMdemod(𝚿₀)
-𝐂₁ = AMFMdemod(𝚿₁)
-𝐂₂ = AMFMdemod(𝚿₂)
-𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
-𝐳 = numModel(𝐒) **METHOD DOESN'T EXIST**
+𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
 ```
 """
 struct numModel
