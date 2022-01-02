@@ -59,17 +59,17 @@ following
 
 Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
 
-**References**
+**References**:
+[Numerical Differentiation](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
 
-[1](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
-
-[2](https://web.media.mit.edu/~crtaylor/calculator.html)
+[Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
 
 # Examples
 ```@example
-
-<EXAMPLE HERE>
-
+using ISA
+x=collect(0.0:0.01:10.0)
+f=sin.(x)
+f′=derivApprox(f, fs=1.0, method="center11")
 ```
 """
 function derivApprox(x::Vector{Float64}; fs=1.0, method="center11")::Vector{Float64} #http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/central-differences/
