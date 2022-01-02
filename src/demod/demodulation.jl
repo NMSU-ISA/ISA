@@ -35,7 +35,7 @@ end
 
 Numerically approximate the derivative of a sampled signal
 associated with a method where the method refers to
-a numerical differentiation method consisting of the
+a numerical differentiation method consists of the
 following
 
 'forward' - forward difference
@@ -61,8 +61,7 @@ Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method=
 
 **References**:
 [Numerical Differentiation](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
-
-[Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
+ ,[Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
 
 # Examples
 ```@example
