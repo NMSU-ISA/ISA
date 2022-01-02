@@ -58,9 +58,12 @@ following
 
 
 Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
-[References][1](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
 
-[https://web.media.mit.edu/~crtaylor/calculator.html]
+**References**
+
+[1](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
+
+[2](https://web.media.mit.edu/~crtaylor/calculator.html)
 
 # Examples
 ```@example
