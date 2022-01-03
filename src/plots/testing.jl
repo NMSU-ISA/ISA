@@ -9,6 +9,8 @@
 #    plot(𝚿₀)
 # end
 #
+#
+#
 # # numTriplet EXAMPLE
 # if 1==1
 #    ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
@@ -56,7 +58,7 @@
 #    𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
 #    plot(𝐳)
 # end
-
+#
 
 # using ISA, Plots
 # 𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
