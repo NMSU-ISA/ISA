@@ -2,6 +2,40 @@
 
 [Recipes](https://docs.juliaplots.org/latest/recipes/) are a way of defining visualizations in your own packages and code, without having to depend on [Plots](http://docs.juliaplots.org/latest/). The functionality relies on [RecipesBase](http://juliaplots.org/RecipesBase.jl/stable/), a super lightweight but powerful package which allows users to create advanced plotting logic without Plots.
 
+After importing the Plots.jl package (i.e. `using Plots`), any data type in ISA.jl can be plotted by simply calling `plot(type)` and the corresponding plot recipe will generate the appropriate plot with the default parameters.
+
+Users need to install the Plots.jl package into their system before calling it for the first time. Plots.jl can be installed by typing `]add Plots`.
+
+## Plots Coloring
+
+The two colormaps [cubeyf](https://mycarta.wordpress.com/2013/02/21/perceptual-rainbow-palette-the-method/) and [viridis](https://www.youtube.com/watch?v=xAoljeRJ3lU) used in ISA.jl are perceptually motivated and both aim to eliminate perceptual problems associated with many colormaps
+
+Out of the box, cubeyf is the default colormap and all plots would be based on cubeyf as long as user doesn't specify other colormap within the `plot()` call.
+
+## Default Parameters
+
+Plot recipes were designed with default plot parameters that should be suitable on most cases. However, users can change these parameters however they want, below are some examples showing the default and costume parameters:
+
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=0.0:0.001:10.0)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default1.png)
+
+```julia
+# change the camera angle
+plot(ψ₀; timeaxis=0.0:0.001:10.0, camera=(20,60))
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum1.png)
+
+Changing axis's title and location is possible too:
+```julia
+plot(ψ₀; timeaxis=0.0:0.001:10.0, yguide="imaginary", ymirror=true)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
+
 ## 3D Argand Diagrams
 An [Argand Diagram](https://mathworld.wolfram.com/ArgandDiagram.html) is a geometric representation of a complex number. We provided a way that allows users to visualize AM-FM components using the pre-defined plotting recipes to plot an Argand diagram as follows. First, define a canonical triplet, then call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/)  along with a time range.
 ### Example
