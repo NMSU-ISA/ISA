@@ -191,8 +191,9 @@ end
    camera --> (45,45)
    ymirror --> true
    framestyle --> :origin
-   a_max = maximum(abs.(𝐳(t)))
+   tt = 𝐳.𝚿ₖ[1].t
+   a_max = maximum(abs.(𝐳.(tt)))
    clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(t)) .* 256/a_max ),256),50) ]
-   𝐳.𝚿ₖ[1].t, imag(𝐳(t)), real(𝐳(t))
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(tt)) .* 256/a_max ),256),50) ]
+   tt, imag(𝐳(tt)), real(𝐳(tt))
 end
