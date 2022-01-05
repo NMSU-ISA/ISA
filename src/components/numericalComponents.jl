@@ -51,7 +51,15 @@ function (𝚿::numComp)(t::UnitRange)
 end
 
 # DISPLAY
-Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
+function display𝚿(x)
+  text = ""
+  T = typeof(x)
+  for (name, typ) in zip(fieldnames(T), T.types)
+      text *= "\n"*"$name is $typ"
+  end
+  return text
+end
+Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component$(display𝚿(x))")
 
 
 struct numTriplet
@@ -66,4 +74,12 @@ struct numTriplet
 end
 
 # DISPLAY
-Base.show(io::IO, x::numTriplet) = print(io, "numerical canonical triplet")
+function display𝐂(x)
+  text = ""
+  T = typeof(x)
+  for (name, typ) in zip(fieldnames(T), T.types)
+      text *= "\n"*"$name is $typ"
+  end
+  return text
+end
+Base.show(io::IO, x::numTriplet) = print(io, "numerical canonical triplet$(display𝐂(x))")
