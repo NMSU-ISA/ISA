@@ -158,9 +158,9 @@ $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\r
 
 where
 
-$a_k = \mathrm{abs}\left(\frac{1-\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k4π/3}+\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}4π3}\mathrm{e}^{-\matrm{j}k2π}+\mathrm{e}^{\mathrm{j}4π/3}\mathrm{e}^{-\mathrm{j}k4π/3}}{\mathrm{j}k2π}\right)~~~\mathrm{and}~~~\\
+$a_k = \mathrm{abs}\left(\frac{1-\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k4π/3}+\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}4π3}\mathrm{e}^{-\mathrm{j}k2π}+\mathrm{e}^{\mathrm{j}4π/3}\mathrm{e}^{-\mathrm{j}k4π/3}}{\mathrm{j}k2π}\right)~~~\mathrm{and}~~~\\
 
-\phi_k= \mathrm{arg}\left(\frac{1-\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k4π/3}+\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}4π3}\mathrm{e}^{-\matrm{j}k2π}+\mathrm{e}^{\mathrm{j}4π/3}\mathrm{e}^{-\mathrm{j}k4π/3}}{\mathrm{j}k2π}\right).$
+\phi_k= \mathrm{arg}\left(\frac{1-\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k4π/3}+\mathrm{e}^{\mathrm{j}2π/3}\mathrm{e}^{-\mathrm{j}k2π/3}-\mathrm{e}^{\mathrm{j}4π3}\mathrm{e}^{-\mathrm{j}k2π}+\mathrm{e}^{\mathrm{j}4π/3}\mathrm{e}^{-\mathrm{j}k4π/3}}{\mathrm{j}k2π}\right).$
 
 For a this choice of parameters of the component set, we have the following Argand Diagram for $z(t;\mathscr{S})$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$. Keep in mind, we are only considering a finite number of components $k = 0,\pm 1,\pm 2,\ldots,K$ not $k = 0,\pm 1,\pm2,\ldots,\pm\infty$.
 
