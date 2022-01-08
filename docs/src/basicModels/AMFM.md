@@ -34,7 +34,7 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(z; timeaxis=0.0:0.001:3.0)
+plot(z; timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel1.png)
 
@@ -75,7 +75,7 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(z; timeaxis=0.0:0.001:3.0)
+plot(z; timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel4.png)
 
@@ -116,7 +116,7 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t),0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(z; timeaxis=0.0:0.001:3.0)
+plot(z; timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel7.png)
 
