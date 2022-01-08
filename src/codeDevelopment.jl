@@ -19,17 +19,6 @@ t = 0:1/fs:1
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 T = typeof(𝚿₀)
 for (name, typ) in zip(fieldnames(T), T.types)
     println("type of the fieldname $name is $typ")

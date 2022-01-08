@@ -29,13 +29,18 @@ end
 
 # DISPLAY
 function displayS(x)
-  text = ""
+  text = "\n"
   for i in 1:length(x.S)
-    text *= "\n"*"$(x.S[i])"
+    T = typeof(x.S[i])
+    text *= "numerical canonical triplet #$(i)\n"
+    for (name, typ) in zip(fieldnames(T), T.types)
+        text *= "$name is $typ\n"
+    end
+    text *= "\n"
   end
   return text
 end
-Base.show(io::IO, x::numSet) = print(io, "numerical component set with $(length(x.S)) components $(displayS(x))")
+Base.show(io::IO, x::numSet) = print(io, "numerical component set with $(length(x.S)) components$(displayS(x))")
 
 
 
@@ -84,11 +89,4 @@ function (𝐳::numModel)(t::UnitRange)
 end
 
 # DISPLAY
-function display𝐳(x)
-  text = ""
-  for i in 1:length(x.𝚿ₖ)
-    text *= "\n"*"$(x.𝚿ₖ[i])"
-  end
-  return text
-end
-Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model with $(length(x.𝚿ₖ)) components $(display𝐳(x))")
+Base.show(io::IO, x::numModel) = print(io, "numerical AM-FM model with $(length(x.𝚿ₖ)) components")

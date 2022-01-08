@@ -33,6 +33,8 @@ numComp(Ψ::Vector{ComplexF64}, fs::Real) = numComp(Ψ, collect(0:length(Ψ)-1)/
 numComp(Ψ::Vector{ComplexF64}, t::Vector{Float64}) = numComp(Ψ, t, 1/(t[2]-t[1]) )
 numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen) = numComp(Ψ, collect(t) )
 numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0:length(Ψ)-1), 1.0)
+numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen, fs::Real) = numComp(Ψ, collect(t), fs)
+numComp(Ψ::Vector{ComplexF64}, t::UnitRange, fs::Real) = numComp(Ψ, collect(t), fs)
 
 # METHODS
 function (𝚿::numComp)(t::Real)
@@ -49,7 +51,15 @@ function (𝚿::numComp)(t::UnitRange)
 end
 
 # DISPLAY
-Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component")
+function display𝚿(x)
+  text = ""
+  T = typeof(x)
+  for (name, typ) in zip(fieldnames(T), T.types)
+      text *= "\n"*"$name is $typ"
+  end
+  return text
+end
+Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component$(display𝚿(x))")
 
 
 struct numTriplet
@@ -64,4 +74,12 @@ struct numTriplet
 end
 
 # DISPLAY
-Base.show(io::IO, x::numTriplet) = print(io, "numerical canonical triplet")
+function display𝐂(x)
+  text = ""
+  T = typeof(x)
+  for (name, typ) in zip(fieldnames(T), T.types)
+      text *= "\n"*"$name is $typ"
+  end
+  return text
+end
+Base.show(io::IO, x::numTriplet) = print(io, "numerical canonical triplet$(display𝐂(x))")

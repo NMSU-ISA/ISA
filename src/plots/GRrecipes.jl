@@ -134,9 +134,9 @@ end
    camera --> (45,45)
    framestyle --> :origin
    clim = (0,1)
-   a_max = maximum(abs.(𝚿₀.(t)))
+   a_max = maximum(abs.(𝚿.t))
    clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝚿₀.(t)) .* 256/a_max ),256),50) ]
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝚿.t) .* 256/a_max ),256),50) ]
    𝚿.t,imag(𝚿.Ψ),real(𝚿.Ψ)
 end
 
@@ -152,9 +152,9 @@ end
    camera --> (20,80)
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
-   a_max = maximum(abs.(𝐂₀.a))
+   a_max = maximum(abs.(𝐂.a))
    clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐂₀.Ψ)) .* 256/a_max ),256),50) ]
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐂.Ψ)) .* 256/a_max ),256),50) ]
    𝐂.t,𝐂.ω,real.(𝐂.Ψ)
 end
 
@@ -191,8 +191,9 @@ end
    camera --> (45,45)
    ymirror --> true
    framestyle --> :origin
-   a_max = maximum(abs.(𝐳(t)))
+   tt = 𝐳.𝚿ₖ[1].t
+   a_max = maximum(abs.(𝐳.(tt)))
    clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(t)) .* 256/a_max ),256),50) ]
-   𝐳.𝚿ₖ[1].t, imag(𝐳(t)), real(𝐳(t))
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(tt)) .* 256/a_max ),256),50) ]
+   tt, imag(𝐳(tt)), real(𝐳(tt))
 end
