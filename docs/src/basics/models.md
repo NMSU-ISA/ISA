@@ -5,7 +5,7 @@ An **AM--FM model** $z(t)$ (`AMFMmodel`) is parameterized by a *component set* $
 $z\left( t ; \mathscr{S} \vphantom{0^0}\right)  \triangleq \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right),~\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 
 ## Defining an AM--FM Model
-We can define an **AM--FM model** $z(t)$ (`AMFMmodel`) by calling `AMFMmodel()` with a *component set* $\mathscr{S}$ (`compSet`).
+We can define an **AM--FM model** $z(t)$ [`AMFMmodel`] by calling `AMFMmodel()` with a *component set* $\mathscr{S}$ [`compSet`].
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
@@ -15,7 +15,7 @@ using ISA
 z = AMFMmodel(𝑆)
 ```
 
-For convenience, we can also define an **AM--FM model** $z(t)$ (`AMFMmodel`) by calling `AMFMmodel()` with either a *vector of canonical triplets*
+For convenience, we can also define an **AM--FM model** $z(t)$ [`AMFMmodel`] by calling `AMFMmodel()` with either a *vector of canonical triplets*
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)

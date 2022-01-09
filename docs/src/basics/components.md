@@ -5,14 +5,14 @@ An **AM--FM component** $\psi_k$ (`AMFMcomp`) is parameterized by *canonical tri
 $\psi_k \left( t ; \mathscr{C}_k \vphantom{0^0}\right) \triangleq a_k(t) \exp\left(\mathrm{j} \left[\int_{-\infty}^{t} \omega_k(\tau)\mathrm{d}\tau +\phi_k\right] \right)$
 
 ## Defining an AM--FM Component
-We can define a  **AM--FM component** $\psi_k$ (`AMFMcomp`) by calling `AMFMcomp()` with a *canonical triplet* $\mathscr{C}$ (`AMFMtriplet`).
+We can define a  **AM--FM component** $\psi_k$ [`AMFMcomp`] by calling `AMFMcomp()` with a *canonical triplet* $\mathscr{C}$ [`AMFMtriplet`].
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
  ψ₀ = AMFMcomp(𝐶₀)
 ```
 
-For convenience, we can also define an  **AM--FM component** $\psi_k$ (`AMFMcomp`) by calling `AMFMcomp()` with the parameters of *canonical triplet*, specifically, an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
+For convenience, we can also define an  **AM--FM component** $\psi_k$ [`AMFMcomp`] by calling `AMFMcomp()` with the parameters of *canonical triplet*, specifically, an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
 ```@example
  using ISA
  ψ₀ = AMFMcomp(t->exp(-t^2/5),t->200.0,0.0)

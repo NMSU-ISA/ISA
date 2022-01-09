@@ -8,10 +8,10 @@ a **phase reference** $\phi$ (`Real`).
 $\mathscr{C}\triangleq\left\{a(t),\omega(t), \phi\vphantom{0^0}\right\}$
 
 ### Defining a Canonical Triplet
-We can define a **canonical triplet** $\mathscr{C}$ (`AMFMtriplet`) by calling `AMFMtriplet()` with an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
+We can define a **canonical triplet** $\mathscr{C}$ [`AMFMtriplet`] by calling `AMFMtriplet()` with an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
 ```@example
 using ISA
-a(t) = exp(-t^2/5) 
+a(t) = exp(-t^2/5)
 ω(t) = 200.0
 φ = 0.0
 𝐶 = AMFMtriplet(a,ω,φ)
@@ -23,7 +23,7 @@ A **component set** $\mathscr{S}$ (`compSet`) is parameterized by a *set of cano
 $\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 
 ### Defining a Component Set
-We can define a **component set** $\mathscr{S}$ (`comSet`) by calling `compSet()` with a *vector of canonical triplets*.
+We can define a **component set** $\mathscr{S}$ [`comSet`] by calling `compSet()` with a *vector of canonical triplets*.
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
