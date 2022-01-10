@@ -1,6 +1,6 @@
 # AM--FM Models
 
-An **AM--FM model** $z(t)$ (`AMFMmodel`) is parameterized by a *component set* $\mathscr{S}$ (`compSet`).
+An **AM--FM model** $z(t)$ [`AMFMmodel`] is parameterized by a *component set* $\mathscr{S}$ [`compSet`].
 
 $z\left( t ; \mathscr{S} \vphantom{0^0}\right)  \triangleq \sum\limits_{k=0}^{K-1}\psi_k\left( t ; \mathscr{C}_k \vphantom{0^0}\right),~\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 
@@ -33,7 +33,7 @@ z = AMFMmodel([ψ₀,ψ₁,ψ₂])
 ```
 
 ## Evaluating an AM--FM Model
-Once an  **AM--FM model** $z(t)$ `AMFMmodel` is defined, it can be evaluated at a time instant $t_0$ (`Real`).
+Once an  **AM--FM model** $z(t)$ [`AMFMmodel`] is defined, it can be evaluated at a time instant $t_0$ (`Real`).
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
@@ -57,7 +57,7 @@ z(t)
 ```
 
 ## Visualizing an AM--FM Model
-We can visualize an **AM--FM model** $z(t)$ (`AMFMmodel`) by evoking a pre-defined plotting recipe by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an *AM--FM model* $z(t)$ (`AMFMmodel`) and a time range.
+We can visualize an **AM--FM model** $z(t)$ [`AMFMmodel`] by evoking a pre-defined plotting recipe by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an *AM--FM model* $z(t)$ [`AMFMmodel`] and a time range.
 ```@example
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)

@@ -31,7 +31,7 @@ For one choice of parameters of the canonical triplet, we have the following Arg
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(ψ₀; timeaxis=-1.0:0.001:1.0)
+plot(ψ₀; timeaxis=-1.0:0.0005:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAM1.png)
 

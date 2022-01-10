@@ -1,7 +1,7 @@
 # Canonical Triplets and Component Sets
 
 ## Canonical Triplets
-A **canonical triplet** $\mathscr{C}$ (`AMFMtriplet`) is parameterized by an **instantaneous amplitude (IA)**
+A **canonical triplet** $\mathscr{C}$ [`AMFMtriplet`] is parameterized by an **instantaneous amplitude (IA)**
 $a(t)$ (`Function`), an **instantaneous frequency (IF)** $\omega(t)$ (`Function`), and
 a **phase reference** $\phi$ (`Real`).
 
@@ -18,7 +18,7 @@ a(t) = exp(-t^2/5)
 ```
 
 ## Component Sets
-A **component set** $\mathscr{S}$ (`compSet`) is parameterized by a *set of canonical triplets*.
+A **component set** $\mathscr{S}$ [`compSet`] is parameterized by a *set of canonical triplets*.
 
 $\mathscr{S}\triangleq\left\{\mathscr{C}_0,\mathscr{C}_1,\cdots,\mathscr{C}_{K-1}\vphantom{0^0}\right\}$
 
