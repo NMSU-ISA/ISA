@@ -32,7 +32,7 @@ numComp(Ψ::Vector{ComplexF64}, t::Vector{Float64}, fs::Real) = numComp(Ψ, t, f
 numComp(Ψ::Vector{ComplexF64}, fs::Real) = numComp(Ψ, collect(0:length(Ψ)-1)/fs, fs)
 numComp(Ψ::Vector{ComplexF64}, t::Vector{Float64}) = numComp(Ψ, t, 1/(t[2]-t[1]) )
 numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen) = numComp(Ψ, collect(t) )
-numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0:length(Ψ)-1), 1.0)
+numComp(Ψ::Vector{ComplexF64}) = numComp(Ψ, collect(0.0:1.0:length(Ψ)-1), 1.0)
 numComp(Ψ::Vector{ComplexF64}, t::StepRangeLen, fs::Real) = numComp(Ψ, collect(t), fs)
 numComp(Ψ::Vector{ComplexF64}, t::UnitRange, fs::Real) = numComp(Ψ, collect(t), fs)
 
