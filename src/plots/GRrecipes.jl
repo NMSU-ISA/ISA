@@ -36,14 +36,41 @@ plot(ψ₀)
    timeaxis, imag(z(t)), real(z(t))
 end
 # 3D Argand Digram
-@recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "imag"
-   zguide --> "real"
+# @recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+#    xguide --> "time(s)"
+#    yguide --> "imag"
+#    zguide --> "real"
+#    background_color --> cubeYF()[1]
+#    foreground_color --> :white
+#    legend --> false
+#    camera --> (45,45)
+#    framestyle --> :origin
+#    t = timeaxis
+#    a_max = maximum(abs.(ψ.C.a.(t)))
+#    clim = (0,1)
+#    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),50) ]
+#    t,imag(ψ.(t)),real(ψ.(t))
+# end
+
+function viewAngle(view)
+   if view == "xyz"
+      return "time(s)","imag","real",(45,45),false
+   elseif view == "TI"
+      return "time(s)","imag"," ",(0,90),true
+   elseif view == "TR"
+      return "time(s)"," ","real",(0,0),false
+   end
+end
+
+@recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s", view="xyz")
+   xguide --> viewAngle(view)[1]
+   yguide --> viewAngle(view)[2]
+   zguide --> viewAngle(view)[3]
+   ymirror --> viewAngle(view)[5]
    background_color --> cubeYF()[1]
    foreground_color --> :white
    legend --> false
-   camera --> (45,45)
+   camera --> viewAngle(view)[4]
    framestyle --> :origin
    t = timeaxis
    a_max = maximum(abs.(ψ.C.a.(t)))
@@ -51,7 +78,6 @@ end
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),50) ]
    t,imag(ψ.(t)),real(ψ.(t))
 end
-
 
 """
     plot(S::compSet;     timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s")
@@ -78,6 +104,30 @@ function getFnorm(FreqUnits)
 end
 
 # 3D IS Plot
+# @recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
+#    xguide --> "time(s)"
+#    yguide --> "freq("*FreqUnits*")"
+#    zguide --> "real"
+#    background_color --> cubeYF()[1]
+#    foreground_color --> :white
+#    legend --> false
+#    camera --> (20,80)
+#    ymirror --> true
+#    framestyle --> :origin
+#    Fnorm = getFnorm(FreqUnits)
+#    t = timeaxis
+#    a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
+#    clim = (0,1)
+#
+#    for k in 1:length(S.S)
+#       seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
+#       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
+#       @series begin
+#          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
+#       end
+#    end
+# end
+
 @recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
    xguide --> "time(s)"
    yguide --> "freq("*FreqUnits*")"
@@ -92,13 +142,18 @@ end
    t = timeaxis
    a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
    clim = (0,1)
-
+   projection = zeros(length(t))
    for k in 1:length(S.S)
       seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
       @series begin
          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
       end
+      projection = projection .+ real(AMFMcomp(S.S[k]).(t))
+   end
+   @series begin
+      seriescolor := :white
+      timeaxis, zeros(length(t)), projection
    end
 end
 
@@ -154,7 +209,7 @@ end
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum(abs.(𝐂.a))
    clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐂.Ψ)) .* 256/a_max ),256),50) ]
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐂.a)) .* 256/a_max ),256),50) ]
    𝐂.t,𝐂.ω,real.(𝐂.Ψ)
 end
 
@@ -172,11 +227,18 @@ end
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum([maximum(abs.(𝐒.S[k].a)) for k in 1:length(𝐒.S)])
 
+   timeaxis = 𝐒.S[1].t
+   projection = zeros(length(timeaxis))
    for k in 1:length(𝐒.S)
       #seriescolor := cubeYF()[ max.(min.(round.(Int, abs.((𝐒.S[k].Ψ)) .* 256/a_max ),256),50) ]
       @series begin
          𝐒.S[k].t,𝐒.S[k].ω,real.(𝐒.S[k].Ψ)
       end
+      projection = projection .+ real.(𝐒.S[k].Ψ)
+   end
+   @series begin
+      seriescolor := :white
+      timeaxis, zeros(length(timeaxis)), projection
    end
 end
 
