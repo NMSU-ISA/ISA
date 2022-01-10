@@ -2,7 +2,7 @@
 
 ## Defining a Numerical AM--FM Model
 
-A **numerical AM--FM model** `𝐳` (`numModel`) is parameterized by a *vector of  numerical AM--FM components* `[𝚿₀,𝚿₁,𝚿₂]`.
+A **numerical AM--FM model** `𝐳` [`numModel`] is parameterized by a *vector of  numerical AM--FM components* `[𝚿₀,𝚿₁,𝚿₂]`.
 
 We can define **numerical AM--FM model** `𝐳` [`numModel`] by calling `numModel()`with a *vector of  numerical AM--FM components* `[𝚿₀,𝚿₁,𝚿₂]`.
 ```@example
