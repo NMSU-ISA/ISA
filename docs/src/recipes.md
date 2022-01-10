@@ -20,15 +20,29 @@ Plot recipes were designed with default plot parameters that should be suitable 
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(ψ₀; timeaxis=0.0:0.001:10.0)
+plot(ψ₀)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default1.png)
 
 ```julia
-# change the camera angle
-plot(ψ₀; timeaxis=0.0:0.001:10.0, camera=(20,60))
+# change the time axis and camera angle
+plot(ψ₀; timeaxis=0.0:0.001:10.0, camera=(20,50))
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum1.png)
+
+
+The following is a list of some of the default parameters used in ISA plot recipes:
+
+| Parameter | Default Value |
+| ------ | ------ |
+| xguide | "time(s)" |
+| yguide | "imag" |
+| zguide | "real" |
+| background_color | cubeYF()[1] |
+| foreground_color | :white |
+| ymirror | true |
+| legend | false |
+| framestyle | :origin |
 
 Changing axis's title and location is possible too:
 ```julia

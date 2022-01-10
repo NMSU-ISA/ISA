@@ -97,6 +97,14 @@ savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\TRview.png")
 
 
 using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀; timeaxis=0.0:0.001:10.0, camera=(20,50))
+
+savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\costum1.png")
+
+
+using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->200.0,0.0)
 𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
 𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->100 + 70.5*sin(5t),π)
