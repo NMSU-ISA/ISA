@@ -70,8 +70,7 @@ f=sin.(x)
 f′=derivApprox(f, fs=1.0, method="center11")
 ```
 """
-function derivApprox(x::Vector{Float64}; fs=1.0, method="center11")::Vector{Float64} #http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/central-differences/
-
+function derivApprox(x::Vector{Float64}; fs=1.0, method="center11")::Vector{Float64} 
     if method == "forward"
         if length(x)<2; error("derivApprox:vector too short for selected method"); end
         x′ = append!([NaN],fs.*diff(x))
