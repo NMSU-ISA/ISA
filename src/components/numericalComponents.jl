@@ -38,16 +38,16 @@ numComp(Ψ::Vector{ComplexF64}, t::UnitRange, fs::Real) = numComp(Ψ, collect(t)
 
 # METHODS
 function (𝚿::numComp)(t::Real)
-  return ifelse(𝚿.t[1]<=t<=𝚿.t[end] ,𝚿.s(t)+1im*𝚿.σ(t),NaN)
+  return ifelse(𝚿.t[1]<=t<=𝚿.t[end], 𝚿.s(t)+1im*𝚿.σ(t), NaN)
 end
 function (𝚿::numComp)(t::Vector{<:Real})
-  return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end] ,𝚿.s(tₖ)+1im*𝚿.σ(tₖ),NaN) for tₖ∈t]
+  return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end], 𝚿.s(tₖ)+1im*𝚿.σ(tₖ), NaN) for tₖ∈t]
 end
 function (𝚿::numComp)(t::StepRangeLen)
-  return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end] ,𝚿.s(tₖ)+1im*𝚿.σ(tₖ),NaN) for tₖ∈t]
+  return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end], 𝚿.s(tₖ)+1im*𝚿.σ(tₖ), NaN) for tₖ∈t]
 end
 function (𝚿::numComp)(t::UnitRange)
-  return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end] ,𝚿.s(tₖ)+1im*𝚿.σ(tₖ),NaN) for tₖ∈t]
+  return [ifelse(𝚿.t[1]<=tₖ<=𝚿.t[end], 𝚿.s(tₖ)+1im*𝚿.σ(tₖ), NaN) for tₖ∈t]
 end
 
 # DISPLAY
@@ -62,6 +62,18 @@ end
 Base.show(io::IO, x::numComp) = print(io, "numerical AM--FM component$(display𝚿(x))")
 
 
+"""
+    numTriplet()
+
+
+Create a 'numTriplet'
+
+# Examples
+```@example
+using ISA
+
+```
+"""
 struct numTriplet
   Ψ::Vector{ComplexF64}
   t::Vector{Float64}
