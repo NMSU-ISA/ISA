@@ -140,6 +140,3 @@ plot(𝐶₁,view="FR")
 # FREQUENCY-REAL
 𝐶₀ = AMFMtriplet(t->1.0,t->100*t,0.1)
 plot(𝐶₀ ,view="FR")
-
-
-savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\FRview.png"
