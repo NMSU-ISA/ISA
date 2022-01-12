@@ -18,16 +18,31 @@ using ISA, Plots
 plot(ψ₀)
 ```
 """
+
+function viewAngle3DArgand(view)
+   if view == "TI" || view == "IT"
+      return "time(s)","imag","",(0,90),true,(true,true,false)
+   elseif view == "TR" || view == "RT"
+      return "time(s)","","real",(0,0),false,(true,false,true)
+   elseif view == "IR" || view == "RI"
+      return "","Imag","real",(90,0),false,(false,true,true)
+   else return "time(s)","imag","real",(45,45),true,(true,true,true)
+   end
+end
+
 # 3D Argand Digram
-@recipe function temp(z::AMFMmodel; timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "imag"
-   zguide --> "real"
+@recipe function temp(z::AMFMmodel; timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s", view="xyz")
+   xguide --> viewAngle3DArgand(view)[1]
+   yguide --> viewAngle3DArgand(view)[2]
+   zguide --> viewAngle3DArgand(view)[3]
+   camera --> viewAngle3DArgand(view)[4]
+   ymirror --> viewAngle3DArgand(view)[5]
+   xticks --> viewAngle3DArgand(view)[6][1]
+   yticks --> viewAngle3DArgand(view)[6][2]
+   zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> cubeYF()[1]
    foreground_color --> :white
    legend --> false
-   camera --> (45,45)
-   ymirror --> true
    framestyle --> :origin
    t = timeaxis
    a_max = maximum(abs.(z(t)))
@@ -35,42 +50,22 @@ plot(ψ₀)
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(z(t)) .* 256/a_max ),256),50) ]
    timeaxis, imag(z(t)), real(z(t))
 end
-# 3D Argand Digram
-# @recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-#    xguide --> "time(s)"
-#    yguide --> "imag"
-#    zguide --> "real"
-#    background_color --> cubeYF()[1]
-#    foreground_color --> :white
-#    legend --> false
-#    camera --> (45,45)
-#    framestyle --> :origin
-#    t = timeaxis
-#    a_max = maximum(abs.(ψ.C.a.(t)))
-#    clim = (0,1)
-#    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),50) ]
-#    t,imag(ψ.(t)),real(ψ.(t))
-# end
-
-function viewAngle(view)
-   if view == "xyz"
-      return "time(s)","imag","real",(45,45),false
-   elseif view == "TI"
-      return "time(s)","imag"," ",(0,90),true
-   elseif view == "TR"
-      return "time(s)"," ","real",(0,0),false
-   end
-end
 
 @recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s", view="xyz")
-   xguide --> viewAngle(view)[1]
-   yguide --> viewAngle(view)[2]
-   zguide --> viewAngle(view)[3]
-   ymirror --> viewAngle(view)[5]
+   xguide --> viewAngle3DArgand(view)[1]
+   yguide --> viewAngle3DArgand(view)[2]
+   zguide --> viewAngle3DArgand(view)[3]
+   ymirror --> viewAngle3DArgand(view)[5]
+   xticks --> viewAngle3DArgand(view)[6][1]
+   yticks --> viewAngle3DArgand(view)[6][2]
+   zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> cubeYF()[1]
+   # left_margin --> 10mm
+   # bottom_margin --> 5Plots.mm
+   # right_margin --> 5Plots.mm
    foreground_color --> :white
    legend --> false
-   camera --> viewAngle(view)[4]
+   camera --> viewAngle3DArgand(view)[4]
    framestyle --> :origin
    t = timeaxis
    a_max = maximum(abs.(ψ.C.a.(t)))
@@ -103,40 +98,55 @@ function getFnorm(FreqUnits)
    end
 end
 
-# 3D IS Plot
-# @recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-#    xguide --> "time(s)"
-#    yguide --> "freq("*FreqUnits*")"
-#    zguide --> "real"
-#    background_color --> cubeYF()[1]
-#    foreground_color --> :white
-#    legend --> false
-#    camera --> (20,80)
-#    ymirror --> true
-#    framestyle --> :origin
-#    Fnorm = getFnorm(FreqUnits)
-#    t = timeaxis
-#    a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
-#    clim = (0,1)
-#
-#    for k in 1:length(S.S)
-#       seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
-#       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
-#       @series begin
-#          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
-#       end
-#    end
-# end
 
-@recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "freq("*FreqUnits*")"
-   zguide --> "real"
+function viewAngleIS(view,FreqUnits)
+   if view == "TF" || view == "FT"
+      return "time(s)","freq("*FreqUnits*")"," ",(0,90),true,-90,(true,true,false)
+   elseif view == "TR" || view == "RT"
+      return "time(s)"," ","real",(0,0),false,0,(true,false,true)
+   elseif view == "FR" || view == "RF"
+      return "","freq("*FreqUnits*")","real",(90,0),false,0,(false,true,true)
+   else return "time(s)","freq("*FreqUnits*")","real",(20,80),true,0,(true,true,true)
+   end
+end
+
+# 3D IS Plot
+@recipe function temp(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s",view="xyz")
+   xguide --> viewAngleIS(view,FreqUnits)[1]
+   yguide --> viewAngleIS(view,FreqUnits)[2]
+   zguide --> viewAngleIS(view,FreqUnits)[3]
+   camera --> viewAngleIS(view,FreqUnits)[4]
+   ymirror --> viewAngleIS(view,FreqUnits)[5]
+   yrotation --> viewAngleIS(view,FreqUnits)[6]
+   xticks --> viewAngleIS(view,FreqUnits)[7][1]
+   yticks --> viewAngleIS(view,FreqUnits)[7][2]
+   zticks --> viewAngleIS(view,FreqUnits)[7][3]
    background_color --> cubeYF()[1]
    foreground_color --> :white
    legend --> false
-   camera --> (20,80)
-   ymirror --> true
+   framestyle --> :origin
+   Fnorm = getFnorm(FreqUnits)
+   t = timeaxis
+   a_max = maximum(abs.(𝐶.a.(t)))
+   clim = (0,1)
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
+   t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
+end
+
+# 3D IS Plot
+@recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s",view="xyz")
+   xguide --> viewAngleIS(view,FreqUnits)[1]
+   yguide --> viewAngleIS(view,FreqUnits)[2]
+   zguide --> viewAngleIS(view,FreqUnits)[3]
+   camera --> viewAngleIS(view,FreqUnits)[4]
+   ymirror --> viewAngleIS(view,FreqUnits)[5]
+   yrotation --> viewAngleIS(view,FreqUnits)[6]
+   xticks --> viewAngleIS(view,FreqUnits)[7][1]
+   yticks --> viewAngleIS(view,FreqUnits)[7][2]
+   zticks --> viewAngleIS(view,FreqUnits)[7][3]
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
@@ -157,54 +167,63 @@ end
    end
 end
 
-# 3D IS Plot
-@recipe function temp(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "freq("*FreqUnits*")"
-   zguide --> "real"
+
+#------------------Models
+# 3D Argand Digram
+@recipe function temp(𝚿::numComp;FreqUnits = "rad/s",view="xyz")
+   xguide --> viewAngle3DArgand(view)[1]
+   yguide --> viewAngle3DArgand(view)[2]
+   zguide --> viewAngle3DArgand(view)[3]
+   camera --> viewAngle3DArgand(view)[4]
+   ymirror --> viewAngle3DArgand(view)[5]
+   xticks --> viewAngle3DArgand(view)[6][1]
+   yticks --> viewAngle3DArgand(view)[6][2]
+   zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> cubeYF()[1]
    foreground_color --> :white
    legend --> false
-   camera --> (20,80)
    framestyle --> :origin
-   Fnorm = getFnorm(FreqUnits)
-   t = timeaxis
-   a_max = maximum(abs.(𝐶.a.(t)))
-   clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
-   t,𝐶.ω.(t),real.(AMFMcomp(𝐶).(t))
-end
-
-
-
-#------------------numerical plotting
-# 3D numComp
-@recipe function temp(𝚿::numComp;FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "imag"
-   zguide --> "real"
-   background_color --> cubeYF()[1]
-   foreground_color --> :white
-   legend --> false
-   camera --> (45,45)
-   framestyle --> :origin
-   clim = (0,1)
    a_max = maximum(abs.(𝚿.t))
    clim = (0,1)
    seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝚿.t) .* 256/a_max ),256),50) ]
    𝚿.t,imag(𝚿.Ψ),real(𝚿.Ψ)
 end
 
-# 3D numTriplet
-@recipe function temp(𝐂::numTriplet;FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "freq("*FreqUnits*")"
-   zguide --> "real"
+# 3D Argand Digram
+@recipe function temp(𝐳::numModel; FreqUnits = "rad/s",view="xyz")
+   xguide --> viewAngle3DArgand(view)[1]
+   yguide --> viewAngle3DArgand(view)[2]
+   zguide --> viewAngle3DArgand(view)[3]
+   camera --> viewAngle3DArgand(view)[4]
+   ymirror --> viewAngle3DArgand(view)[5]
+   xticks --> viewAngle3DArgand(view)[6][1]
+   yticks --> viewAngle3DArgand(view)[6][2]
+   zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> cubeYF()[1]
    foreground_color --> :white
    legend --> false
-   ymirror --> true
-   camera --> (20,80)
+   framestyle --> :origin
+   tt = 𝐳.𝚿ₖ[1].t
+   a_max = maximum(abs.(𝐳.(tt)))
+   clim = (0,1)
+   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(tt)) .* 256/a_max ),256),50) ]
+   tt, imag(𝐳(tt)), real(𝐳(tt))
+end
+
+# 3D IS Plot
+@recipe function temp(𝐂::numTriplet;FreqUnits = "rad/s",view="xyz")
+   xguide --> viewAngleIS(view,FreqUnits)[1]
+   yguide --> viewAngleIS(view,FreqUnits)[2]
+   zguide --> viewAngleIS(view,FreqUnits)[3]
+   camera --> viewAngleIS(view,FreqUnits)[4]
+   ymirror --> viewAngleIS(view,FreqUnits)[5]
+   yrotation --> viewAngleIS(view,FreqUnits)[6]
+   xticks --> viewAngleIS(view,FreqUnits)[7][1]
+   yticks --> viewAngleIS(view,FreqUnits)[7][2]
+   zticks --> viewAngleIS(view,FreqUnits)[7][3]
+   background_color --> cubeYF()[1]
+   foreground_color --> :white
+   legend --> false
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum(abs.(𝐂.a))
@@ -213,16 +232,20 @@ end
    𝐂.t,𝐂.ω,real.(𝐂.Ψ)
 end
 
-# 3D numSet
-@recipe function temp(𝐒::numSet;FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "freq("*FreqUnits*")"
-   zguide --> "real"
+# 3D IS Plot
+@recipe function temp(𝐒::numSet;FreqUnits = "rad/s",view="xyz")
+   xguide --> viewAngleIS(view,FreqUnits)[1]
+   yguide --> viewAngleIS(view,FreqUnits)[2]
+   zguide --> viewAngleIS(view,FreqUnits)[3]
+   camera --> viewAngleIS(view,FreqUnits)[4]
+   ymirror --> viewAngleIS(view,FreqUnits)[5]
+   yrotation --> viewAngleIS(view,FreqUnits)[6]
+   xticks --> viewAngleIS(view,FreqUnits)[7][1]
+   yticks --> viewAngleIS(view,FreqUnits)[7][2]
+   zticks --> viewAngleIS(view,FreqUnits)[7][3]
    background_color --> cubeYF()[1]
    foreground_color --> :white
    legend --> false
-   camera --> (20,80)
-   ymirror --> true
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum([maximum(abs.(𝐒.S[k].a)) for k in 1:length(𝐒.S)])
@@ -240,22 +263,4 @@ end
       seriescolor := :white
       timeaxis, zeros(length(timeaxis)), projection
    end
-end
-
-# numerical model
-@recipe function temp(𝐳::numModel; FreqUnits = "rad/s")
-   xguide --> "time(s)"
-   yguide --> "imag"
-   zguide --> "real"
-   background_color --> cubeYF()[1]
-   foreground_color --> :white
-   legend --> false
-   camera --> (45,45)
-   ymirror --> true
-   framestyle --> :origin
-   tt = 𝐳.𝚿ₖ[1].t
-   a_max = maximum(abs.(𝐳.(tt)))
-   clim = (0,1)
-   seriescolor := cubeYF()[ max.(min.(round.(Int, abs.(𝐳(tt)) .* 256/a_max ),256),50) ]
-   tt, imag(𝐳(tt)), real(𝐳(tt))
 end

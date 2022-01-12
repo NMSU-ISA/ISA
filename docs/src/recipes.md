@@ -36,17 +36,18 @@ The following is a list of some of the default parameters used in ISA plot recip
 | Parameter | Default Value |
 | ------ | ------ |
 | xguide | "time(s)" |
-| yguide | "imag" |
+| yguide | "imag" or "Freq"* |
 | zguide | "real" |
 | background_color | cubeYF()[1] |
 | foreground_color | :white |
 | ymirror | true |
 | legend | false |
 | framestyle | :origin |
+*yguide will change depending on the data type
 
 Changing axis's title and location is possible too:
 ```julia
-plot(ψ₀; timeaxis=0.0:0.001:10.0, yguide="imaginary", ymirror=true)
+plot(ψ₀, timeaxis=0.0:0.001:10.0, yguide="imaginary", ymirror=false)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
 
@@ -68,6 +69,13 @@ plot(ψ₂, timeaxis=0.0:0.001:10.0,view="TI")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TIview.png)
 
+```julia
+# TIME-IMAGINARY
+𝐶₀ = AMFMtriplet(t->1.0,t->100*t,0.1)
+plot(𝐶₀ ,view="FR")
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/FRview.png)
+
 ## 3D Argand Diagrams
 An [Argand Diagram](https://mathworld.wolfram.com/ArgandDiagram.html) is a geometric representation of a complex number. We provided a way that allows users to visualize AM-FM components using the pre-defined plotting recipes to plot an Argand diagram as follows. First, define a canonical triplet, then call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/)  along with a time range.
 ### Example
@@ -77,7 +85,7 @@ For one choice of parameters of the canonical triplet, we have the following Arg
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(ψ₀; timeaxis=0.0:0.001:10.0)
+plot(ψ₀, timeaxis=0.0:0.001:10.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM4.png)
 
