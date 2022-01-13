@@ -43,7 +43,7 @@ The following is a list of some of the default parameters used in ISA plot recip
 | ymirror | true |
 | legend | false |
 | framestyle | :origin |
-*yguide will change depending on the data type
+*yguide will change depending on the plot type (IS or Argand plot)
 
 Changing axis's title and location is possible too:
 ```julia
@@ -53,7 +53,7 @@ plot(ψ₀, timeaxis=0.0:0.001:10.0, yguide="imaginary", ymirror=false)
 
 ## Viewing angles
 
-By default, the `plot()` function will show a 3D plot for all data types in ISA. However, the parameter `view` can be used to plot the time-real axis or the time-imaginary axis:
+By default, the `plot()` function will show a 3D plot for all data types in ISA. However, the parameter `view` can be used to plot the time-real, time-imaginary, or imaginary-real axis for Argand plots; and time-real, time-Frequency, or Frequency-real axis for IS plots:
 
 ```julia
 # TIME-REAL
@@ -76,6 +76,18 @@ plot(𝐶₀ ,view="FR")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/FRview.png)
 
+The `view` parameter stores a string value used to determine the plot view as shown in the following table:
+
+| 'view' parameter* | Graph View |
+| ------ | ------ |
+| "XYZ" | default plot |
+| "TR" | Time-Real |
+| "TI" | Time-Imaginary |
+| "TR" | Imaginary-Real |
+| "TF" | Time-FREQENCY |
+| "FR" | FREQENCY-Real |
+| else | Error |
+*The 'view' parameter is case-insensitive ("TR"="tr"="Tr") and not ordered ("TR"="RT")
 ## 3D Argand Diagrams
 An [Argand Diagram](https://mathworld.wolfram.com/ArgandDiagram.html) is a geometric representation of a complex number. We provided a way that allows users to visualize AM-FM components using the pre-defined plotting recipes to plot an Argand diagram as follows. First, define a canonical triplet, then call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/)  along with a time range.
 ### Example

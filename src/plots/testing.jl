@@ -15,7 +15,13 @@ t = 0:1/fs:1
 𝐂₂ = AMFMdemod(𝚿₂)
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 
-plot(𝚿₀,view="IT")
+plot(ψ₀,view="TR")
+
+𝐶₀ = AMFMtriplet(t->1.0,t->100*t,0.1)
+plot(𝐶₀ ,view="rf")
+
+𝐶₀ = AMFMtriplet(t->1.0,t->100*t,0.1)
+plot(𝐶₀ ,view="d")
 # # numComp EXAMPLE
 # if 1==1
 #    ψ₀ = AMFMcomp(t->10t,t->25cos(t),0.0)

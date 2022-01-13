@@ -20,18 +20,21 @@ plot(ψ₀)
 """
 
 function viewAngle3DArgand(view)
-   if view == "TI" || view == "IT"
+   normalized = uppercase(view)
+   if normalized == "XYZ"
+      return "time(s)","imag","real",(45,45),true,(true,true,true)
+   elseif normalized == "TI" || normalized == "IT"
       return "time(s)","imag","",(0,90),true,(true,true,false)
-   elseif view == "TR" || view == "RT"
+   elseif normalized == "TR" || normalized == "RT"
       return "time(s)","","real",(0,0),false,(true,false,true)
-   elseif view == "IR" || view == "RI"
+   elseif normalized == "IR" || normalized == "RI"
       return "","Imag","real",(90,0),false,(false,true,true)
-   else return "time(s)","imag","real",(45,45),true,(true,true,true)
+   else return error("Invalid Argand Graph. Choose from \"TR\", \"TI\", or \"IR\"")
    end
 end
 
 # 3D Argand Digram
-@recipe function temp(z::AMFMmodel; timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s", view="xyz")
+@recipe function temp(z::AMFMmodel; timeaxis = 0.0:0.005:1.0, FreqUnits = "rad/s", view="XYZ")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -51,7 +54,7 @@ end
    timeaxis, imag(z(t)), real(z(t))
 end
 
-@recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s", view="xyz")
+@recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s", view="XYZ")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -100,18 +103,21 @@ end
 
 
 function viewAngleIS(view,FreqUnits)
-   if view == "TF" || view == "FT"
+   normalized = uppercase(view)
+   if normalized == "XYZ"
+      return "time(s)","freq("*FreqUnits*")","real",(20,80),true,0,(true,true,true)
+   elseif normalized == "TF" || normalized == "FT"
       return "time(s)","freq("*FreqUnits*")"," ",(0,90),true,-90,(true,true,false)
-   elseif view == "TR" || view == "RT"
+   elseif normalized == "TR" || normalized == "RT"
       return "time(s)"," ","real",(0,0),false,0,(true,false,true)
-   elseif view == "FR" || view == "RF"
+   elseif normalized == "FR" || normalized == "RF"
       return "","freq("*FreqUnits*")","real",(90,0),false,0,(false,true,true)
-   else return "time(s)","freq("*FreqUnits*")","real",(20,80),true,0,(true,true,true)
+   else return error("Invalid IS Graph. Choose from \"TR\", \"TF\", or \"FR\"")
    end
 end
 
 # 3D IS Plot
-@recipe function temp(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s",view="xyz")
+@recipe function temp(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s",view="XYZ")
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -134,7 +140,7 @@ end
 end
 
 # 3D IS Plot
-@recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s",view="xyz")
+@recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,FreqUnits = "rad/s",view="XYZ")
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -170,7 +176,7 @@ end
 
 #------------------Models
 # 3D Argand Digram
-@recipe function temp(𝚿::numComp;FreqUnits = "rad/s",view="xyz")
+@recipe function temp(𝚿::numComp;FreqUnits = "rad/s",view="XYZ")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -190,7 +196,7 @@ end
 end
 
 # 3D Argand Digram
-@recipe function temp(𝐳::numModel; FreqUnits = "rad/s",view="xyz")
+@recipe function temp(𝐳::numModel; FreqUnits = "rad/s",view="XYZ")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -211,7 +217,7 @@ end
 end
 
 # 3D IS Plot
-@recipe function temp(𝐂::numTriplet;FreqUnits = "rad/s",view="xyz")
+@recipe function temp(𝐂::numTriplet;FreqUnits = "rad/s",view="XYZ")
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -233,7 +239,7 @@ end
 end
 
 # 3D IS Plot
-@recipe function temp(𝐒::numSet;FreqUnits = "rad/s",view="xyz")
+@recipe function temp(𝐒::numSet;FreqUnits = "rad/s",view="XYZ")
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
