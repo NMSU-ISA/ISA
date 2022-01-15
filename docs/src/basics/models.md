@@ -33,7 +33,7 @@ z = AMFMmodel([ψ₀,ψ₁,ψ₂])
 ```
 
 ## Evaluating an AM--FM Model
-Once an  **AM--FM model** $z(t)$ [`AMFMmodel`] is defined, it can be evaluated at a time instant $t_0$ (`Real`).
+Once an  **AM--FM model** $z(t)$ [`AMFMmodel`] is defined, it can be evaluated at a time instant $t_0$ [`Real`].
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)

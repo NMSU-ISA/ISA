@@ -2,13 +2,13 @@
 
 ## Canonical Triplets
 A **canonical triplet** $\mathscr{C}$ [`AMFMtriplet`] is parameterized by an **instantaneous amplitude (IA)**
-$a(t)$ (`Function`), an **instantaneous frequency (IF)** $\omega(t)$ (`Function`), and
-a **phase reference** $\phi$ (`Real`).
+$a(t)$ [`Function`], an **instantaneous frequency (IF)** $\omega(t)$ [`Function`], and
+a **phase reference** $\phi$ [`Real`].
 
 $\mathscr{C}\triangleq\left\{a(t),\omega(t), \phi\vphantom{0^0}\right\}$
 
 ### Defining a Canonical Triplet
-We can define a **canonical triplet** $\mathscr{C}$ [`AMFMtriplet`] by calling `AMFMtriplet()` with an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
+We can define a **canonical triplet** $\mathscr{C}$ [`AMFMtriplet`] by calling `AMFMtriplet()` with an IA $a(t)$ [`Function`]  and IF $\omega(t)$ [`Function`] which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ [`Real`] which is a real number.
 ```@example
 using ISA
 a(t) = exp(-t^2/5)

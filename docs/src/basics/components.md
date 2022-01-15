@@ -12,14 +12,14 @@ We can define a  **AM--FM component** $\psi_k$ [`AMFMcomp`] by calling `AMFMcomp
  ψ₀ = AMFMcomp(𝐶₀)
 ```
 
-For convenience, we can also define an  **AM--FM component** $\psi_k$ [`AMFMcomp`] by calling `AMFMcomp()` with the parameters of *canonical triplet*, specifically, an IA $a(t)$ (`Function`)  and IF $\omega(t)$ (`Function`) which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ (`Real`) which is a real number.
+For convenience, we can also define an  **AM--FM component** $\psi_k$ [`AMFMcomp`] by calling `AMFMcomp()` with the parameters of *canonical triplet*, specifically, an IA $a(t)$ [`Function`]  and IF $\omega(t)$ [`Function`] which are both real-valued functions of a (real-valued) time variable, and a phase reference $\phi$ [`Real`] which is a real number.
 ```@example
  using ISA
  ψ₀ = AMFMcomp(t->exp(-t^2/5),t->200.0,0.0)
 ```
 
 ## Evaluating an AM--FM Component
-Once an  **AM--FM component** $\psi_k$ [`AMFMcomp`] is defined, it can be evaluated at a time instant $t_0$ (`Real`)
+Once an  **AM--FM component** $\psi_k$ [`AMFMcomp`] is defined, it can be evaluated at a time instant $t_0$ [`Real`]
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
