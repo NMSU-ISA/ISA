@@ -53,7 +53,7 @@ Another convenient way to create a 'AMFMcomp' is by providing
 an *instantenouse amplitude function* `a`,
 an *instantaneous frequency function* `ω`, and a *phase reference* `φ`.
 
-Called with two inputs `a, ω`, this is equivalent to `AMFMcomp0(a, ω, 0.0)`.
+Called with two inputs `a, ω`, this is equivalent to `AMFMcomp(a, ω, 0.0)`.
 
 # Examples
 ```@example
