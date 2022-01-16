@@ -16,7 +16,37 @@ using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 fs = 16_000
 t = 0:1/fs:1
+𝚿₀ = numComp( ψ₀(t), t, fs )
+```
+Another way to call 'numComp' by providing complex-valed signal `Ψ`, and sampling frequency `fs`.
+
+# Examples
+```@example
+using ISA
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
+fs = 16_000
+t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
+```
+Another way to call 'numComp' by providing complex-valed signal `Ψ`, and time index `t`.
+
+# Examples
+```@example
+using ISA
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
+fs = 16_000
+t = 0:1/fs:1
+𝚿₀ = numComp( ψ₀(t), t )
+```
+Another convenient way to call 'numComp' by providing complex-valed signal `Ψ`.
+
+# Examples
+```@example
+using ISA
+ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
+fs = 16_000
+t = 0:1/fs:1
+𝚿₀ = numComp( ψ₀(t) )
 ```
 """
 struct numComp
