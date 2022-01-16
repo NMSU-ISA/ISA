@@ -146,3 +146,10 @@ plot(𝐶₁,view="FR")
 # FREQUENCY-REAL
 𝐶₀ = AMFMtriplet(t->1.0,t->100*t,0.1)
 plot(𝐶₀ ,view="FR")
+
+
+
+#margins
+using Plots.PlotMeasures
+ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
+plot(ψ₂, timeaxis=0.0:0.001:10.0,view="TI",left_margin = 15mm)

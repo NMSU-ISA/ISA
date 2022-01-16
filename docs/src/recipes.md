@@ -34,7 +34,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0, camera=(20,50))
 The following is a list of some of the default parameters used in ISA plot recipes:
 
 | Parameter | Default Value |
-| ------ | ------ |
+| :------ | :------ |
 | xguide | "time(s)" |
 | yguide | "imag" or "Freq"* |
 | zguide | "real" |
@@ -79,7 +79,7 @@ plot(𝐶₀ ,view="FR")
 The `view` parameter stores a string value used to determine the plot view as shown in the following table:
 
 | 'view' parameter* | Graph View |
-| ------ | ------ |
+| :------ | :------ |
 | "XYZ" | default plot |
 | "TR" | Time-Real |
 | "TI" | Time-Imaginary |
