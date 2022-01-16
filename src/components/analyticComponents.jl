@@ -62,6 +62,7 @@ a₀(t) = exp(-t^2)
 ω₀(t) = 2.0
 φ₀ = 0.0
 ψ₀ = AMFMcomp(a₀,ω₀,φ₀)
+```
 """
 struct AMFMcomp
   C::AMFMtriplet
