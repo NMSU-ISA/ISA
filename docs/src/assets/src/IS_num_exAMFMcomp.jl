@@ -5,5 +5,5 @@ using ISA, Plots
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
-plot(𝚿₀,view="IR")
+plot(𝚿₀)
 png(path*"IS_num_exAMFMcomp1.png")
