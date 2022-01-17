@@ -1,9 +1,5 @@
-# Numerical Instantaneous Spectra
+path = "docs/src/assets/"
 
-## Visualizing Numerical Instantaneous Spectra
-We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **numerical component set** `𝐒` [`numSet`], then  call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with **numerical component set** `𝐒`.
-
-```julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
 ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
@@ -18,12 +14,9 @@ t = 0:1/fs:2
 𝐂₂ = AMFMdemod(𝚿₂)
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 plot(𝐒)
-```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_spectra1.png)
+png(path*"IS_num_spectra1.png")
 
-We can also visualize the time-frequency plane associated with the IS (i.e. the 2D IS) plot as follows.
 
-```julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
 ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
@@ -38,5 +31,4 @@ t = 0:1/fs:2
 𝐂₂ = AMFMdemod(𝚿₂)
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 plot(𝐒,view="TF")
-```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_spectra2.png)
+png(path*"IS_num_spectra2.png")
