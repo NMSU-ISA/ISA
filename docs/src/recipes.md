@@ -26,6 +26,7 @@ plot(ψ₀)
 Plot recipes include default plotting parameters that should be suitable for most cases. However, users can change these parameters as needed.
 
 The following is a list of some of the default parameters used in ISA plot recipes.
+
 | Parameter        | Default Value |
 | ------           | ------        |
 | xguide           | "time(s)"     |
