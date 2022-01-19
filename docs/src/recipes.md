@@ -66,7 +66,6 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0, yguide="imaginary", ymirror=true)
 ## Predefined Views
 By default, the `plot()` function will show a 3D plot. However, the parameter `view` can be used to 2D plot orthogonal projections of the 3D plot.
 
-
 ### Argand Diagram Views
 
 | View         | Description          |
@@ -132,6 +131,20 @@ An example of displaying the frequency-real plane associated with an `compSet` i
 ```julia
 code
 ```
+
+#### Real Projection
+Optionally, the real part of $z(t)$, the real superposition of the components
+```math
+x(t)=\Re\{\sum_k\psi_k(t)\}
+```
+can be orthogonally projected along the time-axis.
+
+Below is an example of enabling the real projection
+```julia
+plot(      , realProj=true)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
+
 
 
 ## Colormaps
