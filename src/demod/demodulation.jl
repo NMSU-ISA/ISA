@@ -5,8 +5,7 @@ using DSP #for phase unwrapping
 """
     𝐂 = AMFMdemod(𝚿)
 
-Create a *numerical canonical triplet* 'numTriplet' from
-a *numerical component* 'numComp'.
+Create a *numerical canonical triplet* 'numTriplet' from a *numerical component* 'numComp'.
 
 # Examples
 ```@example
@@ -33,44 +32,42 @@ end
 """
     f′ = derivApprox(f; fs, method)
 
-Numerically approximate the derivative of a sampled signal
-associated with a method where the method refers to
-a numerical differentiation method consists of the
-following
+Numerically approximate the derivative `f′` of a signal `f` with sampling rate `fs` using one of the a numerical differentiation methods listed below.
 
-'forward' - forward difference
+`forward` - forward difference
 
-'backward' - backward difference
+`backward` - backward difference
 
-'center3' - 3-pt stencil central difference
+`center3` - 3-pt stencil central difference
 
-'center5' - 5-pt stencil central difference
+`center5` - 5-pt stencil central difference
 
-'center7' - 7-pt stencil central difference
+`center7` - 7-pt stencil central difference
 
-'center9' - 9-pt stencil central difference
+`center9` - 9-pt stencil central difference
 
-'center11' - 11-pt stencil central difference [default]
+`center11` - 11-pt stencil central difference [default]
 
-'center13' - 13-pt stencil central difference
+`center13` - 13-pt stencil central difference
 
-'center15' - 15-pt stencil central difference
+`center15` - 15-pt stencil central difference
 
 **References**:
-[Numerical Differentiation](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/)
- , [Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
+[Numerical Differentiation](http://www.holoborodko.com/pavel/numerical-methods/numerical-derivative/central-differences/), [Finite Difference Coefficients Calculator](https://web.media.mit.edu/~crtaylor/calculator.html)
 
-Called with a single input 'f', is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
+Called with a single input `f`, is equivalent to `derivApprox(f, fs=1.0, method="center11")`.
+
+A vector of the same length as the input is returned; values at the signal edges that cannot be computed are filled with `NaN`.
 
 # Examples
 ```@example
 using ISA
-x=collect(0.0:0.01:10.0)
-f=sin.(x)
-f′=derivApprox(f, fs=1.0, method="center11")
+x = collect(0.0:0.01:10.0)
+f = sin.(x)
+f′ = derivApprox(f, fs=1.0, method="center11")
 ```
 """
-function derivApprox(x::Vector{Float64}; fs=1.0, method="center11")::Vector{Float64} 
+function derivApprox(x::Vector{Float64}; fs=1.0, method="center11")::Vector{Float64}
     if method == "forward"
         if length(x)<2; error("derivApprox:vector too short for selected method"); end
         x′ = append!([NaN],fs.*diff(x))
