@@ -4,8 +4,11 @@ using DSP #for phase unwrapping
 
 """
     𝐂 = AMFMdemod(𝚿)
+    𝐒 = AMFMdemod([𝚿₀,𝚿₁,𝚿₂])
 
 Create a *numerical canonical triplet* 'numTriplet' from a *numerical component* 'numComp'.
+
+Create a *numerical component set* 'numSet' from a *vector of numerical components*.
 
 # Examples
 ```@example
@@ -17,17 +20,21 @@ t = 0:1/fs:1
 𝐂₀ = AMFMdemod(𝚿₀,t)
 ```
 """
-function AMFMdemod(Ψ::numComp; derivMethod="center11")::numTriplet
-  return numTriplet( Ψ.Ψ,
-                     Ψ.t,
-                     Ψ.fs,
-                     abs.(Ψ.Ψ),
-                     derivApprox(unwrap(angle.(Ψ.Ψ)),fs=Ψ.fs, method=derivMethod),
-                     real.(Ψ.Ψ),
-                     imag.(Ψ.Ψ),
-                     unwrap(angle.(Ψ.Ψ)),
+function AMFMdemod(𝚿::numComp; derivMethod="center11")::numTriplet
+  return numTriplet( 𝚿.Ψ,
+                     𝚿.t,
+                     𝚿.fs,
+                     abs.(𝚿.Ψ),
+                     derivApprox(unwrap(angle.(𝚿.Ψ)),fs=𝚿.fs, method=derivMethod),
+                     real.(𝚿.Ψ),
+                     imag.(𝚿.Ψ),
+                     unwrap(angle.(𝚿.Ψ)),
                      )
 end
+function AMFMdemod(V::Vector{numComp}; derivMethod="center11")::numSet
+  return numSet([ AMFMdemod(𝚿;derivMethod=derivMethod) for 𝚿∈V])
+end
+
 
 """
     f′ = derivApprox(f; fs, method)
