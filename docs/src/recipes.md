@@ -153,11 +153,10 @@ To avoid the perceptual problems associated with many colormaps ([Borland and Ta
 An example of changing the default colormap is given below.
 ```julia
 ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-plot(ψ₂, ??????????)
+plot(ψ₀, colorMap="VIRIDIS")
+savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\changeColor.png")
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/????w.png)
-[NEED TO FIX IMAGE ABOVE]
-
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assetschangeColor.png)
 
 ## Margins
 Depending on the view, you may want to adjust margin sizes.
