@@ -151,7 +151,7 @@ end
 
 @recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,
                       FreqUnits = "rad/s",view="default",
-                      colorMap="cubeYF")
+                      colorMap="cubeYF",realProj=false)
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -169,18 +169,22 @@ end
    t = timeaxis
    a_max = maximum([maximum(abs.(S.S[k].a.(t))) for k in 1:length(S.S)])
    clim = (0,1)
-   projection = zeros(length(t))
+   realProj ? projection = zeros(length(t)) : nothing
+   realProj ? minVector = zeros(length(S.S)) : nothing
    for k in 1:length(S.S)
       seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
       @series begin
          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
       end
-      projection = projection .+ real(AMFMcomp(S.S[k]).(t))
+      realProj ? minVector[k] = minimum(Fnorm.*S.S[k].ω.(t)) : nothing
+      realProj ? projection += real(AMFMcomp(S.S[k]).(t)) : nothing
    end
-   @series begin
-      seriescolor := :white
-      timeaxis, zeros(length(t)), projection
+   if realProj
+      @series begin
+         seriescolor := :white
+         timeaxis, zeros(length(t)).+minimum(minVector), projection
+      end
    end
 end
 
@@ -254,7 +258,7 @@ end
 end
 
 @recipe function temp(𝐒::numSet;FreqUnits = "rad/s",
-                      view="default",colorMap = "cubeYF")
+                      view="default",colorMap = "cubeYF",realProj=false)
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -270,18 +274,22 @@ end
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum([maximum(abs.(𝐒.S[k].a)) for k in 1:length(𝐒.S)])
-
    timeaxis = 𝐒.S[1].t
-   projection = zeros(length(timeaxis))
+   clim = (0,1)
+   realProj ? projection = zeros(length(timeaxis)) : nothing
+   realProj ? minVector = zeros(length(𝐒.S)) : nothing
    for k in 1:length(𝐒.S)
       #seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐒.S[k].Ψ)) .* 256/a_max ),256),50) ]
       @series begin
          𝐒.S[k].t,𝐒.S[k].ω,real.(𝐒.S[k].Ψ)
       end
-      projection = projection .+ real.(𝐒.S[k].Ψ)
+      realProj ? minVector[k] = minimum(𝐒.S[k].ω) : nothing
+      realProj ? projection += real.(𝐒.S[k].Ψ) : nothing
    end
-   @series begin
-      seriescolor := :white
-      timeaxis, zeros(length(timeaxis)), projection
+   if realProj
+      @series begin
+         seriescolor := :white
+         timeaxis, zeros(length(timeaxis)).+minimum(minVector), projection
+      end
    end
 end

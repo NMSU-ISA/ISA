@@ -141,9 +141,12 @@ can be orthogonally projected along the time-axis.
 
 Below is an example of enabling the real projection
 ```julia
-plot(      , realProj=true)
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝑆 = compSet([𝐶₀,𝐶₁])
+plot(𝑆,realProj=true)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/realProject.png)
 
 
 

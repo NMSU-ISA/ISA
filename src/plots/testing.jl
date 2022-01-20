@@ -5,9 +5,14 @@ if 1==1
    𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
    𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
    𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
-   𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+   𝑆 = compSet([𝐶₀,𝐶₂])
    z = AMFMmodel(𝑆)
 end
+
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝑆 = compSet([𝐶₀,𝐶₁])
+plot(𝑆,realProj=true)
 
 # numComp EXAMPLE
 if 1==1
@@ -49,7 +54,7 @@ end
 if 1==1
    ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
    ψ₁ = AMFMcomp(t->1.0,t->10*t,0.1)
-   ψ₂ = AMFMcomp(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+   ψ₂ = AMFMcomp(t->1+0.8*cos(2t),t->10 + 7.5*sin(t),π)
    fs = 16_000
    t = 0:1/fs:1
    𝚿₀ = numComp( ψ₀(t), fs )
@@ -64,7 +69,8 @@ if 1==1
    plot(𝐳)
 end
 
-
+𝐒 = numSet([𝐂₀,𝐂₂])
+plot(𝐒,realProj=true)
 # ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
 # plot(ψ₀, colorMap="VIRIDIS")
 # savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\changeColor.png")
