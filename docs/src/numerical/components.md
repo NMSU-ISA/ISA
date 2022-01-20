@@ -41,10 +41,11 @@ t = 0:1/fs:1
 We can visualize a **numerical AM--FM component** `𝚿₀` [`numComp`] by evoking a pre-defined plotting recipe by calling `plot()`  from [`Plots.jl`](http://docs.juliaplots.org/latest/) with a **numerical AM--FM component**.
 ```@example
 using ISA, Plots
-ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
-plot(𝚿₀)
+𝐂₀ = AMFMdemod(𝚿₀)
+plot(𝐂₀)
 ```
 [NEED IMAGE HERE]
