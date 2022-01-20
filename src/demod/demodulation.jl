@@ -17,7 +17,7 @@ using ISA
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
-𝐂₀ = AMFMdemod(𝚿₀,t)
+𝐂₀ = AMFMdemod(𝚿₀)
 ```
 """
 function AMFMdemod(𝚿::numComp; derivMethod="center11")::numTriplet
