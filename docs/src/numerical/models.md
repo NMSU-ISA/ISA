@@ -51,7 +51,7 @@ t = 0:1/fs:1
 
 ## Visualizing a Numerical AM--FM Model
 We can visualize a **numerical AM--FM model** $𝐳(t)$ [`numModel`] by evoking a pre-defined plotting recipe by calling `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with an *numerical AM--FM model* $𝐳(t)$ [`numModel`].
-```@example
+```@julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
 ψ₁ = AMFMcomp(t->1.0,t->10*t,0.1)

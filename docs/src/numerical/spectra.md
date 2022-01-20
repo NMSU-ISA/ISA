@@ -3,7 +3,7 @@
 ## Visualizing Numerical Instantaneous Spectra
 
 We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **numerical component set**, then  call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/).
-```@example
+```@julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
 ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
@@ -24,7 +24,7 @@ plot(𝐒)
 
 We can also visualize the IS corresponding to an individual **numerical canonical triplet**.
 
- ```@example
+ ```@julia
  using ISA, Plots
  ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
  fs = 16_000
