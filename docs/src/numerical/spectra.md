@@ -21,7 +21,9 @@ plot(𝐒)
 ```
 [NEED IMAGE HERE]
 
- We can also visualize the IS corresponding to an individual **numerical canonical triplet**.
+
+We can also visualize the IS corresponding to an individual **numerical canonical triplet**.
+
  ```@example
  using ISA, Plots
  ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
