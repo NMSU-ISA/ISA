@@ -9,6 +9,7 @@ if 1==1
    z = AMFMmodel(𝑆)
 end
 
+
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
 𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁])
@@ -66,11 +67,22 @@ if 1==1
    𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
    #𝐳 = numModel(𝐒)# doesn't work
    𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
-   plot(𝐳)
+   # plot(𝐳)
 end
 
 𝐒 = numSet([𝐂₀,𝐂₂])
 plot(𝐒,realProj=true)
-# ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-# plot(ψ₀, colorMap="VIRIDIS")
+
+
+# attempt fixing NaN problem
+𝐂₀
+T = typeof(𝐂₀)
+T.types
+fieldnames(T)[1]
+for (name, typ) in zip(fieldnames(T), T.types)
+   println(length(𝐂₀.typ))
+   # text *= "\n"*"$name is $typ"
+end
+
+
 # savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\changeColor.png")

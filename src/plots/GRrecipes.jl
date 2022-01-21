@@ -253,7 +253,7 @@ end
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum(abs.(𝐂.a))
    clim = (0,1)
-   seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐂.a)) .* 256/a_max ),256),50) ]
+   # seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐂.a)) .* 256/a_max ),256),50) ]
    𝐂.t,𝐂.ω,real.(𝐂.Ψ)
 end
 
@@ -279,11 +279,15 @@ end
    realProj ? projection = zeros(length(timeaxis)) : nothing
    realProj ? minVector = zeros(length(𝐒.S)) : nothing
    for k in 1:length(𝐒.S)
-      #seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐒.S[k].Ψ)) .* 256/a_max ),256),50) ]
+      # temp = copy.(𝐒.S[k].ω)
+      # 𝐒.S[k].ω[isnan.(𝐒.S[k].ω)] .= sort(unique(𝐒.S[k].ω))[1]
+      # seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐒.S[k].Ψ)) .* 256/a_max ),256),50) ]
       @series begin
          𝐒.S[k].t,𝐒.S[k].ω,real.(𝐒.S[k].Ψ)
+         # 𝐒.S[k].t[.!isnan.(𝐒.S[1].ω)],𝐒.S[k].ω[.!isnan.(𝐒.S[1].ω)],real.(𝐒.S[k].Ψ)[.!isnan.(𝐒.S[1].ω)]
       end
-      realProj ? minVector[k] = minimum(𝐒.S[k].ω) : nothing
+      realProj ? minVector[k] = sort(unique(𝐒.S[k].ω))[1] : nothing
+      # realProj ? minVector[k] = minimum(𝐒.S[k].ω) : nothing
       realProj ? projection += real.(𝐒.S[k].Ψ) : nothing
    end
    if realProj
