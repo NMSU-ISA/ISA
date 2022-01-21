@@ -19,7 +19,7 @@ t = 0:1/fs:1
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 plot(𝐒)
 ```
-[NEED IMAGE HERE]
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_spectra1.png)
 
 
 We can also visualize the IS corresponding to an individual **numerical canonical triplet** .
@@ -32,4 +32,4 @@ t = 0:1/fs:1
 𝐂₀ = AMFMdemod(𝚿₀)
 plot(𝐂₀)
 ```
-[NEED IMAGE HERE]
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_triplet1.png)
