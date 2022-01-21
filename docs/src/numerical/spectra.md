@@ -23,7 +23,6 @@ plot(𝐒)
 
 
 We can also visualize the IS corresponding to an individual **numerical canonical triplet** .
-
  ```@julia
  using ISA, Plots
  ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)

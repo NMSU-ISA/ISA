@@ -48,4 +48,4 @@ t = 0:1/fs:1
 𝐂₀ = AMFMdemod(𝚿₀)
 plot(𝐂₀)
 ```
-[NEED IMAGE HERE]
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_exAMFMcomp1.png)
