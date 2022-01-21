@@ -1,15 +1,15 @@
 # Numerical Instantaneous Spectra
 
 ## Visualizing Numerical Instantaneous Spectra
-We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **numerical component set** `𝐒` [`numSet`], then  call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/) with **numerical component set** `𝐒`.
 
-```julia
+We can visualize a 3D IS using the pre-defined plotting recipes as follows. First, define a **numerical component set**, then  call `plot()` from [`Plots.jl`](http://docs.juliaplots.org/latest/).
+```@julia
 using ISA, Plots
-ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
 ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
-ψ₂ = AMFMcomp(t->t,t->10 + 7.5*sin(t),π)
+ψ₂ = AMFMcomp(t->1+0.8*cos(2t),t->100 + 70.5*sin(t),π)
 fs = 16_000
-t = 0:1/fs:2
+t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
@@ -19,24 +19,18 @@ t = 0:1/fs:2
 𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
 plot(𝐒)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_spectra1.png)
+[NEED IMAGE HERE]
 
-We can also visualize the time-frequency plane associated with the IS (i.e. the 2D IS) plot as follows.
 
-```julia
-using ISA, Plots
-ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
-ψ₂ = AMFMcomp(t->t,t->10 + 7.5*sin(t),π)
-fs = 16_000
-t = 0:1/fs:2
-𝚿₀ = numComp( ψ₀(t), fs )
-𝚿₁ = numComp( ψ₁(t), fs )
-𝚿₂ = numComp( ψ₂(t), fs )
-𝐂₀ = AMFMdemod(𝚿₀)
-𝐂₁ = AMFMdemod(𝚿₁)
-𝐂₂ = AMFMdemod(𝚿₂)
-𝐒 = numSet([𝐂₀,𝐂₁,𝐂₂])
-plot(𝐒,view="TF")
-```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_spectra2.png)
+We can also visualize the IS corresponding to an individual **numerical canonical triplet** .
+
+ ```@julia
+ using ISA, Plots
+ ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
+ fs = 16_000
+ t = 0:1/fs:1
+ 𝚿₀ = numComp( ψ₀(t), fs )
+ 𝐂₀ = AMFMdemod(𝚿₀)
+ plot(𝐂₀)
+ ```
+ [NEED IMAGE HERE]
