@@ -64,4 +64,4 @@ t = 0:1/fs:3
 𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
 plot(𝐳)
 ```
-[NEED IMAGE HERE]
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_exAMFMmodel1.png)

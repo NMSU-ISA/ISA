@@ -24,12 +24,12 @@ plot(𝐒)
 
 We can also visualize the IS corresponding to an individual **numerical canonical triplet** .
  ```@julia
- using ISA, Plots
- ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
- fs = 16_000
- t = 0:1/fs:1
- 𝚿₀ = numComp( ψ₀(t), fs )
- 𝐂₀ = AMFMdemod(𝚿₀)
- plot(𝐂₀)
- ```
- [NEED IMAGE HERE]
+using ISA, Plots
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
+fs = 16_000
+t = 0:1/fs:1
+𝚿₀ = numComp( ψ₀(t), fs )
+𝐂₀ = AMFMdemod(𝚿₀)
+plot(𝐂₀)
+```
+[NEED IMAGE HERE]
