@@ -8,7 +8,7 @@ if 1==1
    𝑆 = compSet([𝐶₀,𝐶₂])
    z = AMFMmodel(𝑆)
 end
-
+plot(𝑆,realProj=true)
 
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
 𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
@@ -71,7 +71,7 @@ if 1==1
 end
 
 𝐒 = numSet([𝐂₀,𝐂₂])
-plot(𝐒,realProj=true)
+plot(𝐒,realProj=true,view="default")
 
 
 # attempt fixing NaN problem
@@ -86,3 +86,12 @@ end
 
 
 # savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\changeColor.png")
+
+
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default1.png)
+
+savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\default1.png")
