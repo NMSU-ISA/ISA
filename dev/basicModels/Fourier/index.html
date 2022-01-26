@@ -11,17 +11,14 @@ aₖ(k) = 1/T
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier2.png" alt/></p><pre><code class="language-julia">using ISA, Plots
+plot(𝑆, timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier2.png" alt/></p><pre><code class="language-julia">using ISA, Plots
 T = 0.5
 aₖ(k) = 1/T
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel=&quot;&quot;, zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier3.png" alt/></p><h3 id="Example-2-1"><a class="docs-heading-anchor" href="#Example-2-1">Example 2</a><a class="docs-heading-anchor-permalink" href="#Example-2-1" title="Permalink"></a></h3><p>Consider a signal <span>$z(t)$</span> which consists of a periodic square wave with a 50% duty cycle where one period <span>$T$</span> is defined by</p><div>\[z(t) = \begin{cases}
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view=&quot;TF&quot;,
+     left_margin=15Plots.mm, margin=5Plots.mm)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier3.png" alt/></p><h3 id="Example-2-1"><a class="docs-heading-anchor" href="#Example-2-1">Example 2</a><a class="docs-heading-anchor-permalink" href="#Example-2-1" title="Permalink"></a></h3><p>Consider a signal <span>$z(t)$</span> which consists of a periodic square wave with a 50% duty cycle where one period <span>$T$</span> is defined by</p><div>\[z(t) = \begin{cases}
         1, &amp;   |t|&lt;T/4  \\
         0, &amp;   T/4&lt;|t|&lt;T/2        
         \end{cases}.\]</div><p>We can represent this signal with a component set consisting of a set of harmonicly related SHCs</p><div>\[\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots\]</div><p>where</p><div>\[a_k = \mathrm{abs}\left(\frac{\sin(k\pi/2)}{k\pi}\right)~~~\mathrm{and}~~~\phi_k= \mathrm{arg}\left(\frac{\sin(k\pi/2)}{k\pi}\right).\]</div><p>For a this choice of parameters of the component set, we have the following Argand Diagram for <span>$z(t;\mathscr{S})$</span>, 3D IS <span>$\mathcal{S}(t,\omega,s;\mathscr{S})$</span>, and 2D IS <span>$\mathcal{S}(t,\omega;\mathscr{S})$</span>. Keep in mind, we are only considering a finite number of components <span>$k = 0,\pm 1,\pm 2,\ldots,K$</span> not <span>$k = 0,\pm 1,\pm2,\ldots,\pm\infty$</span>.</p><pre><code class="language-julia">using ISA, Plots
@@ -36,13 +33,13 @@ aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier5.png" alt/></p><pre><code class="language-julia">using ISA, Plots
+plot(𝑆, timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier5.png" alt/></p><pre><code class="language-julia">using ISA, Plots
 T = 0.5
 aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
 plot!( camera=(0,90),
        zlabel=&quot;&quot;, zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
@@ -72,7 +69,7 @@ exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
 kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier8.png" alt/></p><pre><code class="language-julia">using ISA, Plots
+plot(𝑆, timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier8.png" alt/></p><pre><code class="language-julia">using ISA, Plots
 T = 0.75
 j=im
 aₖ(k) = ifelse( k==0, 0, (1-exp(-j*k*2π/3)-exp(j*2π/3)*
@@ -82,8 +79,8 @@ exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
 kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
 plot!( camera=(0,90),
        zlabel=&quot;&quot;, zticks=:false,
        left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier9.png" alt/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../basicComponents/AMFM/">« AM–FM Components</a><a class="docs-footer-nextpage" href="../AMFM/">AM–FM Models »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 26 January 2022 18:07">Wednesday 26 January 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+       yrotation = 90, ymirror=true)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier9.png" alt/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../basicComponents/AMFM/">« AM–FM Components</a><a class="docs-footer-nextpage" href="../AMFM/">AM–FM Models »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 26 January 2022 18:23">Wednesday 26 January 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
