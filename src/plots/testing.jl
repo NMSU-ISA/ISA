@@ -154,8 +154,20 @@ viridis()
 𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 plot(𝑆; timeaxis=0.0:0.001:3.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
-savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\margins.png")
+# savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\IS_exFourier3.png")
+
+
+using ISA, Plots
+T = 0.75
+j=im
+aₖ(k) = ifelse( k==0, 0, (1-exp(-j*k*2π/3)-exp(j*2π/3)*
+exp(-j*k*4π/3)+exp(j*2π/3)*exp(-j*k*2π/3)-exp(j*4π/3)*
+exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
+kInds = -150:150
+𝑆 = fourierSeries(T, aₖ, kInds)
+z = AMFMmodel(𝑆)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
+
+
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF", left_margin=10Plots.mm)
+savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\IS_exFourier9.png")

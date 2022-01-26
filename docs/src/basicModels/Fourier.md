@@ -62,7 +62,7 @@ aₖ(k) = 1/T
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier2.png)
 
@@ -73,11 +73,8 @@ aₖ(k) = 1/T
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier3.png)
 
@@ -120,7 +117,7 @@ aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier5.png)
 
@@ -132,11 +129,7 @@ aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF", left_margin=10Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier6.png)
 
@@ -190,7 +183,7 @@ exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
 kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier8.png)
 
@@ -205,10 +198,7 @@ exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
 kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF", left_margin=10Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier9.png)
