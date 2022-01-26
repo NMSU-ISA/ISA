@@ -188,4 +188,4 @@ plot!( camera=(0,90),
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/margins.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/margins.png)

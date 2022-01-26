@@ -56,11 +56,8 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel3.png)
 
@@ -97,11 +94,8 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel6.png)
 
@@ -138,10 +132,7 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t),0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel9.png)
