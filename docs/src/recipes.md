@@ -159,13 +159,18 @@ plot(𝑆,realProj=true)
 ## Colormaps
 To avoid the perceptual problems associated with many colormaps ([Borland and Taylor, 2007](https://ieeexplore.ieee.org/document/4118486); [Liu and Heer, 2018](https://dl.acm.org/doi/10.1145/3173574.3174172)), we have utilized two perceptually motivated colormaps in our visualizations. Namely, [cubeyf](https://mycarta.wordpress.com/2013/02/21/perceptual-rainbow-palette-the-method/) [default] and [viridis](https://www.youtube.com/watch?v=xAoljeRJ3lU).
 
-An example of changing the default colormap is given below.
+An example of changing the default colormap (cubeyf) is given below.
 ```julia
 ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-plot(ψ₀, colorMap="VIRIDIS")
-savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\changeColor.png")
+plot(ψ₀)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assetschangeColor.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/defaultColor.png)
+
+Below is an example of using the viridis colormap.
+```julia
+plot(ψ₀, colorMap="VIRIDIS")
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/VIRIDIScolor.png)
 
 ## Margins
 Depending on the view, you may want to adjust margin sizes.
