@@ -95,3 +95,40 @@ plot(ψ₀)
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default1.png)
 
 savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\default1.png")
+
+
+# change the time axis and camera angle
+# recipes.md
+#1
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+ψ₀ = AMFMcomp(𝐶₀)
+plot(ψ₀)
+#2
+plot(ψ₀, timeaxis=0.0:0.001:10.0)
+#3
+plot(ψ₀, camera=(20,50))
+#4
+plot(ψ₀, yguide="imaginary", ymirror=false)
+#5
+ψ₀ = AMFMcomp(t->10t,t->25cos(t),0.0)
+plot(ψ₀)
+#6 TR
+plot(ψ₀,view="TR", margin=5Plots.mm)
+#7 TI
+plot(ψ₀,view="TI",left_margin=15Plots.mm, margin=5Plots.mm)
+#8 RI
+plot(ψ₀, view="RI",margin=5Plots.mm)
+#9 IS 3d
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+plot(𝑆)
+#10 TF
+plot(𝑆,view="TF",margins=5Plots.mm)
+#11 TR
+plot(𝑆,view="TR",margins=5Plots.mm)
+#12 FR
+plot(𝑆,view="FR",margins=5Plots.mm)
+savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\FRviewIS.png")

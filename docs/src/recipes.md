@@ -32,6 +32,7 @@ The following is a list of some of the default parameters used in ISA plot recip
 | xguide           | "time(s)"     |
 | yguide           | "imag"        |
 | zguide           | "real"        |
+| ymirror          | true          |
 | background_color | cubeYF()[1]   |
 | foreground_color | :white        |
 | ymirror          | true          |
@@ -45,20 +46,19 @@ Below gives an example of setting a custom time-axis range.
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum0.png)
-[NEED TO FIX IMAGE ABOVE]
 
 ### Camera Position
 Below gives an example of setting a custom camera position.
 ```julia
-# change the time axis and camera angle
-plot(ψ₀; timeaxis=0.0:0.001:10.0, camera=(20,50))
+# change the camera angle
+plot(ψ₀, camera=(20,50))
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum1.png)
 
 ### Labels
 Below is an example of modifying the axis label and location.
 ```julia
-plot(ψ₀; timeaxis=0.0:0.001:10.0, yguide="imaginary", ymirror=true)
+plot(ψ₀, yguide="imaginary", ymirror=false)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
 
@@ -77,30 +77,28 @@ By default, the `plot()` function will show a 3D plot. However, the parameter `v
 
 An example of displaying the default 3D view associated with an `AMFMcomp` is given below.
 ```julia
-ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-plot(ψ₂, timeaxis=0.0:0.001:10.0)
+ψ₀ = AMFMcomp(t->10t,t->25cos(t),0.0)
+plot(ψ₀)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRview.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default3d.png)
+
 An example of displaying the time-real plane associated with an `AMFMcomp` is given below.
 ```julia
-ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-plot(ψ₂, timeaxis=0.0:0.001:10.0,view="TR")
+plot(ψ₀,view="TR")
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRview.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRview3d.png)
 
 An example of displaying the time-imaginary plane associated with an `AMFMcomp` is given below.
 ```julia
-ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-plot(ψ₂, timeaxis=0.0:0.001:10.0,view="TI")
+plot(ψ₀,view="TI")
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TIview.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TIview3d.png)
 
 An example of displaying the real-imaginary plane associated with an `AMFMcomp` is given below.
 ```julia
-ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
-plot(ψ₂, timeaxis=0.0:0.001:10.0,view="RI")
+plot(ψ₀, view="RI")
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TIview.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/RIview3d.png)
 
 
 ### Instantaneous Spectrum Views
@@ -114,23 +112,31 @@ plot(ψ₂, timeaxis=0.0:0.001:10.0,view="RI")
 
 An example of displaying the default 3D view associated with an `compSet` is given below.
 ```julia
-code
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+plot(𝑆)
 ```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/defaultIS.png)
 
 An example of displaying the time-frequency plane associated with an `compSet` is given below.
 ```julia
-code
+plot(𝑆,view="TF")
 ```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TFviewIS.png)
 
 An example of displaying the time-real plane associated with an `compSet` is given below.
 ```julia
-code
+plot(𝑆,view="TR")
 ```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRviewIS.png)
 
 An example of displaying the frequency-real plane associated with an `compSet` is given below.
 ```julia
-code
+plot(𝑆,view="FR")
 ```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/FRviewIS.png)
 
 #### Real Projection
 Optionally, the real part of $z(t)$, the real superposition of the components
