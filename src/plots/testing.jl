@@ -170,4 +170,4 @@ plot(𝑆, timeaxis=-1.0:0.001:1.0)
 
 
 plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF", left_margin=10Plots.mm)
-savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\IS_exFourier9.png")
+# savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\IS_exFourier9.png")
