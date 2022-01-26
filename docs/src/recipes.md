@@ -42,7 +42,6 @@ The following is a list of some of the default parameters used in ISA plot recip
 ### Time-Axis
 Below gives an example of setting a custom time-axis range.
 ```julia
-# change the time axis
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum0.png)
@@ -50,7 +49,6 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ### Camera Position
 Below gives an example of setting a custom camera position.
 ```julia
-# change the camera angle
 plot(ψ₀, camera=(20,50))
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum1.png)
@@ -77,6 +75,7 @@ By default, the `plot()` function will show a 3D plot. However, the parameter `v
 
 An example of displaying the default 3D view associated with an `AMFMcomp` is given below.
 ```julia
+using ISA, Plots
 ψ₀ = AMFMcomp(t->10t,t->25cos(t),0.0)
 plot(ψ₀)
 ```
@@ -112,6 +111,7 @@ plot(ψ₀, view="RI")
 
 An example of displaying the default 3D view associated with an `compSet` is given below.
 ```julia
+using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
 𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
 𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
@@ -147,6 +147,7 @@ can be orthogonally projected along the time-axis.
 
 Below is an example of enabling the real projection
 ```julia
+using ISA, Plots
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
 𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁])
@@ -161,16 +162,17 @@ To avoid the perceptual problems associated with many colormaps ([Borland and Ta
 
 An example of changing the default colormap (cubeyf) is given below.
 ```julia
+using ISA, Plots
 ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
 plot(ψ₀)
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/defaultColor.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/defaultColor.png)
 
 Below is an example of using the viridis colormap.
 ```julia
 plot(ψ₀, colorMap="VIRIDIS")
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/VIRIDIScolor.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/VIRIDIScolor.png)
 
 ## Margins
 Depending on the view, you may want to adjust margin sizes.
@@ -186,3 +188,4 @@ plot!( camera=(0,90),
        left_margin=15Plots.mm, margin=5Plots.mm,
        yrotation = 90, ymirror=true)
 ```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/margins.png)

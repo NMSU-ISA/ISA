@@ -131,4 +131,31 @@ plot(𝑆,view="TF",margins=5Plots.mm)
 plot(𝑆,view="TR",margins=5Plots.mm)
 #12 FR
 plot(𝑆,view="FR",margins=5Plots.mm)
-savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\FRviewIS.png")
+#13 real projection
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
+𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝑆 = compSet([𝐶₀,𝐶₁])
+plot(𝑆,realProj=true)
+#14 colormap
+ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
+plot(ψ₀)
+#14 virdis colormap
+plot(ψ₀, colorMap="VIRIDIS")
+
+#same colors??????????
+include(raw"colorMaps/cubeYF.jl")
+include(raw"colorMaps/viridis.jl")
+viridis()
+viridis()
+
+#15 margins
+𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
+𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+plot(𝑆; timeaxis=0.0:0.001:3.0)
+plot!( camera=(0,90),
+       zlabel="", zticks=:false,
+       left_margin=15Plots.mm, margin=5Plots.mm,
+       yrotation = 90, ymirror=true)
+savefig(raw"C:\Users\hemad\.julia\dev\ISA\docs\src\assets\margins.png")
