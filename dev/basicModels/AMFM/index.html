@@ -17,11 +17,8 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubu
 𝐶₂ = AMFMtriplet(t-&gt;0.8*cos(11t),t-&gt;100 + 70.5*sin(5t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel=&quot;&quot;, zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel3.png" alt/></p><h3 id="Example-2-1"><a class="docs-heading-anchor" href="#Example-2-1">Example 2</a><a class="docs-heading-anchor-permalink" href="#Example-2-1" title="Permalink"></a></h3><p>For another choice of parameters of the component set, we have the following Argand Diagram for <span>$z(t;\mathscr{S})$</span>, 3D IS <span>$\mathcal{S}(t,\omega,s;\mathscr{S})$</span>, and 2D IS <span>$\mathcal{S}(t,\omega;\mathscr{S})$</span>.</p><pre><code class="language-julia">using ISA, Plots
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view=&quot;TF&quot;,
+     left_margin=15Plots.mm, margin=5Plots.mm)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel3.png" alt/></p><h3 id="Example-2-1"><a class="docs-heading-anchor" href="#Example-2-1">Example 2</a><a class="docs-heading-anchor-permalink" href="#Example-2-1" title="Permalink"></a></h3><p>For another choice of parameters of the component set, we have the following Argand Diagram for <span>$z(t;\mathscr{S})$</span>, 3D IS <span>$\mathcal{S}(t,\omega,s;\mathscr{S})$</span>, and 2D IS <span>$\mathcal{S}(t,\omega;\mathscr{S})$</span>.</p><pre><code class="language-julia">using ISA, Plots
 𝐶₀ = AMFMtriplet(t-&gt;exp(-t^2),t-&gt;100,0.0)
 𝐶₁ = AMFMtriplet(t-&gt;1,t-&gt;25+20*sin(t),0.0)
 𝐶₂ = AMFMtriplet(t-&gt;sin(11t),t-&gt;250,0.0)
@@ -39,11 +36,8 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubu
 𝐶₂ = AMFMtriplet(t-&gt;sin(11t),t-&gt;250,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel=&quot;&quot;, zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel6.png" alt/></p><h3 id="Example-3-1"><a class="docs-heading-anchor" href="#Example-3-1">Example 3</a><a class="docs-heading-anchor-permalink" href="#Example-3-1" title="Permalink"></a></h3><p>For another choice of parameters of the component set, we have the following Argand Diagram for <span>$z(t;\mathscr{S})$</span>, 3D IS <span>$\mathcal{S}(t,\omega,s;\mathscr{S})$</span>, and 2D IS <span>$\mathcal{S}(t,\omega;\mathscr{S})$</span>.</p><pre><code class="language-julia">using ISA, Plots
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view=&quot;TF&quot;,
+     left_margin=15Plots.mm, margin=5Plots.mm)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel6.png" alt/></p><h3 id="Example-3-1"><a class="docs-heading-anchor" href="#Example-3-1">Example 3</a><a class="docs-heading-anchor-permalink" href="#Example-3-1" title="Permalink"></a></h3><p>For another choice of parameters of the component set, we have the following Argand Diagram for <span>$z(t;\mathscr{S})$</span>, 3D IS <span>$\mathcal{S}(t,\omega,s;\mathscr{S})$</span>, and 2D IS <span>$\mathcal{S}(t,\omega;\mathscr{S})$</span>.</p><pre><code class="language-julia">using ISA, Plots
 𝐶₀ = AMFMtriplet(t-&gt;10,t-&gt;10t^2+2t+1,1.0)
 𝐶₁ = AMFMtriplet(t-&gt;5exp(0.1t),t-&gt;250,0.0)
 𝐶₂ = AMFMtriplet(t-&gt;10t,t-&gt;5cos(50t),0.0)
@@ -61,8 +55,5 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)</code></pre><p><img src="https://raw.githubu
 𝐶₂ = AMFMtriplet(t-&gt;10t,t-&gt;5cos(50t),0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel=&quot;&quot;, zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel9.png" alt/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Fourier/">« Fourier Series</a><a class="docs-footer-nextpage" href="../../numerical/components/">Numerical AM–FM Components »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 26 January 2022 18:31">Wednesday 26 January 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view=&quot;TF&quot;,
+     left_margin=15Plots.mm, margin=5Plots.mm)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFMmodel9.png" alt/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Fourier/">« Fourier Series</a><a class="docs-footer-nextpage" href="../../numerical/components/">Numerical AM–FM Components »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 26 January 2022 18:37">Wednesday 26 January 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
