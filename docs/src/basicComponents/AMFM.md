@@ -26,7 +26,7 @@ For one choice of parameters of the canonical triplet, we have the following Arg
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+𝐶₀ = AMFMtriplet(t->10t+100,t->25cos(t)+50,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -34,7 +34,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+𝐶₀ = AMFMtriplet(t->10t+100,t->25cos(t)+50,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -42,13 +42,10 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+𝐶₀ = AMFMtriplet(t->10t+100,t->25cos(t)+50,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=0.0:0.001:10.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
+left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM3.png)
 
@@ -59,7 +56,7 @@ For another choice of parameters of the canonical triplet, we have the following
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
+𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+50,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -67,22 +64,18 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
+𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+50,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
-
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM5.png)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+1,1.0)
+𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+50,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=0.0:0.001:10.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
+left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM6.png)
 
@@ -93,7 +86,7 @@ For another choice of parameters of the canonical triplet, we have the following
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(0.1t),t->t^2+t+10,0.0)
+𝐶₀ = AMFMtriplet(t->5exp(0.1t)+15,t->t^2+t+25,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -102,7 +95,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(0.1t),t->t^2+t+10,0.0)
+𝐶₀ = AMFMtriplet(t->5exp(0.1t)+15,t->t^2+t+25,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -110,12 +103,9 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(0.1t),t->t^2+t+10,0.0)
+𝐶₀ = AMFMtriplet(t->5exp(0.1t)+15,t->t^2+t+25,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(𝐶₀; timeaxis=0.0:0.001:10.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
+left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM9.png)
