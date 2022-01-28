@@ -8,7 +8,7 @@ We can define **numerical AM--FM component** `𝚿₀` [`numComp`]
 by calling `numComp()` with **AM--FM component** `ψ₀` [`AMFMcomp`] and fs (`Real`).
 ```@example
 using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
@@ -18,7 +18,7 @@ t = 0:1/fs:1
 Once an  **numerical AM--FM component** `𝚿₀` [`numComp`] is defined, it can be evaluated at a time instant $t_0$ (`Real`)
 ```@example
 using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
@@ -28,7 +28,7 @@ t₀ = 0.5
 or over a range of time instants.
 ```@example
 using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->20.0,0.0)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
@@ -46,6 +46,6 @@ fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝐂₀ = AMFMdemod(𝚿₀)
-plot(𝐂₀)
+plot(𝚿₀)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_exAMFMcomp1.png)

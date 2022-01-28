@@ -6,5 +6,5 @@ fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝐂₀ = AMFMdemod(𝚿₀)
-plot(𝐂₀)
+plot(𝚿₀)
 png(path*"IS_num_exAMFMcomp1.png")
