@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Numerical AM–FM Models · ISA.jl</title><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../../"><img src="../../assets/logo.png" alt="ISA.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit">ISA.jl</span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Instantaneous Spectral Analysis</span><ul><li><a class="tocitem" href="../../basics/triplets/">Cannonical Triplets and Component Sets</a></li><li><a class="tocitem" href="../../basics/components/">AM–FM Components</a></li><li><a class="tocitem" href="../../basics/models/">AM–FM Models</a></li><li><a class="tocitem" href="../../basics/spectra/">Instantaneous Spectra</a></li></ul></li><li><span class="tocitem">Basic Components</span><ul><li><a class="tocitem" href="../../basicComponents/SHC/">Simple Harmonic Components</a></li><li><a class="tocitem" href="../../basicComponents/AM/">AM Components</a></li><li><a class="tocitem" href="../../basicComponents/FM/">FM Components</a></li><li><a class="tocitem" href="../../basicComponents/AMFM/">AM–FM Components</a></li></ul></li><li><span class="tocitem">Basic Signal Models</span><ul><li><a class="tocitem" href="../../basicModels/Fourier/">Fourier Series</a></li><li><a class="tocitem" href="../../basicModels/AMFM/">AM–FM Models</a></li></ul></li><li><span class="tocitem">Numerical ISA</span><ul><li><a class="tocitem" href="../components/">Numerical AM–FM Components</a></li><li class="is-active"><a class="tocitem" href>Numerical AM–FM Models</a><ul class="internal"><li><a class="tocitem" href="#Defining-a-Numerical-AM–FM-Model-1"><span>Defining a Numerical AM–FM Model</span></a></li><li><a class="tocitem" href="#Evaluating-a-Numerical-AM–FM-Model-1"><span>Evaluating a Numerical AM–FM Model</span></a></li><li><a class="tocitem" href="#Visualizing-a-Numerical-AM–FM-Model-1"><span>Visualizing a Numerical AM–FM Model</span></a></li></ul></li><li><a class="tocitem" href="../tripletsSets/">Numerical Triplets and Sets</a></li><li><a class="tocitem" href="../spectra/">Numerical Instantaneous Spectra</a></li></ul></li><li><a class="tocitem" href="../../typesMethodsFunctions/">Types/Methods/Functions</a></li><li><a class="tocitem" href="../../recipes/">Plotting Recipes</a></li><li><a class="tocitem" href="../../cite/">Cite</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Numerical ISA</a></li><li class="is-active"><a href>Numerical AM–FM Models</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Numerical AM–FM Models</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/NMSU-ISA/ISA.jl/blob/master/docs/src/numerical/models.md#" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Numerical-AM–FM-Models-1"><a class="docs-heading-anchor" href="#Numerical-AM–FM-Models-1">Numerical AM–FM Models</a><a class="docs-heading-anchor-permalink" href="#Numerical-AM–FM-Models-1" title="Permalink"></a></h1><h2 id="Defining-a-Numerical-AM–FM-Model-1"><a class="docs-heading-anchor" href="#Defining-a-Numerical-AM–FM-Model-1">Defining a Numerical AM–FM Model</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Numerical-AM–FM-Model-1" title="Permalink"></a></h2><p>A <strong>numerical AM–FM model</strong> <code>𝐳</code> [<code>numModel</code>] is parameterized by a <em>vector of  numerical AM–FM components</em> <code>[𝚿₀,𝚿₁,𝚿₂]</code>.</p><p>We can define <strong>numerical AM–FM model</strong> <code>𝐳</code> [<code>numModel</code>] by calling <code>numModel()</code>with a <em>vector of  numerical AM–FM components</em> <code>[𝚿₀,𝚿₁,𝚿₂]</code>.</p><pre><code class="language-julia">using ISA
-ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;2.0,0.0)
-ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;10*t,0.1)
-ψ₂ = AMFMcomp(t-&gt;0.8*cos(2t),t-&gt;10 + 7.5*sin(t),π)
+ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;200.0,0.0)
+ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;100*t+50,0.1)
+ψ₂ = AMFMcomp(t-&gt;1.0+0.8*cos(2t),t-&gt;100 + 7.5*sin(t),π)
 fs = 16_000
-t = 0:1/fs:1
+t = 0:1/fs:3
 𝚿₀ = numComp( ψ₀(t), fs )
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
 𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])</code></pre><pre><code class="language-none">numerical AM-FM model with 3 components</code></pre><h2 id="Evaluating-a-Numerical-AM–FM-Model-1"><a class="docs-heading-anchor" href="#Evaluating-a-Numerical-AM–FM-Model-1">Evaluating a Numerical AM–FM Model</a><a class="docs-heading-anchor-permalink" href="#Evaluating-a-Numerical-AM–FM-Model-1" title="Permalink"></a></h2><p>Once an  <strong>numerical AM–FM model</strong> <code>𝐳</code> [<code>numModel</code>] is defined, it can be evaluated at a time instant <span>$t_0$</span> (<code>Real</code>)</p><pre><code class="language-julia">using ISA
-ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;2.0,0.0)
-ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;10*t,0.1)
-ψ₂ = AMFMcomp(t-&gt;0.8*cos(2t),t-&gt;10 + 7.5*sin(t),π)
-fs = 16_000
-t = 0:1/fs:1
-𝚿₀ = numComp( ψ₀(t), fs )
-𝚿₁ = numComp( ψ₁(t), fs )
-𝚿₂ = numComp( ψ₂(t), fs )
-𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
-𝐳(0.5)</code></pre><pre><code class="language-none">0.23603558091392035 + 1.785372054950191im</code></pre><p>or over a range of time instants.</p><pre><code class="language-julia">using ISA
-ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;2.0,0.0)
-ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;10*t,0.1)
-ψ₂ = AMFMcomp(t-&gt;0.8*cos(2t),t-&gt;10 + 7.5*sin(t),π)
-fs = 16_000
-t = 0:1/fs:1
-𝚿₀ = numComp( ψ₀(t), fs )
-𝚿₁ = numComp( ψ₁(t), fs )
-𝚿₂ = numComp( ψ₂(t), fs )
-𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
-𝐳(t)</code></pre><pre><code class="language-none">16001-element Vector{ComplexF64}:
-  1.1950041652780259 + 0.09983341664682827im
-  1.1950043141167224 + 0.09945842439740031im
-   1.195004760662032 + 0.09908344779172264im
-  1.1950055049576704 + 0.09870848704374804im
-  1.1950065470472013 + 0.0983335423674844im
-   1.195007886974034 + 0.09795861397699764im
-  1.1950095247814256 + 0.09758370208640935im
-  1.1950114605124782 + 0.0972088069098971im
-   1.195013694210143 + 0.09683392866169485im
-  1.1950162259172166 + 0.09645906755609286im
-                     ⋮
- 0.43382450853556803 - 0.33810502963321537im
- 0.43417995380417523 - 0.3376454266626594im
-  0.4345349298989072 - 0.3371855914046886im
-  0.4348894366511913 - 0.33672552434497677im
- 0.43524347389298956 - 0.33626522596935154im
-  0.4355970414568012 - 0.33580469676379626im
- 0.43595013917566244 - 0.3353439372144531im
- 0.43630276688314945 - 0.33488294780760935im
-  0.4366549244133734 - 0.3344217290297134im</code></pre><h2 id="Visualizing-a-Numerical-AM–FM-Model-1"><a class="docs-heading-anchor" href="#Visualizing-a-Numerical-AM–FM-Model-1">Visualizing a Numerical AM–FM Model</a><a class="docs-heading-anchor-permalink" href="#Visualizing-a-Numerical-AM–FM-Model-1" title="Permalink"></a></h2><p>We can visualize a <strong>numerical AM–FM model</strong> <span>$𝐳(t)$</span> [<code>numModel</code>] by evoking a pre-defined plotting recipe by calling <code>plot()</code> from <a href="http://docs.juliaplots.org/latest/"><code>Plots.jl</code></a> with an <em>numerical AM–FM model</em> <span>$𝐳(t)$</span> [<code>numModel</code>].</p><pre><code class="language-">using ISA, Plots
-ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;2.0,0.0)
-ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;10*t,0.1)
-ψ₂ = AMFMcomp(t-&gt;1.0+0.8*cos(2t),t-&gt;10 + 7.5*sin(t),π)
+ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;200.0,0.0)
+ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;100*t+50,0.1)
+ψ₂ = AMFMcomp(t-&gt;1.0+0.8*cos(2t),t-&gt;100 + 7.5*sin(t),π)
 fs = 16_000
 t = 0:1/fs:3
 𝚿₀ = numComp( ψ₀(t), fs )
 𝚿₁ = numComp( ψ₁(t), fs )
 𝚿₂ = numComp( ψ₂(t), fs )
 𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
-plot(𝐳)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_exAMFMmodel1.png" alt/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../components/">« Numerical AM–FM Components</a><a class="docs-footer-nextpage" href="../tripletsSets/">Numerical Triplets and Sets »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 28 January 2022 07:51">Friday 28 January 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+𝐳(0.5)</code></pre><pre><code class="language-none">0.528782021451905 - 1.3630974494058403im</code></pre><p>or over a range of time instants.</p><pre><code class="language-julia">using ISA
+ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;200.0,0.0)
+ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;100*t+50,0.1)
+ψ₂ = AMFMcomp(t-&gt;1.0+0.8*cos(2t),t-&gt;100 + 7.5*sin(t),π)
+fs = 16_000
+t = 0:1/fs:3
+𝚿₀ = numComp( ψ₀(t), fs )
+𝚿₁ = numComp( ψ₁(t), fs )
+𝚿₂ = numComp( ψ₂(t), fs )
+𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
+𝐳(t)</code></pre><pre><code class="language-none">48001-element Vector{ComplexF64}:
+ 0.19500416527802544 + 0.09983341664682839im
+  0.1946443424995561 + 0.10419222775719747im
+ 0.19418884416325577 + 0.1085488554813583im
+ 0.19363770331082408 + 0.11290175571724254im
+ 0.19299097474443938 + 0.11724938493863152im
+ 0.19224873501744955 + 0.12159020048343203im
+ 0.19141108242134597 + 0.1259226608418057im
+  0.1904781369690356 + 0.13024522594411603im
+ 0.18945004037441082 + 0.13455635744863453im
+  0.1883269560282157 + 0.13885451902896545im
+                     ⋮
+ -2.3277952522027725 - 1.0403518226980715im
+ -2.3228304470092938 - 1.0705231888936177im
+ -2.3173363780515412 - 1.1006950563668176im
+ -2.3113124108194425 - 1.1308566675028782im
+ -2.3047581410447506 - 1.1609972481823703im
+ -2.2976733950530814 - 1.1911060127863953im
+ -2.2900582300055814 - 1.2211721692119988im
+ -2.2819129340319178 - 1.2511849238891188im
+  -2.273238026254032 - 1.2811334867995436im</code></pre><h2 id="Visualizing-a-Numerical-AM–FM-Model-1"><a class="docs-heading-anchor" href="#Visualizing-a-Numerical-AM–FM-Model-1">Visualizing a Numerical AM–FM Model</a><a class="docs-heading-anchor-permalink" href="#Visualizing-a-Numerical-AM–FM-Model-1" title="Permalink"></a></h2><p>We can visualize a <strong>numerical AM–FM model</strong> <span>$𝐳(t)$</span> [<code>numModel</code>] by evoking a pre-defined plotting recipe by calling <code>plot()</code> from <a href="http://docs.juliaplots.org/latest/"><code>Plots.jl</code></a> with an <em>numerical AM–FM model</em> <span>$𝐳(t)$</span> [<code>numModel</code>].</p><pre><code class="language-">using ISA, Plots
+ψ₀ = AMFMcomp(t-&gt;exp(-t^2),t-&gt;200.0,0.0)
+ψ₁ = AMFMcomp(t-&gt;1.0,t-&gt;100*t+50,0.1)
+ψ₂ = AMFMcomp(t-&gt;1.0+0.8*cos(2t),t-&gt;100 + 7.5*sin(t),π)
+fs = 16_000
+t = 0:1/fs:3
+𝚿₀ = numComp( ψ₀(t), fs )
+𝚿₁ = numComp( ψ₁(t), fs )
+𝚿₂ = numComp( ψ₂(t), fs )
+𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
+plot(𝐳)</code></pre><p><img src="https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_num_exAMFMmodel1.png" alt/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../components/">« Numerical AM–FM Components</a><a class="docs-footer-nextpage" href="../tripletsSets/">Numerical Triplets and Sets »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 28 January 2022 08:26">Friday 28 January 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -1,9 +1,9 @@
 path = "docs/src/assets/"
 
 using ISA, Plots
-ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->10*t,0.1)
-ψ₂ = AMFMcomp(t->1.0+0.8*cos(2t),t->10 + 7.5*sin(t),π)
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
+ψ₁ = AMFMcomp(t->1.0,t->100*t+50,0.1)
+ψ₂ = AMFMcomp(t->1.0+0.8*cos(2t),t->100 + 7.5*sin(t),π)
 fs = 16_000
 t = 0:1/fs:3
 𝚿₀ = numComp( ψ₀(t), fs )
