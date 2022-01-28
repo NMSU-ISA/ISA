@@ -45,7 +45,7 @@ using ISA, Plots
 𝐶₀ = AMFMtriplet(t->10t+100,t->25cos(t)+50,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
-left_margin=15Plots.mm, margin=5Plots.mm)
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM3.png)
 
@@ -75,7 +75,7 @@ using ISA, Plots
 𝐶₀ = AMFMtriplet(t->10sin(t),t->t^2+2t+50,1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
-left_margin=15Plots.mm, margin=5Plots.mm)
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM6.png)
 
@@ -106,6 +106,6 @@ using ISA, Plots
 𝐶₀ = AMFMtriplet(t->5exp(0.1t)+15,t->t^2+t+25,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
-left_margin=15Plots.mm, margin=5Plots.mm)
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exAMFM9.png)

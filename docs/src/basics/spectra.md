@@ -33,6 +33,6 @@ using ISA, Plots
 𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 plot(𝑆,timeaxis=0.0:0.001:3.0,view="TF",
-left_margin=15Plots.mm, margin=5Plots.mm)
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png)
