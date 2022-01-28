@@ -129,7 +129,8 @@ aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF", left_margin=10Plots.mm)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier6.png)
 
@@ -199,6 +200,7 @@ kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
 plot(𝑆, timeaxis=-1.0:0.001:1.0)
-plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF", left_margin=10Plots.mm)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier9.png)

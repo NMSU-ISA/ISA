@@ -26,11 +26,8 @@ aₖ(k) = 1/T
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"IS_exFourier3.png")
 
 # -----------------
@@ -61,11 +58,8 @@ aₖ(k) = ifelse( k==0, 1/2, sin(k*π/2)/(k*π) )
 kInds = -10:10
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"IS_exFourier6.png")
 
 #-------------------------------
@@ -107,9 +101,6 @@ exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
 kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(𝑆; timeaxis=-1.0:0.001:1.0)
-plot!( camera=(0,90),
-       zlabel="", zticks=:false,
-       left_margin=15Plots.mm, margin=5Plots.mm,
-       yrotation = 90, ymirror=true)
+plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"IS_exFourier9.png")
