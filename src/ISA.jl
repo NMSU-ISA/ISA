@@ -18,9 +18,6 @@ export numSet, numModel
 include("demod/demodulation.jl")
 export derivApprox, AMFMdemod
 
-include("latent/latentSignalAnalysis.jl")
-export latentSig, latentComp
-
 include("plots/GRrecipes.jl")
 
 end # module

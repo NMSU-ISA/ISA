@@ -18,7 +18,6 @@ vector of *canonical triplets*.
 Another way to create a *component set* 'compSet'
 by providing a vector of numerical *AM--FM components*.
 
-# Examples
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
@@ -61,7 +60,6 @@ z = AMFMmodel(𝑆)
 Another convenient way to create a 'AMFMmodel'
 by providing a vector of numerical *AM--FM components*.
 
-# Examples
 ```@example
  using ISA
  𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
@@ -75,7 +73,6 @@ by providing a vector of numerical *AM--FM components*.
 Another convenient way to create a 'AMFMmodel'
 by providing a vector of *canonical triplets*.
 
-# Examples
 ```@example
 using ISA
 𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)

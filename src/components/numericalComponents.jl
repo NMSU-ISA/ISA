@@ -20,7 +20,6 @@ t = 0:1/fs:1
 ```
 Another way to call 'numComp' by providing complex-valed signal `Ψ`, and sampling frequency `fs`.
 
-# Examples
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
@@ -30,7 +29,6 @@ t = 0:1/fs:1
 ```
 Another way to call 'numComp' by providing complex-valed signal `Ψ`, and time index `t`.
 
-# Examples
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
@@ -40,7 +38,6 @@ t = 0:1/fs:1
 ```
 Another convenient way to call 'numComp' by providing complex-valed signal `Ψ`.
 
-# Examples
 ```@example
 using ISA
 ψ₀ = AMFMcomp(t->exp(-t^2),t->2.0,0.0)
