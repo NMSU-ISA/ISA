@@ -54,7 +54,7 @@ function AMFMdemod(V::Vector{numComp}; derivMethod="center11")::numSet
   return numSet([ AMFMdemod(𝚿;derivMethod=derivMethod) for 𝚿∈V])
 end
 function AMFMdemod(𝐳::numModel; derivMethod="center11")::numSet
-  return AMFMdemod(𝐳.𝚿ₖ; derivMethod)
+  return AMFMdemod(𝐳.𝚿ₖ; derivMethod=derivMethod)
 end
 """
     f′ = derivApprox(f; fs, method)
