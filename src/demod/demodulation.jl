@@ -5,10 +5,15 @@ using DSP #for phase unwrapping
 """
     𝐂 = AMFMdemod(𝚿)
     𝐒 = AMFMdemod([𝚿₀,𝚿₁,𝚿₂])
+    𝐒 = AMFMdemod(𝐳)
+
 
 Create a *numerical canonical triplet* 'numTriplet' from a *numerical component* 'numComp'.
 
 Create a *numerical component set* 'numSet' from a *vector of numerical components*.
+
+Create a *numerical component set* 'numSet' from a *numerical AM--FM model* 'numModel'.
+
 
 # Examples
 ```@example
@@ -18,6 +23,20 @@ fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝐂₀ = AMFMdemod(𝚿₀)
+```
+
+```@example
+using ISA
+ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
+ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
+ψ₂ = AMFMcomp(t->1+0.8*cos(2t),t->100 + 70.5*sin(t),π)
+fs = 16_000
+t = 0:1/fs:1
+𝚿₀ = numComp( ψ₀(t), fs )
+𝚿₁ = numComp( ψ₁(t), fs )
+𝚿₂ = numComp( ψ₂(t), fs )
+𝐳 = numModel([𝚿₀,𝚿₁,𝚿₂])
+𝐒 = AMFMdemod(𝐳)
 ```
 """
 function AMFMdemod(𝚿::numComp; derivMethod="center11")::numTriplet
@@ -34,8 +53,9 @@ end
 function AMFMdemod(V::Vector{numComp}; derivMethod="center11")::numSet
   return numSet([ AMFMdemod(𝚿;derivMethod=derivMethod) for 𝚿∈V])
 end
-
-
+function AMFMdemod(𝐳::numModel; derivMethod="center11")::numSet
+  return AMFMdemod(𝐳.𝚿ₖ; derivMethod)
+end
 """
     f′ = derivApprox(f; fs, method)
 
