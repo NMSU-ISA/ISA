@@ -261,11 +261,9 @@ cubeYFrgb = [
     0.800000000000000 0.925500000000000 0.352900000000000
 ]
 
-cmap = []
-for i = 1:256
-    push!(cmap, RGB(cubeYFrgb[i, 1], cubeYFrgb[i, 2], cubeYFrgb[i, 3]))
-end
+
+cmap2 = [RGB(cubeYFrgb[i, 1], cubeYFrgb[i, 2], cubeYFrgb[i, 3]) for i in 1:length(cubeYFrgb'[1,:])]
 
 function cubeYF()
-    return cmap
+    return cmap2
 end

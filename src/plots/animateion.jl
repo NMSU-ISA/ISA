@@ -1,7 +1,5 @@
 using ISA, Plots
 
-include(raw".\GRrecipes.jl")
-
 path = raw"C:\Users\hemad\Desktop\NMSU Cources\Fall2020\EE590\images"
 default(margins=1Plots.mm,bottom_margin =5Plots.mm,left_margin=13Plots.mm,dpi=300)
 
@@ -10,6 +8,8 @@ using ISA, Plots
 𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
 𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+
+plot(𝑆,camera=(20,80.0),colorMap="VIRIDIS")
 
 # plot(𝑆,realProj=true,camera=(20,80)) # 2) 3d plane 1
 # plot(𝑆,realProj=true,camera=(0,90)) # 1) time-freq plane 2
