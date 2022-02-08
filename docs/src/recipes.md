@@ -33,7 +33,7 @@ The following is a list of some of the default parameters used in ISA plot recip
 | yguide           | "imag"        |
 | zguide           | "real"        |
 | ymirror          | true          |
-| background_color | cubeYF()[1]   |
+| background_color | first element of colormap   |
 | foreground_color | :white        |
 | ymirror          | true          |
 | legend           | false         |
