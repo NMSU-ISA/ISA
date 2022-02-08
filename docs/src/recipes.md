@@ -141,7 +141,7 @@ plot(𝑆,view="FR")
 #### Real Projection
 Optionally, the real part of $z(t)$, the real superposition of the components
 ```math
-x(t)=\Re\{\sum_k\psi_k(t)\}
+x(t)=\mathrm{Re}\left\{\sum_k\psi_k(t)\right\}
 ```
 can be orthogonally projected along the time-axis.
 
@@ -158,9 +158,9 @@ plot(𝑆,realProj=true)
 
 
 ## Colormaps
-To avoid the perceptual problems associated with many colormaps ([Borland and Taylor, 2007](https://ieeexplore.ieee.org/document/4118486); [Liu and Heer, 2018](https://dl.acm.org/doi/10.1145/3173574.3174172)), we have utilized two perceptually motivated colormaps in our visualizations. Namely, [cubeyf](https://mycarta.wordpress.com/2013/02/21/perceptual-rainbow-palette-the-method/) [default] and [viridis](https://www.youtube.com/watch?v=xAoljeRJ3lU).
+To avoid the perceptual problems associated with many colormaps ([Borland and Taylor, 2007](https://ieeexplore.ieee.org/document/4118486); [Liu and Heer, 2018](https://dl.acm.org/doi/10.1145/3173574.3174172)), we have utilized two perceptually motivated colormaps in our visualizations. Namely, [cubeyf](https://mycarta.wordpress.com/2013/02/21/perceptual-rainbow-palette-the-method/) and [viridis](https://www.youtube.com/watch?v=xAoljeRJ3lU) [default].
 
-An example of changing the default colormap (cubeyf) is given below.
+An example of using the default colormap (`viridis`).
 ```julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
@@ -168,9 +168,9 @@ plot(ψ₀)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/defaultColor.png)
 
-Below is an example of using the viridis colormap.
+An example of changing the colormap to `cubeYF`.
 ```julia
-plot(ψ₀, colorMap="VIRIDIS")
+plot(ψ₀, colorMap="cubeYF")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/VIRIDIScolor.png)
 
