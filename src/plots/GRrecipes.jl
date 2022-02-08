@@ -46,7 +46,7 @@ end
 
 @recipe function temp(ψ::AMFMcomp; timeaxis = 0.0:0.005:1.0,
                       FreqUnits = "rad/s", view="default",
-                      colorMap="cubeYF")
+                      colorMap="VIRIDIS")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -68,7 +68,7 @@ end
 
 @recipe function temp(z::AMFMmodel; timeaxis = 0.0:0.005:1.0,
                       FreqUnits = "rad/s", view="default",
-                      colorMap="cubeYF")
+                      colorMap="VIRIDIS")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -127,7 +127,7 @@ end
 
 @recipe function temp(𝐶::AMFMtriplet; timeaxis = 0.0:0.005:1.0,
                       FreqUnits = "rad/s",view="default",
-                      colorMap="cubeYF")
+                      colorMap="VIRIDIS")
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -151,7 +151,7 @@ end
 
 @recipe function temp(S::compSet; timeaxis = 0.0:0.005:1.0,
                       FreqUnits = "rad/s",view="default",
-                      colorMap="cubeYF",realProj=false)
+                      colorMap="VIRIDIS",realProj=false)
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -193,7 +193,7 @@ end
 # Models
 # 3D Argand Digram
 @recipe function temp(𝚿::numComp;FreqUnits = "rad/s",
-                      view="default", colorMap = "cubeYF")
+                      view="default", colorMap = "VIRIDIS")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -215,7 +215,7 @@ end
 
 
 @recipe function temp(𝐳::numModel; FreqUnits = "rad/s",
-                      view="default", colorMap = "cubeYF")
+                      view="default", colorMap = "VIRIDIS")
    xguide --> viewAngle3DArgand(view)[1]
    yguide --> viewAngle3DArgand(view)[2]
    zguide --> viewAngle3DArgand(view)[3]
@@ -237,7 +237,7 @@ end
 
 # 3D IS Plot
 @recipe function temp(𝐂::numTriplet;FreqUnits = "rad/s",
-                      view="default",colorMap = "cubeYF")
+                      view="default",colorMap = "VIRIDIS")
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]
@@ -259,7 +259,7 @@ end
 end
 
 @recipe function temp(𝐒::numSet;FreqUnits = "rad/s",
-                      view="default",colorMap = "cubeYF",realProj=false)
+                      view="default",colorMap = "VIRIDIS",realProj=false)
    xguide --> viewAngleIS(view,FreqUnits)[1]
    yguide --> viewAngleIS(view,FreqUnits)[2]
    zguide --> viewAngleIS(view,FreqUnits)[3]

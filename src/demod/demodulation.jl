@@ -7,13 +7,11 @@ using DSP #for phase unwrapping
     𝐒 = AMFMdemod([𝚿₀,𝚿₁,𝚿₂])
     𝐒 = AMFMdemod(𝐳)
 
-
 Create a *numerical canonical triplet* 'numTriplet' from a *numerical component* 'numComp'.
 
 Create a *numerical component set* 'numSet' from a *vector of numerical components*.
 
 Create a *numerical component set* 'numSet' from a *numerical AM--FM model* 'numModel'.
-
 
 # Examples
 ```@example
