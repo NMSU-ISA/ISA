@@ -35,12 +35,20 @@ function viewAngle3DArgand(view)
 end
 
 function colorSelect(CM)
-   normalized = uppercase(CM)
-   if normalized == "CUBEYF"
-      return cubeYF()
-   elseif normalized == "VIRIDIS"
-      return viridis()
-   else return error("Invalid color map. Choose from \"cubeYF\" or \"viridis\"")
+   if isa(CM,Vector{RGB{Float64}})
+      if length(CM)==256
+         return CM
+      else
+         return error("Invalid color map. Colormap must be of lengh 256.")
+      end
+   else
+      normalized = uppercase(CM)
+      if normalized == "CUBEYF"
+         return cubeYF()
+      elseif normalized == "VIRIDIS"
+         return viridis()
+      else return error("Invalid color map. Choose from \"cubeYF\" or \"viridis\"")
+      end
    end
 end
 
