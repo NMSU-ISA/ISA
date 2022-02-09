@@ -112,9 +112,9 @@ plot(ψ₀, view="RI")
 An example of displaying the default 3D view associated with an `compSet` is given below.
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100.0,0.0)
+𝐶₁ = AMFMtriplet(t->1.0,t->10*t^2+50,0.1)
+𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->25 + 10.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 plot(𝑆)
 ```
@@ -148,8 +148,8 @@ can be orthogonally projected along the time-axis.
 Below is an example of enabling the real projection
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->2.0,0.0)
-𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->10 + 7.5*sin(t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100.0,0.0)
+𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->25 + 10.5*sin(t),π)
 𝑆 = compSet([𝐶₀,𝐶₁])
 plot(𝑆,realProj=true)
 ```
@@ -172,7 +172,7 @@ An example of changing the colormap to `cubeYF`.
 ```julia
 plot(ψ₀, colorMap="cubeYF")
 ```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/VIRIDIScolor.png)
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/cubeYFcolor.png)
 
 ## Margins
 Depending on the view, you may want to adjust margin sizes.
