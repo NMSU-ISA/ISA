@@ -30,7 +30,7 @@ can be visualized.
 For one choice of parameters of the canonical triplet, we have the following Argand Diagram for $\psi_0(t;\mathscr{C}_0)$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->t^2,0.0)
+𝐶₀ = AMFMtriplet(t->1, t->t^2, 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -38,7 +38,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->t^2,0.0)
+𝐶₀ = AMFMtriplet(t->1, t->t^2, 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -46,7 +46,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->t^2,0.0)
+𝐶₀ = AMFMtriplet(t->1, t->t^2, 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
      left_margin=15Plots.mm, margin=5Plots.mm)
@@ -58,7 +58,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
 For another choice of parameters of the canonical triplet, we have the following Argand Diagram for $\psi_0(t;\mathscr{C}_0)$, 3D IS $\mathcal{S}(t,\omega,s;\mathscr{S})$, and 2D IS $\mathcal{S}(t,\omega;\mathscr{S})$.
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
+𝐶₀ = AMFMtriplet(t->1, t->25+20*sin(t), 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -66,7 +66,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
+𝐶₀ = AMFMtriplet(t->1, t->25+20*sin(t), 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -74,7 +74,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
+𝐶₀ = AMFMtriplet(t->1, t->25+20*sin(t), 0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
      left_margin=15Plots.mm, margin=5Plots.mm)
@@ -87,7 +87,7 @@ For another choice of parameters of the canonical triplet, we have the following
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->exp(0.5t)+10*t,1.0)
+𝐶₀ = AMFMtriplet(t->1, t->exp(0.5t)+10*t, 1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -95,7 +95,7 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->exp(0.5t)+10*t,1.0)
+𝐶₀ = AMFMtriplet(t->1, t->exp(0.5t)+10*t, 1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 ```
@@ -103,7 +103,7 @@ plot(𝐶₀; timeaxis=0.0:0.001:10.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->1,t->exp(0.5t)+10*t,1.0)
+𝐶₀ = AMFMtriplet(t->1, t->exp(0.5t)+10*t, 1.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(𝐶₀; timeaxis=0.0:0.001:10.0, view="TF",
      left_margin=15Plots.mm, margin=5Plots.mm)
