@@ -17,7 +17,7 @@ Users need to install the Plots.jl package into their system before calling it f
 Below illustrates the use a plotting recipe using default parameters.
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10t,t->25cos(t),0.0)
+𝐶₀ = AMFMtriplet(t->10t,t->25cos(t)+50,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
 plot(ψ₀)
 ```
@@ -76,7 +76,7 @@ By default, the `plot()` function will show a 3D plot. However, the parameter `v
 An example of displaying the default 3D view associated with an `AMFMcomp` is given below.
 ```julia
 using ISA, Plots
-ψ₀ = AMFMcomp(t->10t,t->25cos(t),0.0)
+ψ₀ = AMFMcomp(t->10t,t->25cos(t)+50,0.0)
 plot(ψ₀)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default3d.png)
