@@ -111,12 +111,12 @@ plot(ψ₀, view="RI")
 
 An example of displaying the default 3D view associated with an `compSet` is given below.
 ```julia
-using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->10*t^2+50,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(2t),t->25 + 10.5*sin(t),π)
-𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
-plot(𝑆)
+𝐶₀ = AMFMtriplet(t->0.2+0.8cos(11t), t->200.0, 0.0)
+𝐶₁ = AMFMtriplet(t->exp(-abs(t/3)), t->100t, 0.1)
+𝐶₂ = AMFMtriplet(t->𝒩ᵤ(t; μ=1.5, σ=1.0), t->150 + 125sin(5t), π)
+𝐶₃ = AMFMtriplet(t->u(t-1.725)-u(t-2.475), t->50, 0.0)
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂,𝐶₃])
+plot(𝑆; timeaxis=0.0:0.001:3.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/defaultIS.png)
 

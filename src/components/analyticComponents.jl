@@ -68,8 +68,8 @@ struct AMFMcomp
 end
 
 # CONSTRUCTIONS
-AMFMcomp(a, ω, φ) = AMFMcomp( AMFMtriplet(a, ω, φ))
-AMFMcomp(a, ω) = AMFMcomp( AMFMtriplet(a, ω, 0.0))
+AMFMcomp(a, ω, φ) = AMFMcomp(AMFMtriplet(a, ω, φ))
+AMFMcomp(a, ω) = AMFMcomp(AMFMtriplet(a, ω, 0.0))
 
 # METHODS
 function (ψ::AMFMcomp)(t::Vector{<:Real})
