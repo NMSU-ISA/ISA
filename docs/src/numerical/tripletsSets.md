@@ -5,7 +5,7 @@
 A **numerical canonical triplet** `𝐂₀` [`numTriplet`] can be defined by calling `AMFMdemod()` with a **numerical AM--FM component** `𝚿₀` [`numComp`].
 ```@example
 using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
+ψ₀ = AMFMcomp(t->exp(-t^2), t->200.0, 0.0)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
@@ -20,9 +20,9 @@ We can define a **numerical component set** `𝐒` [`numSet`]
 by calling `numSet()` with *set of numerical canonical triplet* `[𝐂₀,𝐂₁,𝐂₂]`.
 ```@example
 using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
-ψ₂ = AMFMcomp(t->1+0.8*cos(2t),t->100 + 70.5*sin(t),π)
+ψ₀ = AMFMcomp(t->exp(-t^2), t->200.0, 0.0)
+ψ₁ = AMFMcomp(t->1.0, t->100t, 0.1)
+ψ₂ = AMFMcomp(t->1+0.8cos(2t), t->100+70.5sin(t), π)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
@@ -39,9 +39,9 @@ by calling `AMFMdemod()` with *set of numerical components* `[𝚿₀,𝚿₁,�
 
 ```@example
 using ISA
-ψ₀ = AMFMcomp(t->exp(-t^2),t->200.0,0.0)
-ψ₁ = AMFMcomp(t->1.0,t->100*t,0.1)
-ψ₂ = AMFMcomp(t->1+0.8*cos(2t),t->100 + 70.5*sin(t),π)
+ψ₀ = AMFMcomp(t->exp(-t^2), t->200.0, 0.0)
+ψ₁ = AMFMcomp(t->1.0, t->100t, 0.1)
+ψ₂ = AMFMcomp(t->1+0.8cos(2t), t->100+70.5sin(t), π)
 fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )

@@ -29,9 +29,9 @@ For a this choice of parameters of the component set, we have the following Arga
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2/5), t->200.0, 0.0)
+𝐶₁ = AMFMtriplet(t->1.0, t->100t, 0.1)
+𝐶₂ = AMFMtriplet(t->0.8cos(11t), t->100 + 70.5sin(5t), π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0)
@@ -40,9 +40,9 @@ plot(z; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2/5), t->200.0, 0.0)
+𝐶₁ = AMFMtriplet(t->1.0, t->100t, 0.1)
+𝐶₂ = AMFMtriplet(t->0.8cos(11t), t->100 + 70.5sin(5t), π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -51,9 +51,9 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
+𝐶₀ = AMFMtriplet(t->exp(-t^2/5), t->200.0, 0.0)
+𝐶₁ = AMFMtriplet(t->1.0, t->100t, 0.1)
+𝐶₂ = AMFMtriplet(t->0.8cos(11t), t->100 + 70.5sin(5t), π)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
@@ -67,9 +67,9 @@ For another choice of parameters of the component set, we have the following Arg
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
-𝐶₁ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
-𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->100,0.0)
+𝐶₁ = AMFMtriplet(t->1, t->25+20sin(t), 0.0)
+𝐶₂ = AMFMtriplet(t->sin(11t), t->250, 0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0)
@@ -78,9 +78,9 @@ plot(z; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
-𝐶₁ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
-𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->100, 0.0)
+𝐶₁ = AMFMtriplet(t->1, t->25+20sin(t), 0.0)
+𝐶₂ = AMFMtriplet(t->sin(11t), t->250, 0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -89,9 +89,9 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100,0.0)
-𝐶₁ = AMFMtriplet(t->1,t->25+20*sin(t),0.0)
-𝐶₂ = AMFMtriplet(t->sin(11t),t->250,0.0)
+𝐶₀ = AMFMtriplet(t->exp(-t^2), t->100, 0.0)
+𝐶₁ = AMFMtriplet(t->1, t->25+20sin(t), 0.0)
+𝐶₂ = AMFMtriplet(t->sin(11t), t->250, 0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
@@ -105,9 +105,9 @@ For another choice of parameters of the component set, we have the following Arg
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10,t->10t^2+2t+100,1.0)
-𝐶₁ = AMFMtriplet(t->5exp(0.1t),t->250,0.0)
-𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t)+50,0.0)
+𝐶₀ = AMFMtriplet(t->10, t->10t^2+2t+100, 1.0)
+𝐶₁ = AMFMtriplet(t->5exp(0.1t), t->250, 0.0)
+𝐶₂ = AMFMtriplet(t->10t, t->5cos(50t)+50, 0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(z; timeaxis=-1.0:0.001:1.0)
@@ -116,9 +116,9 @@ plot(z; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10,t->10t^2+2t+100,1.0)
-𝐶₁ = AMFMtriplet(t->5exp(0.1t),t->250,0.0)
-𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t)+50,0.0)
+𝐶₀ = AMFMtriplet(t->10, t->10t^2+2t+100, 1.0)
+𝐶₁ = AMFMtriplet(t->5exp(0.1t), t->250, 0.0)
+𝐶₂ = AMFMtriplet(t->10t, t->5cos(50t)+50, 0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆; timeaxis=-1.0:0.001:1.0)
@@ -127,9 +127,9 @@ plot(𝑆; timeaxis=-1.0:0.001:1.0)
 
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->10,t->10t^2+2t+100,1.0)
-𝐶₁ = AMFMtriplet(t->5exp(0.1t),t->250,0.0)
-𝐶₂ = AMFMtriplet(t->10t,t->5cos(50t)+50,0.0)
+𝐶₀ = AMFMtriplet(t->10, t->10t^2+2t+100, 1.0)
+𝐶₁ = AMFMtriplet(t->5exp(0.1t), t->250, 0.0)
+𝐶₂ = AMFMtriplet(t->10t, t->5cos(50t)+50, 0.0)
 𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
 z = AMFMmodel(𝑆)
 plot(𝑆, timeaxis=-1.0:0.001:1.0, view="TF",
