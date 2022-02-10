@@ -27,12 +27,15 @@ using ISA, Plots
 plot(ψ₀)
 png(path*"default3d.png")
 
-plot(ψ₀,view="TR")
+plot(ψ₀,view="TR",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"TRview3d.png")
 
-plot(ψ₀,view="TI")
+plot(ψ₀,view="TI",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"TIview3d.png")
 
 
-plot(ψ₀, view="RI")
+plot(ψ₀, view="RI",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"RIview3d.png")

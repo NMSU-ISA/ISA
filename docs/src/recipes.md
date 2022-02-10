@@ -60,6 +60,18 @@ plot(ψ₀, yguide="imaginary", ymirror=false)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
 
+## Margins
+Depending on the view, you may want to adjust margin sizes.
+```julia
+using ISA, Plots
+𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
+𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
+𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
+𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
+plot(𝑆,timeaxis=0.0:0.001:3.0,view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png)
 
 ## Predefined Views
 By default, the `plot()` function will show a 3D plot. However, the parameter `view` can be used to 2D plot orthogonal projections of the 3D plot.
@@ -83,19 +95,22 @@ plot(ψ₀)
 
 An example of displaying the time-real plane associated with an `AMFMcomp` is given below.
 ```julia
-plot(ψ₀,view="TR")
+plot(ψ₀,view="TR",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRview3d.png)
 
 An example of displaying the time-imaginary plane associated with an `AMFMcomp` is given below.
 ```julia
-plot(ψ₀,view="TI")
+plot(ψ₀,view="TI",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TIview3d.png)
 
 An example of displaying the real-imaginary plane associated with an `AMFMcomp` is given below.
 ```julia
-plot(ψ₀, view="RI")
+plot(ψ₀, view="RI",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/RIview3d.png)
 
@@ -122,19 +137,22 @@ plot(𝑆; timeaxis=0.0:0.001:3.0)
 
 An example of displaying the time-frequency plane associated with an `compSet` is given below.
 ```julia
-plot(𝑆,view="TF")
+plot(𝑆,view="TF",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TFviewIS.png)
 
 An example of displaying the time-real plane associated with an `compSet` is given below.
 ```julia
-plot(𝑆,view="TR")
+plot(𝑆,view="TR",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRviewIS.png)
 
 An example of displaying the frequency-real plane associated with an `compSet` is given below.
 ```julia
-plot(𝑆,view="FR")
+plot(𝑆,view="FR",
+     left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/FRviewIS.png)
 
@@ -148,8 +166,8 @@ can be orthogonally projected along the time-axis.
 Below is an example of enabling the real projection
 ```julia
 using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2),t->100.0,0.0)
-𝐶₁ = AMFMtriplet(t->0.8*cos(2t),t->25 + 10.5*sin(t),π)
+𝐶₀ = AMFMtriplet(t->0.2+0.8cos(11t), t->200.0, 0.0)
+𝐶₁ = AMFMtriplet(t->exp(-t^2),t->100.0,0.0)
 𝑆 = compSet([𝐶₀,𝐶₁])
 plot(𝑆,realProj=true)
 ```
@@ -163,7 +181,7 @@ To avoid the perceptual problems associated with many colormaps ([Borland and Ta
 An example of using the default colormap (`viridis`).
 ```julia
 using ISA, Plots
-ψ₀ = AMFMcomp(t->t,t->25cos(t),0.0)
+ψ₀ = AMFMcomp(t->t,t->25cos(t)+50,0.0)
 plot(ψ₀)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/defaultColor.png)
@@ -173,16 +191,3 @@ An example of changing the colormap to `cubeYF`.
 plot(ψ₀, colorMap="cubeYF")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/cubeYFcolor.png)
-
-## Margins
-Depending on the view, you may want to adjust margin sizes.
-```julia
-using ISA, Plots
-𝐶₀ = AMFMtriplet(t->exp(-t^2/5),t->200.0,0.0)
-𝐶₁ = AMFMtriplet(t->1.0,t->100*t,0.1)
-𝐶₂ = AMFMtriplet(t->0.8*cos(11t),t->100 + 70.5*sin(5t),π)
-𝑆 = compSet([𝐶₀,𝐶₁,𝐶₂])
-plot(𝑆,timeaxis=0.0:0.001:3.0,view="TF",
-     left_margin=15Plots.mm, margin=5Plots.mm)
-```
-![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_ex2.png)
