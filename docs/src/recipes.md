@@ -191,3 +191,13 @@ An example of changing the colormap to `cubeYF`.
 plot(ψ₀, colorMap="cubeYF")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/cubeYFcolor.png)
+
+
+Optionally, users can provide their own customized colormap as a Vector{RGB{Float64}} with 256 element.
+
+Below is an example of using a randomly generated colormap.
+```julia
+myColorMap = [RGB(rand(), rand(), rand()) for i in 1:256]
+plot(ψ₀, colorMap = myColorMap)
+```
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/myColorMap.png)
