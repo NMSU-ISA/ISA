@@ -46,11 +46,15 @@ png(path*"realProject.png")
 
 using ISA, Plots
 ψ₀ = AMFMcomp(t->t,t->25cos(t)+50,0.0)
-plot(ψ₀)
+plot(ψ₀, timeaxis=0.0:0.001:3.0)
 png(path*"defaultColor.png")
 
-plot(ψ₀, colorMap="cubeYF")
+plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap="cubeYF")
 png(path*"cubeYFcolor.png")
+
+myColorMap = [RGB(rand(), rand(), rand()) for i in 1:256]
+plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap = myColorMap)
+png(path*"myColorMap.png")
 
 #---------------------------------------------------
 
@@ -62,14 +66,14 @@ png(path*"cubeYFcolor.png")
 plot(𝑆; timeaxis=0.0:0.001:3.0)
 png(path*"defaultIS.png")
 
-plot(𝑆,view="TF",
+plot(𝑆,view="TF", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"TFviewIS.png")
 
-plot(𝑆,view="TR",
+plot(𝑆,view="TR", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"TRviewIS.png")
 
-plot(𝑆,view="FR",
+plot(𝑆,view="FR", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 png(path*"FRviewIS.png")
