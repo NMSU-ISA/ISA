@@ -19,7 +19,7 @@ Below illustrates the use a plotting recipe using default parameters.
 using ISA, Plots
 𝐶₀ = AMFMtriplet(t->10t,t->25cos(t)+50,0.0)
 ψ₀ = AMFMcomp(𝐶₀)
-plot(ψ₀)
+plot(ψ₀, timeaxis=0.0:0.001:3.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default1.png)
 
@@ -49,14 +49,15 @@ plot(ψ₀; timeaxis=0.0:0.001:10.0)
 ### Camera Position
 Below gives an example of setting a custom camera position.
 ```julia
-plot(ψ₀, camera=(20,50))
+plot(ψ₀, timeaxis=0.0:0.001:3.0, camera=(20,50))
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum1.png)
 
 ### Labels
 Below is an example of modifying the axis label and location.
 ```julia
-plot(ψ₀, yguide="imaginary", ymirror=false)
+plot(ψ₀, timeaxis=0.0:0.001:3.0,
+     yguide="imaginary", ymirror=false)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/costum2.png)
 
@@ -89,27 +90,27 @@ An example of displaying the default 3D view associated with an `AMFMcomp` is gi
 ```julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->10t,t->25cos(t)+50,0.0)
-plot(ψ₀)
+plot(ψ₀, timeaxis=0.0:0.001:3.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/default3d.png)
 
 An example of displaying the time-real plane associated with an `AMFMcomp` is given below.
 ```julia
-plot(ψ₀,view="TR",
+plot(ψ₀, view="TR", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRview3d.png)
 
 An example of displaying the time-imaginary plane associated with an `AMFMcomp` is given below.
 ```julia
-plot(ψ₀,view="TI",
+plot(ψ₀, view="TI", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TIview3d.png)
 
 An example of displaying the real-imaginary plane associated with an `AMFMcomp` is given below.
 ```julia
-plot(ψ₀, view="RI",
+plot(ψ₀, view="RI", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/RIview3d.png)
@@ -137,21 +138,21 @@ plot(𝑆; timeaxis=0.0:0.001:3.0)
 
 An example of displaying the time-frequency plane associated with an `compSet` is given below.
 ```julia
-plot(𝑆,view="TF",
+plot(𝑆,view="TF", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TFviewIS.png)
 
 An example of displaying the time-real plane associated with an `compSet` is given below.
 ```julia
-plot(𝑆,view="TR",
+plot(𝑆,view="TR", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/TRviewIS.png)
 
 An example of displaying the frequency-real plane associated with an `compSet` is given below.
 ```julia
-plot(𝑆,view="FR",
+plot(𝑆,view="FR", timeaxis=0.0:0.001:3.0,
      left_margin=15Plots.mm, margin=5Plots.mm)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/FRviewIS.png)
@@ -182,13 +183,13 @@ An example of using the default colormap (`viridis`).
 ```julia
 using ISA, Plots
 ψ₀ = AMFMcomp(t->t,t->25cos(t)+50,0.0)
-plot(ψ₀)
+plot(ψ₀, timeaxis=0.0:0.001:3.0)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/defaultColor.png)
 
 An example of changing the colormap to `cubeYF`.
 ```julia
-plot(ψ₀, colorMap="cubeYF")
+plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap="cubeYF")
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/cubeYFcolor.png)
 
@@ -198,6 +199,6 @@ Optionally, users can provide their own customized colormap as a Vector{RGB{Floa
 Below is an example of using a randomly generated colormap.
 ```julia
 myColorMap = [RGB(rand(), rand(), rand()) for i in 1:256]
-plot(ψ₀, colorMap = myColorMap)
+plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap = myColorMap)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/myColorMap.png)
