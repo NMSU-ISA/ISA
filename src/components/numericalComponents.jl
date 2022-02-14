@@ -82,7 +82,7 @@ function display𝚿(x)
   text = ""
   T = typeof(x)
   for (name, typ) in zip(fieldnames(T), T.types)
-      text *= "\n"*" "^4*"$name is $typ"
+      text *= "\n"*" "^2*"$name is $typ"
   end
   return text
 end
@@ -120,7 +120,7 @@ function display𝐂(x)
   text = ""
   T = typeof(x)
   for (name, typ) in zip(fieldnames(T), T.types)
-      text *= "\n"*" "^4*"$name is $typ"
+      text *= "\n"*" "^2*"$name is $typ"
   end
   return text
 end
