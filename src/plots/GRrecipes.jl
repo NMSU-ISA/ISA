@@ -64,6 +64,7 @@ end
    yticks --> viewAngle3DArgand(view)[6][2]
    zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> colorSelect(colorMap)[1]
+   linealpha --> sign.(abs.( ψ(timeaxis) ))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
@@ -86,6 +87,7 @@ end
    yticks --> viewAngle3DArgand(view)[6][2]
    zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> colorSelect(colorMap)[1]
+   linealpha --> sign.(abs.(z(timeaxis)))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
@@ -146,6 +148,7 @@ end
    yticks --> viewAngleIS(view,FreqUnits)[7][2]
    zticks --> viewAngleIS(view,FreqUnits)[7][3]
    background_color --> colorSelect(colorMap)[1]
+   linealpha --> sign.(abs.( 𝐶.a.(timeaxis) ))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
@@ -182,6 +185,7 @@ end
    for k in 1:length(S.S)
       seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
+      linealpha --> sign.(abs.( S.S[k].a.(timeaxis) ))
       @series begin
          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
       end
@@ -211,6 +215,7 @@ end
    yticks --> viewAngle3DArgand(view)[6][2]
    zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> colorSelect(colorMap)[1]
+   linealpha --> sign.(abs.(𝚿(𝚿.t)))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
@@ -233,10 +238,11 @@ end
    yticks --> viewAngle3DArgand(view)[6][2]
    zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> colorSelect(colorMap)[1]
+   tt = 𝐳.𝚿ₖ[1].t
+   linealpha --> sign.(abs.( 𝐳(tt)))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
-   tt = 𝐳.𝚿ₖ[1].t
    a_max = maximum(abs.(𝐳.(tt)))
    clim = (0,1)
    seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(𝐳(tt)) .* 256/a_max ),256),50) ]
