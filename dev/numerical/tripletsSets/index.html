@@ -5,14 +5,14 @@ fs = 16_000
 t = 0:1/fs:1
 𝚿₀ = numComp( ψ₀(t), fs )
 𝐂₀ = AMFMdemod(𝚿₀)</code></pre><pre><code class="language-none">numerical canonical triplet
-    Ψ is Vector{ComplexF64}
-    t is Vector{Float64}
-    fs is Float64
-    a is Vector{Float64}
-    ω is Vector{Float64}
-    s is Vector{Float64}
-    σ is Vector{Float64}
-    θ is Vector{Float64}</code></pre><h2 id="Defining-a-Numerical-Component-Set-1"><a class="docs-heading-anchor" href="#Defining-a-Numerical-Component-Set-1">Defining a Numerical Component Set</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Numerical-Component-Set-1" title="Permalink"></a></h2><p>A <strong>numerical component set</strong> <code>𝐒</code> [<code>numSet</code>] is parameterized by a <em>set of numerical canonical triplet</em> <code>[𝐂₀,𝐂₁,𝐂₂]</code>.</p><p>We can define a <strong>numerical component set</strong> <code>𝐒</code> [<code>numSet</code>] by calling <code>numSet()</code> with <em>set of numerical canonical triplet</em> <code>[𝐂₀,𝐂₁,𝐂₂]</code>.</p><pre><code class="language-julia">using ISA
+  Ψ is Vector{ComplexF64}
+  t is Vector{Float64}
+  fs is Float64
+  a is Vector{Float64}
+  ω is Vector{Float64}
+  s is Vector{Float64}
+  σ is Vector{Float64}
+  θ is Vector{Float64}</code></pre><h2 id="Defining-a-Numerical-Component-Set-1"><a class="docs-heading-anchor" href="#Defining-a-Numerical-Component-Set-1">Defining a Numerical Component Set</a><a class="docs-heading-anchor-permalink" href="#Defining-a-Numerical-Component-Set-1" title="Permalink"></a></h2><p>A <strong>numerical component set</strong> <code>𝐒</code> [<code>numSet</code>] is parameterized by a <em>set of numerical canonical triplet</em> <code>[𝐂₀,𝐂₁,𝐂₂]</code>.</p><p>We can define a <strong>numerical component set</strong> <code>𝐒</code> [<code>numSet</code>] by calling <code>numSet()</code> with <em>set of numerical canonical triplet</em> <code>[𝐂₀,𝐂₁,𝐂₂]</code>.</p><pre><code class="language-julia">using ISA
 ψ₀ = AMFMcomp(t-&gt;exp(-t^2), t-&gt;200.0, 0.0)
 ψ₁ = AMFMcomp(t-&gt;1.0, t-&gt;100t, 0.1)
 ψ₂ = AMFMcomp(t-&gt;1+0.8cos(2t), t-&gt;100+70.5sin(t), π)
@@ -95,4 +95,4 @@ s is Vector{Float64}
 σ is Vector{Float64}
 θ is Vector{Float64}
 
-</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../models/">« Numerical AM–FM Models</a><a class="docs-footer-nextpage" href="../spectra/">Numerical Instantaneous Spectra »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Thursday 10 February 2022 21:31">Thursday 10 February 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../models/">« Numerical AM–FM Models</a><a class="docs-footer-nextpage" href="../spectra/">Numerical Instantaneous Spectra »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Monday 14 February 2022 06:30">Monday 14 February 2022</span>. Using Julia version 1.6.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
