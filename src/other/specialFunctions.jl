@@ -1,4 +1,19 @@
 #unit step function
+"""
+    C = AMFMtriplet(a, ω, φ)
+    C = AMFMtriplet(a, ω)
+
+Create a *canonical triplet* 'AMFMtriplet' consisting of an *instantenouse amplitude function* `a`, an *instantaneous frequency function* `ω`, and a *phase reference* `φ`.
+
+# Examples
+```@example
+using ISA
+a₀(t) = exp(-t^2)
+ω₀(t) = 2.0
+φ₀ = 0.0
+𝐶₀ = AMFMtriplet(a₀,ω₀,φ₀)
+```
+"""
 function u(t::Float64)::Float64 #unit step function
     return ifelse( t < 0, zero(t), one(t) )
 end
