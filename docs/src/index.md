@@ -27,6 +27,7 @@ Pages = ["basics/triplets.md",
          "numerical/tripletsSets.md",   
          "numerical/spectra.md",            
          "typesMethodsFunctions.md",
+         "utilityFunctions.md",
          "recipes.md",   
          "cite.md"]
 ```

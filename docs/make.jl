@@ -29,6 +29,7 @@ makedocs(;
                      "Numerical Triplets and Sets"     => "numerical/tripletsSets.md",
                      "Numerical Instantaneous Spectra"     => "numerical/spectra.md",],
         "Types/Methods/Functions" => "typesMethodsFunctions.md",
+        "Utility Functions" => "utilityFunctions.md",
         "Plotting Recipes" => "recipes.md",
         "Cite" => "cite.md",
     ],
