@@ -1,6 +1,6 @@
 # Utility Functions
 
-# Unit step function
+## Unit step function
 
 A **unit step** function is defined by
 
@@ -15,4 +15,4 @@ t = 1.25
 x(t) = u(t-0.25)-u(t-2.5)
 ```
 
-# Dirac delta function
+## Dirac delta function

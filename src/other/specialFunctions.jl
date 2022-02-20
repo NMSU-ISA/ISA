@@ -14,7 +14,6 @@ x = u(t-1.725)
 function u(t::Float64)::Float64 #unit step function
     return ifelse( t < 0, zero(t), one(t) )
 end
-
 """
     y = 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
 
@@ -30,8 +29,7 @@ x = 2.0
 σ = 0.1
 y = 𝒩ᵤ(x::Float64; μ, σ)
 ```
-"""
-#unnormalized Gaussian function
+"""#unnormalized Gaussian function
 function 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
     return exp(-0.5 * ((x - μ) / σ)^2)
 end
@@ -51,8 +49,7 @@ x = 2.0
 σ = 0.1
 y = 𝒩(x::Float64; μ, σ)
 ```
-"""
-#normalized Gaussian function
+"""#normalized Gaussian function
 function 𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
     return 1 / (σ * sqrt(2 * π)) * exp(-0.5 * ((x - μ) / σ)^2)
 end
@@ -71,8 +68,7 @@ t = 1.5
 σ = 1.0e-11
 x = δn(t, σ)
 ```
-"""
-#Dirac delta (Gaussian approximation) amplitude normalized
+"""#Dirac delta (Gaussian approximation) amplitude normalized
 function δn(t::Float64,σ::Float64=1.0e-11)::Float64
    return 𝒩ᵤ(t, μ=0.0, σ=σ)
 end
@@ -91,8 +87,7 @@ t = 2.5
 σ = 1.0e-11
 x = δ(t, σ)
 ```
-"""
-#Dirac delta (Gaussian approximation) unit area
+"""#Dirac delta (Gaussian approximation) unit area
 function δ(t::Float64,σ::Float64=1.0e-11)::Float64
    return 𝒩(t, μ=0.0, σ=σ)
 end
