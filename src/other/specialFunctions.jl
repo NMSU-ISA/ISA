@@ -3,7 +3,8 @@
     x = u(t::Float64)::Float64
 
 Define a *unit step function* 'u' consisting of argument t of type Float64.
-
+The unit step function, 'u' returns the value 1.0 for
+non-negative input argument, t otherwise returns 0.0.
 # Examples
 ```@example
 using ISA
@@ -15,10 +16,10 @@ function u(t::Float64)::Float64 #unit step function
     return ifelse( t < 0, zero(t), one(t) )
 end
 """
-    y = 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
+    f = 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
 
 Define an unnormalized *Gaussian function* '𝒩ᵤ' consisting of
-argument x, input data μ, mean and σ, standard devivation
+argument x (input data), μ (mean), and σ (standard devivation)
 of type Float64.
 
 # Examples
@@ -27,7 +28,7 @@ using ISA
 x = 2.0
 μ = 1.0
 σ = 0.1
-y = 𝒩ᵤ(x::Float64; μ, σ)
+f = 𝒩ᵤ(x::Float64; μ, σ)
 ```
 """#unnormalized Gaussian function
 function 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
@@ -35,11 +36,11 @@ function 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
 end
 
 """
-    y = 𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
+    f = 𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
 
-Define a normalized *Gaussian function* '𝒩ᵤ' consisting of
-argument x, input data μ, mean and σ, standard
-devivation of type Float64.
+Define a normalized *Gaussian function* '𝒩' consisting of
+argument x (input data), μ (mean), and σ (standard
+devivation) of type Float64.
 
 # Examples
 ```@example
@@ -47,7 +48,7 @@ using ISA
 x = 2.0
 μ = 1.0
 σ = 0.1
-y = 𝒩(x::Float64; μ, σ)
+f = 𝒩(x::Float64; μ, σ)
 ```
 """#normalized Gaussian function
 function 𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
@@ -57,8 +58,8 @@ end
 """
     x = δn(t::Float64,σ::Float64=1.0e-11)::Float64
 
-Define a Dirac delta using Gaussian approximation, consisting of
-argument t, zero mean, μ=0.0, and σ, standard
+Define a *Dirac delta function*, 'δn' using unnormalized Gaussian approximation, consisting of
+argument t, with zero mean (μ=0.0), and σ, standard
 devivation of type Float64.
 
 # Examples
@@ -76,7 +77,7 @@ end
 """
     x = δ(t::Float64,σ::Float64=1.0e-11)::Float64
 
-Define a Dirac delta using normalised Gaussian approximation, consisting of
+Define a *Dirac delta function*, 'δ' using normalised Gaussian approximation, consisting of
 argument t, zero mean, μ=0.0, and σ, standard
 devivation of type Float64. It returns an impulse of unit area.
 
