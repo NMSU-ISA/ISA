@@ -19,8 +19,7 @@ x = u(t-0.25)-u(t-2.5)
 
 A **Gaussian function** is defined by
 
-$f(x) = \mathrm{e}^{-0.5(\dfrac{x-μ}{σ})^2}$,
-
+$f(x) = \mathrm{e}^{-0.5\left(\dfrac{x-μ}{σ}\right)^2}$
 where $x$ is an input data, μ is mean and σ is the standard
 deviation.
 
@@ -36,7 +35,7 @@ f = 𝒩ᵤ(x::Float64; μ, σ)
 
 A normalized **Gaussian function** is defined by
 
-$f(x) = \dfrac{1}{√2πσ}\mathrm{e}^{-0.5(\dfrac{x-μ}{σ})^2}$,
+$f(x) = \dfrac{1}{√(2π)σ}\mathrm{e}^{-0.5\left(\dfrac{x-μ}{σ}\right)^2}$
 where $x$ is an input data, μ is mean and σ is the standard
 deviation.
 
@@ -48,9 +47,16 @@ x = 2.0
 f = 𝒩(x::Float64; μ, σ)
 ```
 
-## Delta function
+## Dirac delta function
 
-A Delta function is defined using Gaussian approximation with
+A **Dirac delta function** is defined using Gaussian approximation with
 zero mean and variance $σ^2$ tending to zero (in limit).
 
-$δ(t) = \mathrm{e}^{-0.5(\dfrac{t^2}{σ^2})}$,
+$δ(t) = \mathrm{e}^{-0.5\left(\dfrac{t^2}{σ^2}\right)}.$
+
+Another representation of **Dirac delta function** is defined
+using normalized Gaussian approximation with
+zero mean and variance $σ^2$ tending to zero (in limit).
+This definition truly represents the Dirac delta function.
+
+$δ(t) = \dfrac{1}{√(2π)σ}\mathrm{e}^{-0.5\left(\dfrac{t^2}{σ^2}\right)}.$
