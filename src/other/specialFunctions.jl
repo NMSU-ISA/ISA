@@ -65,7 +65,7 @@ of type Float64.
 # Examples
 ```@example
 using ISA
-t = 1.5
+t = 1.0e-10
 σ = 1.0e-11
 x = δn(t, σ)
 ```
@@ -84,7 +84,7 @@ of type Float64.
 # Examples
 ```@example
 using ISA
-t = 2.5
+t = 1.0e-10
 σ = 1.0e-11
 x = δ(t, σ)
 ```

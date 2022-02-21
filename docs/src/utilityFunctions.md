@@ -54,9 +54,23 @@ zero mean and variance $σ^2$ tending to zero (in limit).
 
 $δ(t) = \mathrm{e}^{-0.5\left(\dfrac{t^2}{σ^2}\right)}.$
 
+```@example
+using ISA
+t = 1.0e-10
+σ = 1.0e-11
+x = δn(t, σ)
+```
+
 Another representation of **Dirac delta function** is defined
 using normalized Gaussian approximation with
 zero mean and variance $σ^2$ tending to zero (in limit).
-This definition truly represents the Dirac delta function.
+This definition truly represents the Dirac delta function in approximation.
 
 $δ(t) = \dfrac{1}{√(2π)σ}\mathrm{e}^{-0.5\left(\dfrac{t^2}{σ^2}\right)}.$
+
+```@example
+using ISA
+t = 1.0e-10
+σ = 1.0e-11
+x = δ(t, σ)
+```
