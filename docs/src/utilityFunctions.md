@@ -27,3 +27,9 @@ $\mathcal{N}(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\l
 We define a Gaussian approximation for the **Dirac delta function** denoted `δ(t; σ)` as
 
 $δ(t) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$
+
+## Normalized Dirac Delta Approximation
+
+We define an amplitude normalized Gaussian approximation for the **Dirac delta function** denoted `δn(t; σ)` as
+
+$δ_n(t) = \exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$

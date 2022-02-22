@@ -68,7 +68,19 @@ function δn(t::Float64,σ::Float64=1.0e-11)::Float64
    return 𝒩ᵤ(t, μ=0.0, σ=σ)
 end
 
+"""
+    δ(t::Float64,σ::Float64=1.0e-11)::Float64
 
+Normalized Dirac Delta Approximation
+
+# Examples
+```@example
+using ISA
+t = 1.0e-10
+σ = 1.0e-11
+δ(t, σ)
+```
+"""
 function δ(t::Float64,σ::Float64=1.0e-11)::Float64
    return 𝒩(t, μ=0.0, σ=σ)
 end
