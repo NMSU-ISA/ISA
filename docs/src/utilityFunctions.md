@@ -21,3 +21,9 @@ $ \mathcal{N}_\mathrm{u}(x;\mu,\sigma) = \exp\left(-\frac{1}{2}\left(\frac{x-\mu
 We define a unit area **Gaussian function** denoted `𝒩(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` as
 
 $\mathcal{N}(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right).$
+
+## Dirac Delta Approximation
+
+We define a Gaussian approximation for the **Dirac delta function** denoted `δ(t; σ)` as
+
+$δ(t) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$
