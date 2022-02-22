@@ -1,76 +1,41 @@
 # Utility Functions
 
-## Unit step function
+## Unit Step Function
 
-A **unit step function** is defined by
+We define a **unit step function** `u(t)` as
 
 $u(t) = \begin{cases}
         1, &   t \geq 0 \\
         0, &   t < 0       
         \end{cases}.$
 
-```@example
-using ISA
-t = 1.25
-x = u(t-0.25)-u(t-2.5)
-```
+Note that we chosen the value at $t=0$ as $1$.
 
-## Gaussian function
+## Gaussian Function
 
-A **Gaussian function** is defined by
+We define a **Gaussian function** denoted `𝒩ᵤ(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` as
 
-$f(x) = \mathrm{e}^{-0.5\left(\dfrac{x-μ}{σ}\right)^2}$
+$f(x) = \mathrm{e}^{-0.5\left(\frac{x-μ}{σ}\right)^2}.$
+
+
+## Normalized Gaussian Function
+
+We define a **unit area Gaussian function** denoted `𝒩(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` as
+
+$f(x) = \frac{1}{√(2π)σ}\mathrm{e}^{-0.5\left(\frac{x-μ}{σ}\right)^2}$
 where $x$ is an input data, μ is mean and σ is the standard
 deviation.
 
-```@example
-using ISA
-x = 2.0
-μ = 1.0
-σ = 0.1
-f = 𝒩ᵤ(x::Float64; μ, σ)
-```
 
-## Normalized Gaussian function
+## Dirac Delta Approximation
 
-A normalized **Gaussian function** is defined by
+We define a Gaussian approximation for the **Dirac delta function** denoted `δ(t; σ)` as
 
-$f(x) = \dfrac{1}{√(2π)σ}\mathrm{e}^{-0.5\left(\dfrac{x-μ}{σ}\right)^2}$
-where $x$ is an input data, μ is mean and σ is the standard
-deviation.
+$δ(t) = \frac{1}{\sqrt{2π}σ}\mathrm{e}^{-0.5\left(\frac{t^2}{σ^2}\right)}.$
 
-```@example
-using ISA
-x = 2.0
-μ = 1.0
-σ = 0.1
-f = 𝒩(x::Float64; μ, σ)
-```
 
-## Dirac delta function
+## Normalized Dirac Delta Approximation
 
-A **Dirac delta function** is defined using Gaussian approximation with
-zero mean and variance $σ^2$ tending to zero (in limit).
+We define an amplitude normalized Gaussian approximation for the **Dirac delta function** denoted `δn(t; σ)` as
 
-$δ(t) = \mathrm{e}^{-0.5\left(\dfrac{t^2}{σ^2}\right)}.$
-
-```@example
-using ISA
-t = 1.0e-10
-σ = 1.0e-11
-x = δn(t, σ)
-```
-
-Another representation of **Dirac delta function** is defined
-using normalized Gaussian approximation with
-zero mean and variance $σ^2$ tending to zero (in limit).
-This definition truly represents the Dirac delta function in approximation.
-
-$δ(t) = \dfrac{1}{√(2π)σ}\mathrm{e}^{-0.5\left(\dfrac{t^2}{σ^2}\right)}.$
-
-```@example
-using ISA
-t = 1.0e-10
-σ = 1.0e-11
-x = δ(t, σ)
-```
+$δ_n(t) = \mathrm{e}^{-0.5\left(\frac{t^2}{σ^2}\right)}.$
