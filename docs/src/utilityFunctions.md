@@ -9,3 +9,9 @@ $\mathrm{u}(t) = \begin{cases}
         0, &   t < 0       
         \end{cases}.$
 Note that we chosen the value at $t=0$ as $1$.
+
+## Unnormalized Gaussian Function
+
+We define an unnormalized **Gaussian function** denoted `𝒩ᵤ(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` as
+
+$ \mathcal{N}_\mathrm{u}(x;\mu,\sigma) = \exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right).$

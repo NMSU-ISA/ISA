@@ -15,7 +15,20 @@ function u(t::Float64)::Float64 #unit step function
     return ifelse( t < 0, zero(t), one(t) )
 end
 
+"""
+    𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
 
+Unnormalized Gaussian Function
+
+# Examples
+```@example
+using ISA
+x = 2.0
+μ = 1.0
+σ = 0.1
+𝒩ᵤ(x; μ, σ)
+```
+"""
 function 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
     return exp(-0.5 * ((x - μ) / σ)^2)
 end
