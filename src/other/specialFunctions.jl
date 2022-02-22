@@ -1,4 +1,19 @@
+"""
+    u(t::Float64)::Float64
 
+Unit Step Function
+
+    $ \mathrm{u}(t) = \begin{cases}
+            1, &   t \geq 0 \\
+            0, &   t < 0
+            \end{cases}.$
+# Examples
+```@example
+using ISA
+t = 2.5
+x = u(t-1.725)
+```
+"""
 function u(t::Float64)::Float64 #unit step function
     return ifelse( t < 0, zero(t), one(t) )
 end
