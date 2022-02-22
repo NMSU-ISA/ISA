@@ -1,10 +1,10 @@
 
-"""
+@doc raw"""
     u(t::Float64)::Float64
 
 Unit Step Function
 
-``\ \mathrm{u}(t) = \begin{cases}
+``\mathrm{u}(t) = \begin{cases}
         1, &   t \geq 0 \\
         0, &   t < 0
         \end{cases}``
@@ -73,19 +73,7 @@ function δn(t::Float64,σ::Float64=1.0e-11)::Float64
    return 𝒩ᵤ(t, μ=0.0, σ=σ)
 end
 
-"""
-    δ(t::Float64,σ::Float64=1.0e-11)::Float64
 
-Normalized Dirac Delta Approximation
-
-# Examples
-```@example
-using ISA
-t = 1.0e-10
-σ = 1.0e-11
-δ(t, σ)
-```
-"""
 function δ(t::Float64,σ::Float64=1.0e-11)::Float64
    return 𝒩(t, μ=0.0, σ=σ)
 end
