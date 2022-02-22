@@ -4,6 +4,11 @@
 
 Unit Step Function
 
+``\ \mathrm{u}(t) = \begin{cases}
+        1, &   t \geq 0 \\
+        0, &   t < 0
+        \end{cases}``
+
 # Examples
 ```@example
 using ISA
