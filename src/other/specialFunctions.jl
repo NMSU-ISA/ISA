@@ -33,7 +33,20 @@ function 𝒩ᵤ(x::Float64; μ::Float64, σ::Float64)::Float64
     return exp(-0.5 * ((x - μ) / σ)^2)
 end
 
+"""
+    𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
 
+Unit Area Gaussian Function
+
+# Examples
+```@example
+using ISA
+x = 2.0
+μ = 1.0
+σ = 0.1
+𝒩(x; μ, σ)
+```
+"""
 function 𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
     return 1 / (σ * sqrt(2 * π)) * exp(-0.5 * ((x - μ) / σ)^2)
 end
