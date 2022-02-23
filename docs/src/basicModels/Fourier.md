@@ -88,7 +88,7 @@ $z(t) = \begin{cases}
         0, &   T/4<|t|<T/2        
         \end{cases}.$
 
-We can represent this signal with a component set consisting of a set of harmonicly related SHCs
+We can represent this signal with a component set consisting of a set of harmonically related SHCs
 
 $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
