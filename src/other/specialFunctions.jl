@@ -10,7 +10,7 @@ Unit Step Function
 ```@example
 using ISA
 t = 2.5
-x = u(t-1.725)
+u(t-1.725)
 ```
 """
 function u(t::Float64)::Float64 #unit step function
@@ -62,7 +62,7 @@ end
 
 Normalized Dirac Delta Approximation
 
-``δ_n(t) = \\exp\\left(-\\frac{1}{2}\\left(\\frac{t^2}{\\sigma^2}\\right)\\right). ``
+``δ_n(t;\sigma) = \\exp\\left(-\\frac{1}{2}\\left(\\frac{t^2}{\\sigma^2}\\right)\\right). ``
 
 # Examples
 ```@example
@@ -81,7 +81,7 @@ end
 
 Dirac Delta Approximation
 
-``δ(t) = \\frac{1}{\\sqrt{2\\pi}\\sigma}\\exp\\left(-\\frac{1}{2}\\left(\\frac{t^2}{\\sigma^2}\\right)\\right). ``
+``δ(t;\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma}\\exp\\left(-\\frac{1}{2}\\left(\\frac{t^2}{\\sigma^2}\\right)\\right). ``
 
 # Examples
 ```@example

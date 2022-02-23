@@ -2,34 +2,35 @@
 
 ## Unit Step Function
 
-We define a **unit step function** `u(t)` as
+We include a **unit step function** `u(t)` defined as
 
 $\mathrm{u}(t) = \begin{cases}
         1, &   t \geq 0 \\
         0, &   t < 0       
         \end{cases}.$
-Note that we chosen the value at $t=0$ as $1$.
 
 ## Unnormalized Gaussian Function
 
-We define an unnormalized **Gaussian function** denoted `𝒩ᵤ(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` as
+We include an unnormalized **Gaussian function** denoted `𝒩ᵤ(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` defined as
 
-$ \mathcal{N}_\mathrm{u}(x;\mu,\sigma) = \exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right).$
+
+$\mathcal{N}_\mathrm{u}(x;\mu,\sigma) = \exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right).$
+
 
 ## Unit Area Gaussian Function
 
-We define a unit area **Gaussian function** denoted `𝒩(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` as
+We include a unit area **Gaussian function** denoted `𝒩(x; μ, σ)` parameterized by mean `μ` and standard deviation `σ` defined as
 
 $\mathcal{N}(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right).$
 
 ## Dirac Delta Approximation
 
-We define a Gaussian approximation for the **Dirac delta function** denoted `δ(t; σ)` as
+We include a Gaussian approximation for the **Dirac delta function** denoted `δ(t; σ)` defined as
 
-$δ(t) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$
+$δ(t;\sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$
 
 ## Normalized Dirac Delta Approximation
 
-We define an amplitude normalized Gaussian approximation for the **Dirac delta function** denoted `δn(t; σ)` as
+We include an amplitude normalized Gaussian approximation for the **Dirac delta function** denoted `δn(t; σ)` defined as
 
-$δ_n(t) = \exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$
+$δ_n(t;\sigma) = \exp\left(-\frac{1}{2}\left(\frac{t^2}{\sigma^2}\right)\right).$
