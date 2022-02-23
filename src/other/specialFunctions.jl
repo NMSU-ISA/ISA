@@ -25,6 +25,8 @@ end
 
 Unnormalized Gaussian Function
 
+``\\mathcal{N}_\\mathrm{u}(x;\\mu,\\sigma) = \\exp\\left(-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right)``
+
 # Examples
 ```@example
 using ISA
