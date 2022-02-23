@@ -63,7 +63,9 @@ end
 """
     δn(t::Float64,σ::Float64=1.0e-11)::Float64
 
-Dirac Delta Approximation
+Normalized Dirac Delta Approximation
+
+``δ_n(t) = \\exp\\left(-\\frac{1}{2}\\left(\\frac{t^2}{\\sigma^2}\\right)\\right). ``
 
 # Examples
 ```@example
