@@ -10,7 +10,7 @@ Unit Step Function
 ```@example
 using ISA
 t = 2.5
-u(t-1.725)
+u(t)
 ```
 """
 function u(t::Float64)::Float64 #unit step function
