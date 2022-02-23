@@ -52,7 +52,7 @@ png(path*"defaultColor.png")
 plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap="cubeYF")
 png(path*"cubeYFcolor.png")
 
-myColorMap = [RGB(rand(), rand(), rand()) for i in 1:256]
+myColorMap  = reverse(colormap("Blues",256))
 plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap = myColorMap)
 png(path*"myColorMap.png")
 
