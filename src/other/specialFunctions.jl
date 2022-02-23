@@ -25,7 +25,7 @@ end
 
 Unnormalized Gaussian Function
 
-``\\mathcal{N}_\\mathrm{u}(x;\\mu,\\sigma) = \\exp\\left(-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right)``
+``\\mathcal{N}_\\mathrm{u}(x;\\mu,\\sigma) = \\exp\\left(-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right).``
 
 # Examples
 ```@example
@@ -44,6 +44,8 @@ end
     𝒩(x::Float64; μ::Float64, σ::Float64)::Float64
 
 Unit Area Gaussian Function
+
+``\\mathcal{N}(x;\\mu,\\sigma) = \\frac{1}{\\sqrt{2\\pi}\\sigma}\\exp\\left(-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right).``
 
 # Examples
 ```@example
