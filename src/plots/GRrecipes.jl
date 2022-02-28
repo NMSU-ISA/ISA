@@ -64,11 +64,11 @@ end
    yticks --> viewAngle3DArgand(view)[6][2]
    zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> colorSelect(colorMap)[1]
-   linealpha --> sign.(abs.( ψ(timeaxis) ))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
    t = timeaxis
+   linealpha --> sign.(abs.( ψ(timeaxis) ))
    a_max = maximum(abs.(ψ.C.a.(t)))
    clim = (0,1)
    seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(ψ.(t)) .* 256/a_max ),256),50) ]
@@ -87,11 +87,11 @@ end
    yticks --> viewAngle3DArgand(view)[6][2]
    zticks --> viewAngle3DArgand(view)[6][3]
    background_color --> colorSelect(colorMap)[1]
-   linealpha --> sign.(abs.(z(timeaxis)))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
    t = timeaxis
+   linealpha --> sign.(abs.(z(timeaxis)))
    a_max = maximum(abs.(z(t)))
    clim = (0,1)
    seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(z(t)) .* 256/a_max ),256),50) ]
@@ -148,12 +148,12 @@ end
    yticks --> viewAngleIS(view,FreqUnits)[7][2]
    zticks --> viewAngleIS(view,FreqUnits)[7][3]
    background_color --> colorSelect(colorMap)[1]
-   linealpha --> sign.(abs.( 𝐶.a.(timeaxis) ))
    foreground_color --> :white
    legend --> false
    framestyle --> :origin
    Fnorm = getFnorm(FreqUnits)
    t = timeaxis
+   linealpha --> sign.(abs.( 𝐶.a.(timeaxis) ))
    a_max = maximum(abs.(𝐶.a.(t)))
    clim = (0,1)
    seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(AMFMcomp(𝐶).(t)) .* 256/a_max ),256),50) ]
@@ -185,8 +185,9 @@ end
    for k in 1:length(S.S)
       seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.(S.S[k].a.(t)) .* 256/a_max ),256),50) ]
       #linealpha --> max.(min.( abs.(z.S.S[1].a.(t)).^(1/2) .* 1/a_max ,1),0)
-      linealpha --> sign.(abs.( S.S[k].a.(timeaxis) ))
+
       @series begin
+         linealpha --> sign.(abs.( S.S[k].a.(timeaxis) ))
          timeaxis, Fnorm.*S.S[k].ω.(t), real(AMFMcomp(S.S[k]).(t))
       end
       realProj ? minVector[k] = minimum(Fnorm.*S.S[k].ω.(t)) : nothing
@@ -268,8 +269,9 @@ end
    Fnorm = getFnorm(FreqUnits)
    a_max = maximum(abs.(𝐂.a))
    clim = (0,1)
-   # seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐂.a)) .* 256/a_max ),256),50) ]
-   𝐂.t,𝐂.ω,real.(𝐂.Ψ)
+   rm = (!).(isnan.(𝐂.ω))# remove "NaN" values in 𝐂.ω
+   seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐂.a)) .* 256/a_max ),256),50) ][rm]
+   𝐂.t[rm],𝐂.ω[rm],real.(𝐂.Ψ)[rm]
 end
 
 @recipe function temp(𝐒::numSet;FreqUnits = "rad/s",
@@ -294,13 +296,11 @@ end
    realProj ? projection = zeros(length(timeaxis)) : nothing
    realProj ? minVector = zeros(length(𝐒.S)) : nothing
    for k in 1:length(𝐒.S)
-      ### THIS FIXES THE WARNINGS BUT APPEND ZEROS TO THE PLOT
-      ### temp = copy.(𝐒.S[k].ω)
-      ### 𝐒.S[k].ω[isnan.(𝐒.S[k].ω)] .= sort(unique(𝐒.S[k].ω))[1]
-      ### seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐒.S[k].Ψ)) .* 256/a_max ),256),50) ]
+      rm = (!).(isnan.(𝐒.S[k].ω))# remove "NaN" values in 𝐂.ω
+      seriescolor := colorSelect(colorMap)[ max.(min.(round.(Int, abs.((𝐒.S[k].a)) .* 256/a_max ),256),50) ][rm]
+
       @series begin
-         𝐒.S[k].t,𝐒.S[k].ω,real.(𝐒.S[k].Ψ)
-         ### 𝐒.S[k].t[.!isnan.(𝐒.S[1].ω)],𝐒.S[k].ω[.!isnan.(𝐒.S[1].ω)],real.(𝐒.S[k].Ψ)[.!isnan.(𝐒.S[1].ω)]
+         𝐒.S[k].t[rm],𝐒.S[k].ω[rm],real.(𝐒.S[k].Ψ)[rm]
       end
       realProj ? minVector[k] = sort(unique(𝐒.S[k].ω))[1] : nothing
       realProj ? projection += real.(𝐒.S[k].Ψ) : nothing
