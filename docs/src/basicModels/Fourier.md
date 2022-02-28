@@ -1,7 +1,7 @@
 # Basic Signal Models
 
 ## Fourier Series
-Consider a component set consisting of a set of harmonicly related SHCs
+Consider a component set consisting of a set of harmonically related SHCs
 
 $\mathscr{S}\triangleq\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots,\pm\infty .$
 
@@ -34,7 +34,7 @@ Consider a signal $z(t)$ which consists of a [Dirac delta](https://en.wikipedia.
 
 $z(t) = \sum\limits_{k=-\infty}^{\infty}\delta(t-kT)$
 
-We can represent this signal with a component set consisting of a set of harmonicly related SHCs
+We can represent this signal with a component set consisting of a set of harmonically related SHCs
 
 $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
@@ -88,7 +88,7 @@ $z(t) = \begin{cases}
         0, &   T/4<|t|<T/2        
         \end{cases}.$
 
-We can represent this signal with a component set consisting of a set of harmonicly related SHCs
+We can represent this signal with a component set consisting of a set of harmonically related SHCs
 
 $\mathscr{S}=\left\{\cdots,\mathscr{C}_{-1},\mathscr{C}_0,\mathscr{C}_1,\cdots\right\},~\mathscr{C}_k = \left\{a_k,k\omega_0, \phi_k\vphantom{0^0}\right\},~k = 0,\pm 1,\pm 2,\ldots$
 
@@ -169,7 +169,7 @@ exp(-j*k*2π)+exp(j*4π/3)*exp(-j*k*4π/3))/(j*k*2π) )
 kInds = -150:150
 𝑆 = fourierSeries(T, aₖ, kInds)
 z = AMFMmodel(𝑆)
-plot(z; timeaxis=-1.0:0.001:1.0, ylims=(1.0,1.0),camera=(60,15))
+plot(z; timeaxis=-1.0:0.001:1.0, camera=(60,15))
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/IS_exFourier7.png)
 

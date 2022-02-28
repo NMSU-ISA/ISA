@@ -198,7 +198,7 @@ Optionally, users can provide their own customized colormap as a Vector{RGB{Floa
 
 Below is an example of using a randomly generated colormap.
 ```julia
-myColorMap = [RGB(rand(), rand(), rand()) for i in 1:256]
+myColorMap  = reverse(colormap("Blues",256))
 plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap = myColorMap)
 ```
 ![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/myColorMap.png)
