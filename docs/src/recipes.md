@@ -7,6 +7,8 @@ Two basic visualization type are included in ISA.jl.
     2) An [Instantaneous Spectrum](https://web.nmsu.edu/~spsandov/ISA/literature.html#openModal1) allows visualization of multiple aspects of the signal model simultaneously, including both magnitude and phase of each signal component. While it may take some time to become comfortable with the 3D visualization, we believe it has significant advantages in terms of interpretability over other time-frequency visualizations.
 
 
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/ISA_animation.mp4)
+
 ## Setup
 After including the Plots.jl package (i.e. `using Plots`), data types defined in ISA.jl can be plotted by simply calling `plot(type)` and the corresponding plot recipe will generate the appropriate plot with the default parameters.
 
@@ -196,7 +198,7 @@ plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap="cubeYF")
 
 Optionally, users can provide their own customized colormap as a Vector{RGB{Float64}} with 256 element.
 
-Below is an example of using a randomly generated colormap.
+Below is an example of changing the colormap to a user generated colormap `myColorMap`.
 ```julia
 myColorMap  = reverse(colormap("Blues",256))
 plot(ψ₀, timeaxis=0.0:0.001:3.0, colorMap = myColorMap)
