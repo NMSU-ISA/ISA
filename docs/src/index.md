@@ -1,5 +1,7 @@
 # [ISA.jl: Instantaneous Spectral Analysis in Julia](https://github.com/NMSU-ISA/ISA/)
 
+![](https://raw.githubusercontent.com/NMSU-ISA/ISA/master/docs/src/assets/ISA_animation.mp4)
+
 ## Installation
 
 ### Users
